@@ -1,0 +1,230 @@
+package com.example.hypixeltrackerbackend.services;
+
+import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.data.*;
+import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
+import com.example.hypixeltrackerbackend.utils.CollectionsUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+@Service
+public class DataProcessorService {
+    private final ItemPricingRepository pricingRepository;
+    private static final Logger logger = Logger.getLogger(DataProcessorService.class.getName());
+    private Map<String, CompleteItem> completeItemHashMap;
+
+    @Autowired
+    public DataProcessorService(ItemPricingRepository pricingRepository) {
+        this.pricingRepository = pricingRepository;
+    }
+
+    /**
+     * Use to load the static part of the data
+     *
+     * @throws IOException if an error occurred while reading the local database
+     */
+    public void preloadData() throws IOException {
+        if (completeItemHashMap == null) {
+            completeItemHashMap = StaticItemMapper.generate();
+        }
+    }
+
+    /**
+     * Get the latest data available
+     *
+     * @return a hashMap of already processed bazaar's item
+     */
+    public Map<String, CompleteItem> getLastData() {
+        return completeItemHashMap;
+    }
+    public Iterable<ItemPricing> getHistory(String itemId,String timeWindow){
+        LocalDateTime ending = LocalDateTime.now();
+        LocalDateTime beginning = switch (timeWindow) {
+            case "day" -> ending.minusHours(24);
+            case "hour" -> ending.minusHours(1);
+            case "week" -> ending.minusDays(7);
+            case "month" -> ending.minusMonths(1);
+            case "year" -> ending.minusYears(1);
+            default -> LocalDateTime.MIN;
+        };
+        return pricingRepository.findAllByItemIdAndLastUpdateBetween(itemId,beginning,ending);
+    }
+
+    /**
+     * Group all the record between now-1 hour and now
+     * If two grouping are call, only the timestamp will move
+     * @see TimeConstant
+     */
+    @Transactional
+    public void groupLastHourRecords() {
+        LocalDateTime begin = LocalDateTime.now().minusHours(1).truncatedTo(ChronoUnit.SECONDS);
+
+        for (int i = 0; i < TimeConstant.VALUES_BY_HOURS; i++) {
+            begin = groupFromWithTimeStamp(begin,TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        }
+    }
+
+    /**
+     * Group all the record between now-1 day and now
+     * If two grouping are call, only the timestamp will move
+     * @see TimeConstant
+     */
+    @Transactional
+    public void groupLastDayRecords() {
+        LocalDateTime begin = LocalDateTime.now().minusDays(1);
+
+        for (int i = 0; i < TimeConstant.VALUES_BY_DAYS; i++) {
+            begin = groupFromWithTimeStamp(begin,TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
+        }
+    }
+
+    private LocalDateTime groupFromWithTimeStamp(LocalDateTime begin, Integer samplingLength){
+        List<ItemPricing> summary = pricingRepository.groupAllByTimestampBetween(begin, begin.plusMinutes(samplingLength));
+        pricingRepository.deleteAllByLastUpdateBetween(begin, begin.plusMinutes(samplingLength));
+        pricingRepository.saveAll(summary);
+        return begin.plusMinutes(samplingLength);
+    }
+    /**
+     * Parse a payload from the endpoint and update local data
+     *
+     * @param string the payload of the getBazaarItem request
+     */
+    public void updateBazaarPrice(String string) {
+        if (completeItemHashMap == null) {
+            return;
+        }
+        Map<String, ItemPricing> bazaarItemList = ItemPricingMapper.toBazaarItems(string);
+        bazaarItemList.forEach((key, value) -> {
+            if (completeItemHashMap.containsKey(key)) {
+                completeItemHashMap.get(key).setPricing(value);
+            }
+        });
+        Collection<ItemPricing> prices = bazaarItemList.values();
+        pricingRepository.saveAll(prices);
+        completeItemHashMap.forEach((key, value) -> computeItemMinimalCost(value));
+    }
+
+    /**
+     * Resolve minimal cost value using craft if available or else buy price.
+     * NB if an item have no craft and no bazaar order, the minimal cost will remain null.
+     *
+     * @param item a completeItem to resolve, will be call recursively if needed
+     */
+    private void computeItemMinimalCost(CompleteItem item) {
+        if (CollectionsUtils.isEmpty(item.getCrafts())) {
+            if (item.getPricing()==null){
+                logger.fine("no pricing for " + item.getName() + " might be missing from bazaar at this time");
+                return;
+            }
+            item.getPricing().setMinimalPrice(item.getPricing().getBuyPrice());
+            return;
+        }
+        for (Craft craft : item.getCrafts()) {
+            try {
+                updateMinimalCostUsingOneCraft(item, craft);
+            } catch (InvalidObjectException e) {
+                logger.log(Level.FINE, e::getMessage);
+            }
+        }
+    }
+
+    /**
+     * Update the minimal cost by resolving the crafting cost using the given craft
+     *
+     * @param item  the item to update
+     * @param craft one craft of the item to check
+     * @throws InvalidObjectException if unable to compute craft cost or if the item have no pricing
+     */
+    private void updateMinimalCostUsingOneCraft(CompleteItem item, Craft craft) throws InvalidObjectException {
+        if (craft.getCraftingCost() == null) {
+            computeCraftCost(craft);
+        }
+        // check pricing after because craft cost can be useful even if there is no pricing
+        if (item.getPricing() == null) {
+            throw new InvalidObjectException(item.getName() + " : have no pricing");
+        }
+        updateMinimalPrice(item.getPricing(), craft.getCraftingCost());
+    }
+
+    /**
+     * Update the minimal price value by setting it to the default (i.e. the buy cost)
+     *
+     * @param pricing      the pricing sheet of an item
+     * @param craftingCost the cost to check with
+     */
+    private void updateMinimalPrice(ItemPricing pricing, Double craftingCost) {
+        Double buyPrice = pricing.getBuyPrice();
+        // by the provider api, the buyPrice is 0 if item is not currently sell
+        if (buyPrice == null || buyPrice > craftingCost) {
+            pricing.setMinimalPrice(craftingCost);
+        } else {
+            pricing.setMinimalPrice(buyPrice);
+        }
+    }
+
+    /**
+     * Compute the crafting cost of an item
+     *
+     * @param craft the craft to complete
+     * @throws InvalidObjectException is thrown if cannot compute cost of a material
+     */
+    private void computeCraftCost(Craft craft) throws InvalidObjectException {
+        double craftingCost = 0;
+        List<String> materials = craft.getMaterialIdList();
+        List<Float> quantities = craft.getQuantityOfMaterial();
+        for (int i = 0; i < materials.size(); i++) {
+            String materialId = materials.get(i);
+            float quantity = quantities.get(i);
+            craftingCost += extractCostForAMaterial(materialId) * quantity;
+        }
+        craft.setCraftingCost(craftingCost);
+    }
+
+    /**
+     * Extract the cost of a material multiplied
+     *
+     * @param materialId id of a material to find
+     * @return the extracted value
+     * @throws InvalidObjectException is thrown when a material have no pricing
+     */
+    private double extractCostForAMaterial(String materialId) throws InvalidObjectException {
+        if (!completeItemHashMap.containsKey(materialId)) {
+            throw new InvalidObjectException(materialId.concat(" : is missing from local database"));
+        }
+        CompleteItem completeItem = completeItemHashMap.get(materialId);
+        ItemPricing itemPricing = completeItem.getPricing();
+        double minimalPrice;
+        if (itemPricing == null) {
+            minimalPrice = handleMissingPricing(completeItem);
+        } else {
+            if (itemPricing.getMinimalPrice() == null) {
+                computeItemMinimalCost(completeItem);
+            }
+            minimalPrice = itemPricing.getMinimalPrice();
+        }
+        return minimalPrice;
+    }
+
+    private double handleMissingPricing(CompleteItem completeItem) throws InvalidObjectException {
+        if (CollectionsUtils.isNotEmpty(completeItem.getCrafts())) {
+            if (completeItem.getCrafts().get(0).getCraftingCost() == null) {
+                computeItemMinimalCost(completeItem);
+            }
+            return completeItem.getCrafts().get(0).getCraftingCost();
+        } else {
+            throw new InvalidObjectException(completeItem.getName() + " : no pricing and no craft, craft aborted");
+        }
+    }
+
+}

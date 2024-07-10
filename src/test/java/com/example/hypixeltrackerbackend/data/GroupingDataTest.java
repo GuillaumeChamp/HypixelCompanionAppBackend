@@ -1,0 +1,120 @@
+package com.example.hypixeltrackerbackend.data;
+
+import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
+import com.example.hypixeltrackerbackend.services.DataProcessorService;
+import com.example.hypixeltrackerbackend.services.SchedulerService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
+
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+
+@SpringBootTest
+@ActiveProfiles("test")
+class GroupingDataTest {
+    @Autowired
+    private DataProcessorService dataProcessorService;
+    @Autowired
+    private ItemPricingRepository repository;
+    @Autowired
+    private SchedulerService schedulerService;
+
+    private static final String TEST_STRING = "test";
+
+    @BeforeEach
+    void setup() {
+        schedulerService.stop();
+        repository.deleteAll();
+    }
+
+    @Test
+    void shouldGroupingLastHourWorkWithFewItems() {
+        final String testItemId1 = "test1";
+        final String testItemId2 = "test2";
+
+        LocalDateTime testTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+        ItemPricing itemPricing = new ItemPricing(testItemId1, 10d, 12d, testTime);
+        ItemPricing itemPricing1 = new ItemPricing(testItemId1, 8d, 10d, testTime.minusMinutes(2));
+
+        ItemPricing itemPricing3 = new ItemPricing(testItemId2, 4d, 8d, testTime);
+        ItemPricing itemPricing4 = new ItemPricing(testItemId2, 2d, 6d, testTime.minusMinutes(2));
+
+        repository.save(itemPricing);
+        repository.save(itemPricing1);
+
+        repository.save(itemPricing3);
+        repository.save(itemPricing4);
+
+        dataProcessorService.groupLastHourRecords();
+
+        List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
+        assertThat(pricing).hasSize(2)
+                .allSatisfy(e -> assertThat(e.getLastUpdate())
+                        .isEqualTo(testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES)))
+                .anySatisfy(e -> {
+                    assertThat(e.getItemId()).isEqualTo(testItemId1);
+                    assertThat(e.getSellPrice()).isEqualTo(9);
+                    assertThat(e.getBuyPrice()).isEqualTo(11);
+                })
+                .anySatisfy(e -> {
+                    assertThat(e.getItemId()).isEqualTo(testItemId2);
+                    assertThat(e.getSellPrice()).isEqualTo(3);
+                    assertThat(e.getBuyPrice()).isEqualTo(7);
+                });
+    }
+
+    @Test
+    void shouldGroupingLastHourSampleCorrectly() {
+        LocalDateTime testTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+
+        repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime));
+        repository.save(new ItemPricing(TEST_STRING, 8d, 10d, testTime.minusMinutes(2)));
+
+        LocalDateTime secondTimeStamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
+        repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
+
+        dataProcessorService.groupLastHourRecords();
+
+        List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
+        assertThat(pricing).hasSize(2)
+                .allSatisfy(e -> assertThat(e.getItemId()).isEqualTo(TEST_STRING))
+                .anySatisfy(e -> {
+                    assertThat(e.getSellPrice()).isEqualTo(9);
+                    assertThat(e.getBuyPrice()).isEqualTo(11);
+                    final LocalDateTime expectedTimestamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+                    assertThat(e.getLastUpdate().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
+                })
+                .anySatisfy(e -> {
+                    assertThat(e.getSellPrice()).isEqualTo(18);
+                    assertThat(e.getBuyPrice()).isEqualTo(35);
+                    final LocalDateTime expectedTimestamp = secondTimeStamp.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+                    assertThat(e.getLastUpdate().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
+                });
+    }
+
+    @Test
+    void shouldDoubleGroupingHaveNoEffect() {
+        LocalDateTime testTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+
+        repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime));
+        repository.save(new ItemPricing(TEST_STRING, 8d, 10d, testTime.minusMinutes(2)));
+
+        LocalDateTime secondTimeStamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
+        repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
+
+        dataProcessorService.groupLastHourRecords();
+        dataProcessorService.groupLastHourRecords();
+
+        List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
+        assertThat(pricing).hasSize(2);
+    }
+}
