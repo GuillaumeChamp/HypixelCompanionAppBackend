@@ -48,7 +48,7 @@ public class DataProcessorService {
     public Map<String, CompleteItem> getLastData() {
         return completeItemHashMap;
     }
-    public Iterable<ItemPricing> getHistory(String itemId,String timeWindow){
+    public List<ItemPricing> getHistory(String itemId,String timeWindow){
         LocalDateTime ending = LocalDateTime.now();
         LocalDateTime beginning = switch (timeWindow) {
             case "day" -> ending.minusHours(24);
@@ -58,7 +58,7 @@ public class DataProcessorService {
             case "year" -> ending.minusYears(1);
             default -> LocalDateTime.MIN;
         };
-        return pricingRepository.findAllByItemIdAndLastUpdateBetween(itemId,beginning,ending);
+        return pricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(itemId,beginning,ending);
     }
 
     /**
@@ -67,12 +67,13 @@ public class DataProcessorService {
      * @see TimeConstant
      */
     @Transactional
-    public void groupLastHourRecords() {
-        LocalDateTime begin = LocalDateTime.now().minusHours(1).truncatedTo(ChronoUnit.SECONDS);
+    public void groupOneHourRecords(LocalDateTime beginning) {
+        LocalDateTime begin = beginning.truncatedTo(ChronoUnit.SECONDS);
 
         for (int i = 0; i < TimeConstant.VALUES_BY_HOURS; i++) {
             begin = groupFromWithTimeStamp(begin,TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
         }
+        logger.info("Successfully compress data from " + beginning + " to " + begin);
     }
 
     /**
@@ -81,12 +82,13 @@ public class DataProcessorService {
      * @see TimeConstant
      */
     @Transactional
-    public void groupLastDayRecords() {
-        LocalDateTime begin = LocalDateTime.now().minusDays(1);
+    public void groupOneDayRecords(LocalDateTime beginning) {
+        LocalDateTime begin = beginning.truncatedTo(ChronoUnit.SECONDS);
 
         for (int i = 0; i < TimeConstant.VALUES_BY_DAYS; i++) {
             begin = groupFromWithTimeStamp(begin,TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
         }
+        logger.info("Successfully compress data from " + beginning + " to " + begin);
     }
 
     private LocalDateTime groupFromWithTimeStamp(LocalDateTime begin, Integer samplingLength){

@@ -8,6 +8,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -48,8 +49,8 @@ public class SchedulerService {
             }
             dataProcessorService.updateBazaarPrice(response);
         }, 0, TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS);
-        scheduleTaskExecutor.scheduleAtFixedRate(dataProcessorService::groupLastHourRecords, 1, 1, TimeUnit.HOURS);
-        scheduleTaskExecutor.scheduleAtFixedRate(dataProcessorService::groupLastDayRecords, 1, 1, TimeUnit.DAYS);
+        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
+        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
 
     }
 

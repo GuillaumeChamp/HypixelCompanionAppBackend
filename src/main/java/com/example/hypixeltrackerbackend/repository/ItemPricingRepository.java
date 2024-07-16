@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ItemPricingRepository extends CrudRepository<ItemPricing, Long>{
 
-    Iterable<ItemPricing> findAllByItemIdAndLastUpdateBetween(String itemId, LocalDateTime lastUpdate, LocalDateTime lastUpdate2);
+    List<ItemPricing> findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(String itemId, LocalDateTime lastUpdate, LocalDateTime lastUpdate2);
     @Query("""
          select new com.example.hypixeltrackerbackend.data.ItemPricing(p.itemId,avg(p.sellPrice),avg(p.buyPrice),:before)
          from ItemPricing p

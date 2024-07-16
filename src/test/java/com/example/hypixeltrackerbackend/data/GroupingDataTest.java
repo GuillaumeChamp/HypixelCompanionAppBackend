@@ -52,7 +52,7 @@ class GroupingDataTest {
         repository.save(itemPricing3);
         repository.save(itemPricing4);
 
-        dataProcessorService.groupLastHourRecords();
+        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
         assertThat(pricing).hasSize(2)
@@ -81,7 +81,7 @@ class GroupingDataTest {
         repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
         repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
 
-        dataProcessorService.groupLastHourRecords();
+        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
         assertThat(pricing).hasSize(2)
@@ -111,8 +111,8 @@ class GroupingDataTest {
         repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
         repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
 
-        dataProcessorService.groupLastHourRecords();
-        dataProcessorService.groupLastHourRecords();
+        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
+        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
         assertThat(pricing).hasSize(2);

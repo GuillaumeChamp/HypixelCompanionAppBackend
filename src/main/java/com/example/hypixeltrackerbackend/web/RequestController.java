@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.StreamSupport;
 
 
 @RestController
@@ -37,11 +37,27 @@ public class RequestController {
     @GetMapping(value = {"/bazaar/{id}", "/bazaar/{id}/{window}"})
     List<PricingRecord> getHistory(@PathVariable("id") String itemId, @PathVariable(value = "window", required = false) String timeWindow) {
         timeWindow = timeWindow==null ? DEFAULT_TIME_WINDOW : timeWindow;
-        List<PricingRecord> history = StreamSupport.stream(dataProcessorService.getHistory(itemId, timeWindow).spliterator(), false).map(PricingRecord::new).toList();
+        List<PricingRecord> history = dataProcessorService.getHistory(itemId, timeWindow).stream().map(PricingRecord::new).toList();
         if (CollectionsUtils.isEmpty(history)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item not found : " + itemId);
         }
         return history;
     }
+
+    @CrossOrigin
+    @GetMapping(value = {"/compress"})
+    String compressData() {
+        LocalDateTime now = LocalDateTime.now();
+        // compress last week
+        for (int i = 2; i < 7; i++) {
+            dataProcessorService.groupOneDayRecords(now.minusDays(i));
+        }
+        // compress last day
+        for (int i=2;i<24;i++){
+            dataProcessorService.groupOneHourRecords(now.minusHours(i));
+        }
+        return "ok";
+    }
+
 
 }
