@@ -48,7 +48,8 @@ public class DataProcessorService {
     public Map<String, CompleteItem> getLastData() {
         return completeItemHashMap;
     }
-    public List<ItemPricing> getHistory(String itemId,String timeWindow){
+
+    public List<ItemPricing> getHistory(String itemId, String timeWindow) {
         LocalDateTime ending = LocalDateTime.now();
         LocalDateTime beginning = switch (timeWindow) {
             case "day" -> ending.minusHours(24);
@@ -58,12 +59,13 @@ public class DataProcessorService {
             case "year" -> ending.minusYears(1);
             default -> LocalDateTime.MIN;
         };
-        return pricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(itemId,beginning,ending);
+        return pricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(itemId, beginning, ending);
     }
 
     /**
      * Group all the record between now-1 hour and now
      * If two grouping are call, only the timestamp will move
+     *
      * @see TimeConstant
      */
     @Transactional
@@ -71,7 +73,7 @@ public class DataProcessorService {
         LocalDateTime begin = beginning.truncatedTo(ChronoUnit.SECONDS);
 
         for (int i = 0; i < TimeConstant.VALUES_BY_HOURS; i++) {
-            begin = groupFromWithTimeStamp(begin,TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+            begin = groupFromWithTimeStamp(begin, TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
         }
         logger.info("Successfully compress data from " + beginning + " to " + begin);
     }
@@ -79,6 +81,7 @@ public class DataProcessorService {
     /**
      * Group all the record between now-1 day and now
      * If two grouping are call, only the timestamp will move
+     *
      * @see TimeConstant
      */
     @Transactional
@@ -86,17 +89,18 @@ public class DataProcessorService {
         LocalDateTime begin = beginning.truncatedTo(ChronoUnit.SECONDS);
 
         for (int i = 0; i < TimeConstant.VALUES_BY_DAYS; i++) {
-            begin = groupFromWithTimeStamp(begin,TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
+            begin = groupFromWithTimeStamp(begin, TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
         }
         logger.info("Successfully compress data from " + beginning + " to " + begin);
     }
 
-    private LocalDateTime groupFromWithTimeStamp(LocalDateTime begin, Integer samplingLength){
+    private LocalDateTime groupFromWithTimeStamp(LocalDateTime begin, Integer samplingLength) {
         List<ItemPricing> summary = pricingRepository.groupAllByTimestampBetween(begin, begin.plusMinutes(samplingLength));
         pricingRepository.deleteAllByLastUpdateBetween(begin, begin.plusMinutes(samplingLength));
         pricingRepository.saveAll(summary);
         return begin.plusMinutes(samplingLength);
     }
+
     /**
      * Parse a payload from the endpoint and update local data
      *
@@ -125,7 +129,7 @@ public class DataProcessorService {
      */
     private void computeItemMinimalCost(CompleteItem item) {
         if (CollectionsUtils.isEmpty(item.getCrafts())) {
-            if (item.getPricing()==null){
+            if (item.getPricing() == null) {
                 logger.fine("no pricing for " + item.getName() + " might be missing from bazaar at this time");
                 return;
             }

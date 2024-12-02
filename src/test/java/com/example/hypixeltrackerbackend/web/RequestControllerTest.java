@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -38,7 +39,7 @@ class RequestControllerTest {
     void testGetItems() throws Exception {
         // wait that a request have been proceeded
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
-                .until(()-> dataProcessorService.getLastData()!=null);
+                .until(() -> dataProcessorService.getLastData() != null);
 
         mockMvc.perform(get("/bazaar").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -47,17 +48,50 @@ class RequestControllerTest {
                         .contains("INK_SACK:3")
                         .startsWith("{")
                         .endsWith("}")
-
                 );
     }
+
     @Test
-    @DisplayName("GET /sql")
-    void shouldSqlEndpointWorkProperly() throws Exception {
+    @DisplayName("GET /bazaar/{id} with wrong ID")
+    void testGetSpecificItemWithWrongId() throws Exception {
         // wait that a request have been proceeded
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
-                .until(()-> dataProcessorService.getLastData()!=null);
+                .pollDelay(500,TimeUnit.MILLISECONDS)
+                .until(() -> dataProcessorService.getLastData() != null);
 
-        mockMvc.perform(get("/sql").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/bazaar/{id}","toto").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
+                .andExpect(status().isNotFound())
+                .andDo(result -> assertThat(result.getResponse().getErrorMessage()).isEqualTo("Item not found : toto"));
+    }
+
+
+    @Test
+    @DisplayName("GET /bazaar/{id}")
+    void testGetSpecificItem() throws Exception {
+        // wait that a request have been proceeded
+        Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
+                .pollDelay(500,TimeUnit.MILLISECONDS)
+                .until(() -> dataProcessorService.getLastData() != null);
+
+        mockMvc.perform(get("/bazaar/{id}/{window}","WHEAT","day").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
+                .andExpect(status().isOk())
+                .andDo(result -> assertThat(result.getResponse().getContentAsString())
+                        .contains("sellPrice")
+                        .contains("buyPrice")
+                        .contains("timestamp")
+                        .startsWith("[{")
+                        .endsWith("}]")
+                );
+    }
+
+    @Test
+    @DisplayName("GET /compress")
+    void shouldCompressEndpointWorkProperly() throws Exception {
+        // wait that a request have been proceeded
+        Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
+                .until(() -> dataProcessorService.getLastData() != null);
+
+        mockMvc.perform(get("/compress").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }
