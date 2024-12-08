@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 
 @Service
 public class DataProcessorService {
+    private static final double MINIMAL_PRICE = 0.1;
     private final ItemPricingRepository pricingRepository;
     private static final Logger logger = Logger.getLogger(DataProcessorService.class.getName());
     private Map<String, CompleteItem> completeItemHashMap;
@@ -63,42 +64,43 @@ public class DataProcessorService {
     }
 
     /**
-     * Group all the record between now-1 hour and now
-     * If two grouping are call, only the timestamp will move
-     *
+     * Group all the records from the given date time and the given date time plus one hour
+     * @param beginning the beginning of the compression
      * @see TimeConstant
      */
     @Transactional
     public void groupOneHourRecords(LocalDateTime beginning) {
-        LocalDateTime begin = beginning.truncatedTo(ChronoUnit.SECONDS);
+        LocalDateTime startOfWindow = beginning.truncatedTo(ChronoUnit.SECONDS);
 
         for (int i = 0; i < TimeConstant.VALUES_BY_HOURS; i++) {
-            begin = groupFromWithTimeStamp(begin, TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
         }
-        logger.info("Successfully compress data from " + beginning + " to " + begin);
+        String logString = "Successfully compress data from " + beginning + " to " + startOfWindow;
+        logger.info(logString);
     }
 
     /**
-     * Group all the record between now-1 day and now
-     * If two grouping are call, only the timestamp will move
-     *
+     * Group all the records from the given date time and the given date time plus one day
+     * @param beginning the beginning of the compression
      * @see TimeConstant
      */
     @Transactional
     public void groupOneDayRecords(LocalDateTime beginning) {
-        LocalDateTime begin = beginning.truncatedTo(ChronoUnit.SECONDS);
+        LocalDateTime startOfWindow = beginning.truncatedTo(ChronoUnit.SECONDS);
 
         for (int i = 0; i < TimeConstant.VALUES_BY_DAYS; i++) {
-            begin = groupFromWithTimeStamp(begin, TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
+            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
+            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
         }
-        logger.info("Successfully compress data from " + beginning + " to " + begin);
+        String logString = "Successfully compress data from " + beginning + " to " + startOfWindow;
+        logger.log(Level.INFO,logString);
     }
 
-    private LocalDateTime groupFromWithTimeStamp(LocalDateTime begin, Integer samplingLength) {
-        List<ItemPricing> summary = pricingRepository.groupAllByTimestampBetween(begin, begin.plusMinutes(samplingLength));
-        pricingRepository.deleteAllByLastUpdateBetween(begin, begin.plusMinutes(samplingLength));
+    private void groupRecordsWithTimeStampAndWindowSize(LocalDateTime begin, Integer samplingTimeWindow) {
+        List<ItemPricing> summary = pricingRepository.groupAllByTimestampBetween(begin, begin.plusMinutes(samplingTimeWindow));
+        pricingRepository.deleteAllByLastUpdateBetween(begin, begin.plusMinutes(samplingTimeWindow));
         pricingRepository.saveAll(summary);
-        return begin.plusMinutes(samplingLength);
     }
 
     /**
@@ -128,9 +130,18 @@ public class DataProcessorService {
      * @param item a completeItem to resolve, will be call recursively if needed
      */
     private void computeItemMinimalCost(CompleteItem item) {
+        if (item.getName()==null){
+            logger.log(Level.WARNING,"item without name : {0} please check if item database is up to date",item);
+            return;
+        }
         if (CollectionsUtils.isEmpty(item.getCrafts())) {
             if (item.getPricing() == null) {
                 logger.fine("no pricing for " + item.getName() + " might be missing from bazaar at this time");
+                return;
+            }
+            if (item.getPricing().getBuyPrice() == null) {
+                logger.fine("no buy price" + item.getName() + " might not have buy order at this moment");
+                item.getPricing().setMinimalPrice(MINIMAL_PRICE);
                 return;
             }
             item.getPricing().setMinimalPrice(item.getPricing().getBuyPrice());
@@ -216,6 +227,9 @@ public class DataProcessorService {
         } else {
             if (itemPricing.getMinimalPrice() == null) {
                 computeItemMinimalCost(completeItem);
+            }
+            if (itemPricing.getMinimalPrice()==null){
+                throw new InvalidObjectException(materialId.concat(" : corrupted item, check its craft"));
             }
             minimalPrice = itemPricing.getMinimalPrice();
         }

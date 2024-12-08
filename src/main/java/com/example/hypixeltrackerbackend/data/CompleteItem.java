@@ -86,4 +86,18 @@ public class CompleteItem {
         }
         this.npcBuyPrice = npcBuyPrice;
     }
+
+    @Override
+    public String toString() {
+        return "CompleteItem{" +
+                "name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", tier='" + tier + '\'' +
+                ", tag='" + tag + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", pricing=" + pricing +
+                ", crafts=" + crafts +
+                ", npcBuyPrice=" + npcBuyPrice +
+                '}';
+    }
 }

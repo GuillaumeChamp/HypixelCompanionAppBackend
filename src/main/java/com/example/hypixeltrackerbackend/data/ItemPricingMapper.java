@@ -24,9 +24,7 @@ public class ItemPricingMapper {
 
         listOfEntry.forEach(object -> {
             ItemPricing newItem = readAnEntry((JSONObject) object,update);
-            if (newItem != null) {
-                itemList.put(newItem.getItemId(),newItem);
-            }
+            itemList.put(newItem.getItemId(), newItem);
         });
 
         return itemList;
@@ -39,26 +37,21 @@ public class ItemPricingMapper {
      * @return teh parsed Bazaar Item
      */
     private static ItemPricing readAnEntry(JSONObject entry, LocalDateTime update) {
+        double sellPrice;
+        Double buyPrice = null;
+
         JSONArray sellSummary = entry.getJSONArray("sell_summary");
-        if (sellSummary.isEmpty()) {
-            return null;
-        }
-        JSONObject lastSellOrder = sellSummary.getJSONObject(sellSummary.length() - 1);
-        Double sellPrice = lastSellOrder.getDouble(PRICE_PER_UNIT);
-        //by design of the providing api, 0 means that the item is not currently sold
-        if (sellPrice==0){
-            sellPrice=null;
+        if (!sellSummary.isEmpty()) {
+            JSONObject lastSellOrder = sellSummary.getJSONObject(sellSummary.length() - 1);
+            sellPrice = lastSellOrder.getDouble(PRICE_PER_UNIT);
+        }else {
+            sellPrice = 0.1;
         }
 
         JSONArray buySummary = entry.getJSONArray("buy_summary");
-        if (buySummary.isEmpty()) {
-            return null;
-        }
-        JSONObject firstBuyOrder = buySummary.getJSONObject(0);
-        Double buyPrice = firstBuyOrder.getDouble(PRICE_PER_UNIT);
-        // same comment as before
-        if (buyPrice==0){
-            buyPrice=null;
+        if (!buySummary.isEmpty()) {
+            JSONObject firstBuyOrder = buySummary.getJSONObject(0);
+            buyPrice = firstBuyOrder.getDouble(PRICE_PER_UNIT);
         }
 
         return new ItemPricing(entry.getString("product_id"), sellPrice, buyPrice,update);
