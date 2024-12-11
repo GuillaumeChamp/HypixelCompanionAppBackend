@@ -971,7 +971,7 @@
       "image": "assets/item/mining/SkyBlock_items_enchanted_gold_block.gif",
       "craft": [
         {
-          "material": ["GOLD_INGOT"],
+          "material": ["ENCHANTED_GOLD"],
           "quantity": [160]
         }
       ]

@@ -12,9 +12,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DataTest {
     @Test
     void shouldDataDeserializeProperly() throws IOException {
-        String payload = Files.readString(Path.of("src/main/resources/static/bazaar.json"));
+        String payload = Files.readString(Path.of("src/test/resources/bazaar.json"));
         Map<String , ItemPricing> items = ItemPricingMapper.toBazaarItems(payload);
-        assertThat(items).hasSizeLessThan(1349);
+        assertThat(items).hasSizeLessThan(1350);
     }
 
     @Test

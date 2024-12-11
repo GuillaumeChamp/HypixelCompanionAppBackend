@@ -38,20 +38,23 @@ public class SchedulerService {
         }
         isRunning = true;
         scheduleTaskExecutor = Executors.newScheduledThreadPool(3);
-
-        logger.log(Level.INFO, "Scheduler started !");
         dataProcessorService.preloadData();
-        scheduleTaskExecutor.scheduleAtFixedRate(() -> {
+        scheduleTaskExecutor.scheduleAtFixedRate(this::processNewestData, 0, TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS);
+        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
+        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
+        logger.log(Level.INFO, "Scheduler started !");
+    }
+    private void processNewestData(){
+        try {
             String response = DataFetcher.queryBazaarData();
             if (response == null) {
                 logger.warning("no response received or task canceled");
                 return;
             }
             dataProcessorService.updateBazaarPrice(response);
-        }, 0, TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS);
-        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
-        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
-
+        } catch (Exception e) {
+            Logger.getAnonymousLogger().log(Level.SEVERE, e.getMessage());
+        }
     }
 
     public void stop() {

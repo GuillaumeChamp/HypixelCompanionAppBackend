@@ -42,16 +42,16 @@ public class ItemPricingMapper {
 
         JSONArray sellSummary = entry.getJSONArray("sell_summary");
         if (!sellSummary.isEmpty()) {
-            JSONObject lastSellOrder = sellSummary.getJSONObject(sellSummary.length() - 1);
-            sellPrice = lastSellOrder.getDouble(PRICE_PER_UNIT);
+            JSONObject highestSellOrder = sellSummary.getJSONObject(0);
+            sellPrice = highestSellOrder.getDouble(PRICE_PER_UNIT);
         }else {
             sellPrice = 0.1;
         }
 
         JSONArray buySummary = entry.getJSONArray("buy_summary");
         if (!buySummary.isEmpty()) {
-            JSONObject firstBuyOrder = buySummary.getJSONObject(0);
-            buyPrice = firstBuyOrder.getDouble(PRICE_PER_UNIT);
+            JSONObject lowestBuyOrder = buySummary.getJSONObject(0);
+            buyPrice = lowestBuyOrder.getDouble(PRICE_PER_UNIT);
         }
 
         return new ItemPricing(entry.getString("product_id"), sellPrice, buyPrice,update);
