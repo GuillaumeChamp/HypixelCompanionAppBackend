@@ -48,12 +48,12 @@ public class SchedulerService {
         try {
             String response = DataFetcher.queryBazaarData();
             if (response == null) {
-                logger.warning("no response received or task canceled");
+                //already logged
                 return;
             }
             dataProcessorService.updateBazaarPrice(response);
         } catch (Exception e) {
-            Logger.getAnonymousLogger().log(Level.SEVERE, e.getMessage());
+            logger.log(Level.SEVERE, ()->"Error while processing request : " + e.getMessage());
         }
     }
 

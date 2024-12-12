@@ -33,12 +33,12 @@ public class DataFetcher {
             HttpResponse<String> response = HttpClient.newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() == HttpStatus.OK.value()) {
-                logger.log(Level.INFO, ()->"successfully recovered hypixel bazaar data.");
+                logger.log(Level.INFO, ()->"successfully recovered bazaar data from Hypixel.");
                 DataFetcher.lastAnswer = LocalDateTime.now();
                 return response.body();
             }
         } catch (IOException e) {
-            logger.warning("ERROR WHILE SENDING/READING REQUEST \n" + Arrays.toString(e.getStackTrace()));
+            logger.log(Level.WARNING,()->"No response received \n" + Arrays.toString(e.getStackTrace()));
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

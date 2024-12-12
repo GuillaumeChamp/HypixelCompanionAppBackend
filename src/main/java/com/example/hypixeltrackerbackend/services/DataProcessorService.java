@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 
 @Service
 public class DataProcessorService {
-    private static final double MINIMAL_PRICE = 0.1;
     private final ItemPricingRepository pricingRepository;
     private static final Logger logger = Logger.getLogger(DataProcessorService.class.getName());
     private Map<String, CompleteItem> completeItemHashMap;
@@ -136,12 +135,11 @@ public class DataProcessorService {
         }
         if (CollectionsUtils.isEmpty(item.getCrafts())) {
             if (item.getPricing() == null) {
-                logger.fine("no pricing for " + item.getName() + " might be missing from bazaar at this time");
+                logger.fine("no pricing for " + item.getName());
                 return;
             }
             if (item.getPricing().getBuyPrice() == null) {
-                logger.fine("no buy price" + item.getName() + " might not have buy order at this moment");
-                item.getPricing().setMinimalPrice(MINIMAL_PRICE);
+                logger.fine("no buy price" + item.getName() + " might not have sell order at this moment");
                 return;
             }
             item.getPricing().setMinimalPrice(item.getPricing().getBuyPrice());
@@ -151,7 +149,7 @@ public class DataProcessorService {
             try {
                 updateMinimalCostUsingOneCraft(item, craft);
             } catch (InvalidObjectException e) {
-                logger.log(Level.FINE, e::getMessage);
+                logger.log(Level.INFO, e::getMessage);
             }
         }
     }
@@ -161,7 +159,7 @@ public class DataProcessorService {
      *
      * @param item  the item to update
      * @param craft one craft of the item to check
-     * @throws InvalidObjectException if unable to compute craft cost or if the item have no pricing
+     * @throws InvalidObjectException if unable to compute craft cost or if the item has no pricing
      */
     private void updateMinimalCostUsingOneCraft(CompleteItem item, Craft craft) throws InvalidObjectException {
         if (craft.getCraftingCost() == null) {
@@ -169,7 +167,7 @@ public class DataProcessorService {
         }
         // check pricing after because craft cost can be useful even if there is no pricing
         if (item.getPricing() == null) {
-            throw new InvalidObjectException(item.getName() + " : have no pricing");
+            throw new InvalidObjectException(item.getName() + " : has no pricing");
         }
         updateMinimalPrice(item.getPricing(), craft.getCraftingCost());
     }
@@ -213,7 +211,7 @@ public class DataProcessorService {
      *
      * @param materialId id of a material to find
      * @return the extracted value
-     * @throws InvalidObjectException is thrown when a material have no pricing
+     * @throws InvalidObjectException is thrown when a material has no pricing
      */
     private double extractCostForAMaterial(String materialId) throws InvalidObjectException {
         if (!completeItemHashMap.containsKey(materialId)) {
@@ -229,7 +227,7 @@ public class DataProcessorService {
                 computeItemMinimalCost(completeItem);
             }
             if (itemPricing.getMinimalPrice()==null){
-                throw new InvalidObjectException(materialId.concat(" : corrupted item, check its craft"));
+                throw new InvalidObjectException(materialId.concat(" : unable to compute craft cost"));
             }
             minimalPrice = itemPricing.getMinimalPrice();
         }

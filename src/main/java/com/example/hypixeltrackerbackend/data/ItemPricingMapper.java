@@ -37,21 +37,21 @@ public class ItemPricingMapper {
      * @return teh parsed Bazaar Item
      */
     private static ItemPricing readAnEntry(JSONObject entry, LocalDateTime update) {
-        double sellPrice;
+        Double sellPrice = null;
         Double buyPrice = null;
 
         JSONArray sellSummary = entry.getJSONArray("sell_summary");
         if (!sellSummary.isEmpty()) {
-            JSONObject highestSellOrder = sellSummary.getJSONObject(0);
-            sellPrice = highestSellOrder.getDouble(PRICE_PER_UNIT);
-        }else {
-            sellPrice = 0.1;
+            JSONObject highestBuyOrder = sellSummary.getJSONObject(0);
+            sellPrice = highestBuyOrder.getDouble(PRICE_PER_UNIT);
+            // if there is no buy order, the sell price is undefined
         }
 
         JSONArray buySummary = entry.getJSONArray("buy_summary");
         if (!buySummary.isEmpty()) {
-            JSONObject lowestBuyOrder = buySummary.getJSONObject(0);
-            buyPrice = lowestBuyOrder.getDouble(PRICE_PER_UNIT);
+            JSONObject lowestSellOrder = buySummary.getJSONObject(0);
+            buyPrice = lowestSellOrder.getDouble(PRICE_PER_UNIT);
+            // if there is no sell order, the buy price is undefined
         }
 
         return new ItemPricing(entry.getString("product_id"), sellPrice, buyPrice,update);

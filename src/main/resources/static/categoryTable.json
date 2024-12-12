@@ -407,6 +407,18 @@
       "image": "assets/item/farming/Minecraft_items_cactus.png"
     },
     {
+      "id": "INK_SACK:2",
+      "category": "Farming",
+      "tag": "cactus",
+      "image": "assets/item/farming/Minecraft_items_green_dye.png",
+      "craft": [
+        {
+          "material": ["CACTUS"],
+          "quantity": [1]
+        }
+      ]
+    },
+    {
       "id": "ENCHANTED_CACTUS_GREEN",
       "category": "Farming",
       "tag": "cactus",
@@ -494,7 +506,7 @@
       "id": "ENCHANTED_LEATHER",
       "category": "Farming",
       "tag": "Cow,Leather",
-      "image": "https://wiki.hypixel.net/images/0/03/SkyBlock_items_enchanted_leather.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_leather.gif",
       "craft": [
         {
           "material": ["LEATHER"],
@@ -2463,6 +2475,48 @@
       ]
     },
     {
+      "id": "BONE",
+      "category": "Combat",
+      "tag": "skeleton,bone",
+      "image": "assets/item/combat/Minecraft_items_bone.png"
+    },
+    {
+      "id": "ENCHANTED_BONE",
+      "category": "Combat",
+      "tag": "skeleton,bone",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_bone.gif",
+      "craft": [
+        {
+          "material": ["BONE"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_BONE_BLOCK",
+      "category": "Combat",
+      "tag": "skeleton,bone",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_quartz_block.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_BONE"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_BONE_MEAL",
+      "category": "Combat",
+      "tag": "skeleton,bone",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_bonemeal.gif",
+      "craft": [
+        {
+          "material": ["BONE"],
+          "quantity": [32]
+        }
+      ]
+    },
+    {
       "id": "BLAZE_ROD",
       "category": "Combat",
       "tag": "blaze",
@@ -2491,6 +2545,12 @@
           "quantity": [160]
         }
       ]
+    },
+    {
+      "id": "BLAZE_ASHES",
+      "category": "Combat",
+      "tag": "blaze",
+      "image": "assets/item/combat/SkyBlock_items_blaze_ashes.png"
     },
     {
       "id": "TARANTULA_WEB",
@@ -3393,54 +3453,6 @@
       "image": "https://wiki.hypixel.net/images/1/13/SkyBlock_items_enchanted_cookie.gif"
     },
     {
-      "id": "ESSENCE_DRAGON",
-      "category": "Essence",
-      "tag": "Essence,End",
-      "image": "https://wiki.hypixel.net/images/7/75/SkyBlock_items_dragon_essence.png"
-    },
-    {
-      "id": "ESSENCE_WITHER",
-      "category": "Essence",
-      "tag": "Essence,Dungeon",
-      "image": "https://wiki.hypixel.net/images/a/a8/SkyBlock_items_wither_essence.png"
-    },
-    {
-      "id": "ESSENCE_SPIDER",
-      "category": "Essence",
-      "tag": "Essence,Arachnids",
-      "image": "https://wiki.hypixel.net/images/a/a5/SkyBlock_items_spider_essence.png"
-    },
-    {
-      "id": "ESSENCE_UNDEAD",
-      "category": "Essence",
-      "tag": "Essence,Dungeon",
-      "image": "https://wiki.hypixel.net/images/5/58/SkyBlock_items_undead_essence.png"
-    },
-    {
-      "id": "ESSENCE_ICE",
-      "category": "Essence",
-      "tag": "Essence,Event",
-      "image": "https://wiki.hypixel.net/images/d/d7/SkyBlock_items_ice_essence.png"
-    },
-    {
-      "id": "ESSENCE_DIAMOND",
-      "category": "Essence",
-      "tag": "Essence,Mining",
-      "image": "https://wiki.hypixel.net/images/0/0c/SkyBlock_items_diamond_essence.png"
-    },
-    {
-      "id": "ESSENCE_GOLD",
-      "category": "Essence",
-      "tag": "Essence,Mining",
-      "image": "https://wiki.hypixel.net/images/8/8d/SkyBlock_items_gold_essence.png"
-    },
-    {
-      "id": "ESSENCE_CRIMSON",
-      "category": "Essence",
-      "tag": "Essence,Kuudra",
-      "image": "https://wiki.hypixel.net/images/6/66/SkyBlock_items_crimson_essence.png"
-    },
-    {
       "id": "HOT_POTATO_BOOK",
       "category": "Item Upgrade",
       "tag": "armor upgrade,weapon upgrade",
@@ -3525,10 +3537,136 @@
       "image": "https://wiki.hypixel.net/images/4/45/SkyBlock_items_potato_spreading.png"
     },
     {
-      "id": "EXPORTABLE_CARROTS",
-      "category": "Rift Item",
-      "tag": "carrot fortune,health boost",
-      "image": "https://wiki.hypixel.net/images/8/85/SkyBlock_items_exportable_carrots.png"
+      "id": "ESSENCE_DRAGON",
+      "category": "Essence",
+      "tag": "Essence,End",
+      "image": "https://wiki.hypixel.net/images/7/75/SkyBlock_items_dragon_essence.png"
+    },
+    {
+      "id": "ESSENCE_WITHER",
+      "category": "Essence",
+      "tag": "Essence,Dungeon",
+      "image": "https://wiki.hypixel.net/images/a/a8/SkyBlock_items_wither_essence.png"
+    },
+    {
+      "id": "ESSENCE_SPIDER",
+      "category": "Essence",
+      "tag": "Essence,Arachnids",
+      "image": "https://wiki.hypixel.net/images/a/a5/SkyBlock_items_spider_essence.png"
+    },
+    {
+      "id": "ESSENCE_UNDEAD",
+      "category": "Essence",
+      "tag": "Essence,Dungeon",
+      "image": "https://wiki.hypixel.net/images/5/58/SkyBlock_items_undead_essence.png"
+    },
+    {
+      "id": "ESSENCE_ICE",
+      "category": "Essence",
+      "tag": "Essence,Event",
+      "image": "https://wiki.hypixel.net/images/d/d7/SkyBlock_items_ice_essence.png"
+    },
+    {
+      "id": "ESSENCE_DIAMOND",
+      "category": "Essence",
+      "tag": "Essence,Mining",
+      "image": "https://wiki.hypixel.net/images/0/0c/SkyBlock_items_diamond_essence.png"
+    },
+    {
+      "id": "ESSENCE_GOLD",
+      "category": "Essence",
+      "tag": "Essence,Mining",
+      "image": "https://wiki.hypixel.net/images/8/8d/SkyBlock_items_gold_essence.png"
+    },
+    {
+      "id": "ESSENCE_CRIMSON",
+      "category": "Essence",
+      "tag": "Essence,Kuudra",
+      "image": "https://wiki.hypixel.net/images/6/66/SkyBlock_items_crimson_essence.png"
+    },
+    {
+      "id": "GREEN_CANDY",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_green_candy.png"
+    },
+    {
+      "id": "PURPLE_CANDY",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_purple_candy.png"
+    },
+    {
+      "id": "DARK_CANDY",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_dark_candy.png"
+    },
+    {
+      "id": "ECTOPLASM",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/fishing/SkyBlock_items_enchanted_prismarine_crystals.gif"
+    },
+    {
+      "id": "PUMPKIN_GUTS",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_pumpkin_seeds.gif"
+    },
+    {
+      "id": "SPOOKY_SHARD",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_spooky_shard.png"
+    },
+    {
+      "id": "WEREWOLF_SKIN",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/farming/Minecraft_items_leather.png"
+    },
+    {
+      "id": "SOUL_FRAGMENT",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_soul_fragment.png"
+    },
+    {
+      "id": "BAT_FIREWORK",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/Minecraft_items_firework.png",
+      "craft": [
+        {
+          "material": ["GREEN_CANDY"],
+          "quantity": [100]
+        }
+      ]
+    },
+    {
+      "id": "PUMPKIN_BOMB",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_pumpkin_bomb.png",
+      "craft": [
+        {
+          "material": ["GREEN_CANDY","PUMPKIN_GUTS"],
+          "quantity": [0.25,0.03125]
+        }
+      ]
+    },
+    {
+      "id": "HORSEMAN_CANDLE",
+      "category": "Event",
+      "tag": "Spooky",
+      "image": "assets/item/oddities/SkyBlock_items_horseman_candle.png",
+      "craft": [
+        {
+          "material": ["PURPLE_CANDY"],
+          "quantity": [32]
+        }
+      ]
     },
     {
       "id": "SLEEPY_HOLLOW",
@@ -3538,16 +3676,130 @@
       "image": "https://wiki.hypixel.net/images/f/ff/SkyBlock_items_sleepy_hollow.png"
     },
     {
+      "id": "EXPIRED_PUMPKIN",
+      "category": "Event",
+      "tag": "Halloween",
+      "image": "assets/item/oddities/SkyBlock_items_expired_pumpkin.png",
+      "craft": [
+        {
+          "material": ["DARK_CANDY"],
+          "quantity": [0.0333333]
+        }
+      ]
+    },
+    {
+      "id": "WHITE_GIFT",
+      "category": "Event",
+      "tag": "winter",
+      "image": "assets/item/oddities/SkyBlock_items_white_gift.png"
+    },
+    {
+      "id": "GREEN_GIFT",
+      "category": "Event",
+      "tag": "winter",
+      "image": "assets/item/oddities/SkyBlock_items_green_gift.png"
+    },
+    {
+      "id": "RED_GIFT",
+      "category": "Event",
+      "tag": "winter",
+      "image": "assets/item/oddities/SkyBlock_items_red_gift.png"
+    },
+    {
+      "id": "PARTY_GIFT",
+      "category": "Event",
+      "tag": "winter,foxy",
+      "image": "assets/item/oddities/SkyBlock_items_party_gift.png"
+    },
+    {
+      "id": "REFINED_BOTTLE_OF_JYRRE",
+      "category": "Event",
+      "tag": "winter",
+      "image": "assets/item/oddities/SkyBlock_items_potion_of_night_vision.gif"
+    },
+    {
+      "id": "VOLCANIC_ROCK",
+      "category": "Event",
+      "tag": "winter",
+      "image": "assets/item/oddities/SkyBlock_items_volcanic_rock.png"
+    },
+    {
       "id": "GLACIAL_FRAGMENT",
       "category": "Event",
-      "tag": "jerry workshop",
+      "tag": "winter",
       "image": "assets/item/oddities/SkyBlock_items_glacial_fragment.png"
+    },
+    {
+      "id": "WINTER_FRAGMENT",
+      "category": "Event",
+      "tag": "winter",
+      "image": "assets/item/oddities/SkyBlock_items_winter_fragment.png",
+      "craft": [
+        {
+          "material": ["VOLCANIC_ROCK"],
+          "quantity": [0.5]
+        }
+      ]
+    },
+    {
+      "id": "NURSE_SHARK_TOOTH",
+      "category": "Fishing",
+      "tag": "fishing festival",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+    },
+    {
+      "id": "BLUE_SHARK_TOOTH",
+      "category": "Fishing",
+      "tag": "fishing festival",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+    },
+    {
+      "id": "TIGER_SHARK_TOOTH",
+      "category": "Fishing",
+      "tag": "fishing festival",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+    },
+    {
+      "id": "GREAT_WHITE_SHARK_TOOTH",
+      "category": "Fishing",
+      "tag": "fishing festival",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
     },
     {
       "id": "SHARK_FIN",
       "category": "Fishing",
       "tag": "fishing festival",
       "image": "assets/item/fishing/Minecraft_items_prismarine_shard.png"
+    },
+    {
+      "id": "ENCHANTED_SHARK_FIN",
+      "category": "Fishing",
+      "tag": "fishing festival",
+      "image": "assets/item/fishing/SkyBlock_items_enchanted_prismarine_shard.gif",
+      "craft": [
+        {
+          "material": ["SHARK_FIN"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "GREAT_WHITE_TOOTH_MEAL",
+      "category": "Fishing",
+      "tag": "fishing festival",
+      "image": "assets/item/combat/Minecraft_items_bone_meal.png",
+      "craft": [
+        {
+          "material": ["GREAT_WHITE_SHARK_TOOTH","ENCHANTED_BONE"],
+          "quantity": [4,1]
+        }
+      ]
+    },
+    {
+      "id": "EXPORTABLE_CARROTS",
+      "category": "Rift Item",
+      "tag": "carrot fortune,health boost",
+      "image": "https://wiki.hypixel.net/images/8/85/SkyBlock_items_exportable_carrots.png"
     }
   ]
 }
