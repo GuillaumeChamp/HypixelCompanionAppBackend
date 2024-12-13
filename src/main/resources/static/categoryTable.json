@@ -872,13 +872,13 @@
       "id": "COBBLESTONE",
       "category": "Mining",
       "tag": "cobblestone",
-      "image": "https://wiki.hypixel.net/images/0/0b/Minecraft_items_cobblestone.png"
+      "image": "assets/item/mining/Minecraft_items_cobblestone.png"
     },
     {
       "id": "ENCHANTED_COBBLESTONE",
       "category": "Mining",
       "tag": "cobblestone",
-      "image": "https://wiki.hypixel.net/images/0/07/SkyBlock_items_enchanted_cobblestone.gif",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_cobblestone.gif",
       "craft": [
         {
           "material": ["COBBLESTONE"],
@@ -992,21 +992,17 @@
       "id": "DIAMOND",
       "category": "Mining",
       "tag": "diamond",
-      "image": "https://wiki.hypixel.net/images/3/31/Minecraft_items_diamond.png"
+      "image": "assets/item/mining/Minecraft_items_diamond.png"
     },
     {
       "id": "DIAMOND_BLOCK",
       "category": "Mining",
       "tag": "diamond",
-      "image": "https://wiki.hypixel.net/images/2/20/SkyBlock_items_enchanted_diamond.gif",
+      "image": "assets/item/mining/Minecraft_items_diamond_block.png",
       "craft": [
         {
           "material": ["DIAMOND"],
           "quantity": [9]
-        },
-        {
-          "material": ["DIAMOND_BLOCK"],
-          "quantity": [17.7777777778]
         }
       ]
     },
@@ -1014,7 +1010,7 @@
       "id": "ENCHANTED_DIAMOND",
       "category": "Mining",
       "tag": "diamond",
-      "image": "https://wiki.hypixel.net/images/2/20/SkyBlock_items_enchanted_diamond.gif",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_diamond.gif",
       "craft": [
         {
           "material": ["DIAMOND"],
@@ -1030,7 +1026,7 @@
       "id": "ENCHANTED_DIAMOND_BLOCK",
       "category": "Mining",
       "tag": "diamond",
-      "image": "https://wiki.hypixel.net/images/9/9d/Minecraft_items_diamond_block.png",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_diamond_block.gif",
       "craft": [
         {
           "material": ["ENCHANTED_DIAMOND"],
@@ -1054,13 +1050,13 @@
       "id": "INK_SACK:4",
       "category": "Mining",
       "tag": "lapis lazuli",
-      "image": "https://wiki.hypixel.net/images/c/cd/Minecraft_items_lapis_lazuli.png"
+      "image": "assets/item/mining/Minecraft_items_lapis_lazuli.png"
     },
     {
       "id": "LAPIS_BLOCK",
       "category": "Mining",
       "tag": "lapis lazuli",
-      "image": "https://wiki.hypixel.net/images/e/e6/Minecraft_items_lapis_lazuli_block.png",
+      "image": "assets/item/mining/Minecraft_items_lapis_lazuli_block.png",
       "craft": [
         {
           "material": ["INK_SACK:4"],
@@ -1072,7 +1068,7 @@
       "id": "ENCHANTED_LAPIS_LAZULI",
       "category": "Mining",
       "tag": "lapis lazuli",
-      "image": "https://wiki.hypixel.net/images/e/e0/SkyBlock_items_enchanted_lapis_lazuli.gif",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_lapis_lazuli.gif",
       "craft": [
         {
           "material": ["INK_SACK:4"],
@@ -1088,7 +1084,7 @@
       "id": "ENCHANTED_LAPIS_LAZULI_BLOCK",
       "category": "Mining",
       "tag": "lapis lazuli",
-      "image": "https://wiki.hypixel.net/images/0/08/SkyBlock_items_enchanted_lapis_block.gif",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_lapis_block.gif",
       "craft": [
         {
           "material": ["ENCHANTED_LAPIS_LAZULI"],
@@ -1340,13 +1336,13 @@
       "id": "ROUGH_RUBY_GEM",
       "category": "Mining",
       "tag": "ruby,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/b8/SkyBlock_items_rough_ruby_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_ruby_gem.png"
     },
     {
       "id": "FLAWED_RUBY_GEM",
       "category": "Mining",
       "tag": "ruby,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/5/5f/SkyBlock_items_flawed_ruby_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_ruby_gem.png",
       "craft": [
         {
           "material": ["ROUGH_RUBY_GEM"],
@@ -1358,7 +1354,7 @@
       "id": "FINE_RUBY_GEM",
       "category": "Mining",
       "tag": "ruby,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/5/57/SkyBlock_items_fine_ruby_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_ruby_gem.png",
       "craft": [
         {
           "material": ["FLAWED_RUBY_GEM"],
@@ -1370,7 +1366,7 @@
       "id": "FLAWLESS_RUBY_GEM",
       "category": "Mining",
       "tag": "ruby,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/b9/SkyBlock_items_flawless_ruby_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_ruby_gem.png",
       "craft": [
         {
           "material": ["FINE_RUBY_GEM"],
@@ -1382,7 +1378,7 @@
       "id": "PERFECT_RUBY_GEM",
       "category": "Mining",
       "tag": "ruby,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/c/c7/SkyBlock_items_perfect_ruby_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_ruby_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_RUBY_GEM"],
@@ -1394,13 +1390,13 @@
       "id": "ROUGH_AMBER_GEM",
       "category": "Mining",
       "tag": "amber,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/5/55/SkyBlock_items_rough_amber_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_amber_gem.png"
     },
     {
       "id": "FLAWED_AMBER_GEM",
       "category": "Mining",
       "tag": "amber,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/1/1c/SkyBlock_items_flawed_amber_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_amber_gem.png",
       "craft": [
         {
           "material": ["ROUGH_AMBER_GEM"],
@@ -1412,7 +1408,7 @@
       "id": "FINE_AMBER_GEM",
       "category": "Mining",
       "tag": "amber,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/9/95/SkyBlock_items_fine_amber_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_amber_gem.png",
       "craft": [
         {
           "material": ["FLAWED_AMBER_GEM"],
@@ -1424,7 +1420,7 @@
       "id": "FLAWLESS_AMBER_GEM",
       "category": "Mining",
       "tag": "amber,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/8/86/SkyBlock_items_flawless_amber_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_amber_gem.png",
       "craft": [
         {
           "material": ["FINE_AMBER_GEM"],
@@ -1436,7 +1432,7 @@
       "id": "PERFECT_AMBER_GEM",
       "category": "Mining",
       "tag": "amber,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/9/9e/SkyBlock_items_perfect_amber_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_amber_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_AMBER_GEM"],
@@ -1448,13 +1444,13 @@
       "id": "ROUGH_SAPPHIRE_GEM",
       "category": "Mining",
       "tag": "sapphire,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/7/78/SkyBlock_items_rough_sapphire_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_sapphire_gem.png"
     },
     {
       "id": "FLAWED_SAPPHIRE_GEM",
       "category": "Mining",
       "tag": "sapphire,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/3/3d/SkyBlock_items_flawed_sapphire_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_sapphire_gem.png",
       "craft": [
         {
           "material": ["ROUGH_SAPPHIRE_GEM"],
@@ -1466,7 +1462,7 @@
       "id": "FINE_SAPPHIRE_GEM",
       "category": "Mining",
       "tag": "sapphire,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/5/5f/SkyBlock_items_fine_sapphire_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_sapphire_gem.png",
       "craft": [
         {
           "material": ["FLAWED_SAPPHIRE_GEM"],
@@ -1478,7 +1474,7 @@
       "id": "FLAWLESS_SAPPHIRE_GEM",
       "category": "Mining",
       "tag": "sapphire,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/d/de/SkyBlock_items_flawless_sapphire_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_sapphire_gem.png",
       "craft": [
         {
           "material": ["FINE_SAPPHIRE_GEM"],
@@ -1490,7 +1486,7 @@
       "id": "PERFECT_SAPPHIRE_GEM",
       "category": "Mining",
       "tag": "sapphire,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/7/73/SkyBlock_items_perfect_sapphire_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_sapphire_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_SAPPHIRE_GEM"],
@@ -1502,13 +1498,13 @@
       "id": "ROUGH_JADE_GEM",
       "category": "Mining",
       "tag": "jade,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/a/ad/SkyBlock_items_rough_jade_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_jade_gem.png"
     },
     {
       "id": "FLAWED_JADE_GEM",
       "category": "Mining",
       "tag": "jade,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/b4/SkyBlock_items_flawed_jade_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_jade_gem.png",
       "craft": [
         {
           "material": ["ROUGH_JADE_GEM"],
@@ -1520,7 +1516,7 @@
       "id": "FINE_JADE_GEM",
       "category": "Mining",
       "tag": "jade,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/0/01/SkyBlock_items_fine_jade_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_jade_gem.png",
       "craft": [
         {
           "material": ["FLAWED_JADE_GEM"],
@@ -1532,7 +1528,7 @@
       "id": "FLAWLESS_JADE_GEM",
       "category": "Mining",
       "tag": "jade,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/5/5f/SkyBlock_items_flawless_jade_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_jade_gem.png",
       "craft": [
         {
           "material": ["FINE_JADE_GEM"],
@@ -1544,7 +1540,7 @@
       "id": "PERFECT_JADE_GEM",
       "category": "Mining",
       "tag": "jade,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/b3/SkyBlock_items_perfect_jade_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_jade_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_JADE_GEM"],
@@ -1556,13 +1552,13 @@
       "id": "ROUGH_AMETHYST_GEM",
       "category": "Mining",
       "tag": "amethyst,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/0/00/SkyBlock_items_rough_amethyst_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_amethyst_gem.png"
     },
     {
       "id": "FLAWED_AMETHYST_GEM",
       "category": "Mining",
       "tag": "amethyst,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/7/7e/SkyBlock_items_flawed_amethyst_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_amethyst_gem.png",
       "craft": [
         {
           "material": ["ROUGH_AMETHYST_GEM"],
@@ -1574,7 +1570,7 @@
       "id": "FINE_AMETHYST_GEM",
       "category": "Mining",
       "tag": "amethyst,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/3/3f/SkyBlock_items_fine_amethyst_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_amethyst_gem.png",
       "craft": [
         {
           "material": ["FLAWED_AMETHYST_GEM"],
@@ -1586,7 +1582,7 @@
       "id": "FLAWLESS_AMETHYST_GEM",
       "category": "Mining",
       "tag": "amethyst,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/d/d9/SkyBlock_items_flawless_amethyst_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_amethyst_gem.png",
       "craft": [
         {
           "material": ["FINE_AMETHYST_GEM"],
@@ -1598,7 +1594,7 @@
       "id": "PERFECT_AMETHYST_GEM",
       "category": "Mining",
       "tag": "amethyst,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/7/78/SkyBlock_items_perfect_amethyst_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_amethyst_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_AMETHYST_GEM"],
@@ -1610,13 +1606,13 @@
       "id": "ROUGH_TOPAZ_GEM",
       "category": "Mining",
       "tag": "topaz,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/0/0b/SkyBlock_items_rough_topaz_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_topaz_gem.png"
     },
     {
       "id": "FLAWED_TOPAZ_GEM",
       "category": "Mining",
       "tag": "topaz,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/c/ca/SkyBlock_items_flawed_topaz_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_topaz_gem.png",
       "craft": [
         {
           "material": ["ROUGH_TOPAZ_GEM"],
@@ -1628,7 +1624,7 @@
       "id": "FINE_TOPAZ_GEM",
       "category": "Mining",
       "tag": "topaz,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/bf/SkyBlock_items_fine_topaz_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_topaz_gem.png",
       "craft": [
         {
           "material": ["FLAWED_TOPAZ_GEM"],
@@ -1640,7 +1636,7 @@
       "id": "FLAWLESS_TOPAZ_GEM",
       "category": "Mining",
       "tag": "topaz,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/c/c0/SkyBlock_items_flawless_topaz_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_topaz_gem.png",
       "craft": [
         {
           "material": ["FINE_TOPAZ_GEM"],
@@ -1652,7 +1648,7 @@
       "id": "PERFECT_TOPAZ_GEM",
       "category": "Mining",
       "tag": "topaz,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/4/4a/SkyBlock_items_perfect_topaz_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_topaz_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_TOPAZ_GEM"],
@@ -1664,13 +1660,13 @@
       "id": "ROUGH_JASPER_GEM",
       "category": "Mining",
       "tag": "jasper,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/6/6f/SkyBlock_items_rough_jasper_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_jasper_gem.png"
     },
     {
       "id": "FLAWED_JASPER_GEM",
       "category": "Mining",
       "tag": "jasper,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/b0/SkyBlock_items_flawed_jasper_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_jasper_gem.png",
       "craft": [
         {
           "material": ["ROUGH_JASPER_GEM"],
@@ -1682,7 +1678,7 @@
       "id": "FINE_JASPER_GEM",
       "category": "Mining",
       "tag": "jasper,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/f/fc/SkyBlock_items_fine_jasper_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_jasper_gem.png",
       "craft": [
         {
           "material": ["FLAWED_JASPER_GEM"],
@@ -1694,7 +1690,7 @@
       "id": "FLAWLESS_JASPER_GEM",
       "category": "Mining",
       "tag": "jasper,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/4/4d/SkyBlock_items_flawless_jasper_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_jasper_gem.png",
       "craft": [
         {
           "material": ["FINE_JASPER_GEM"],
@@ -1706,7 +1702,7 @@
       "id": "PERFECT_JASPER_GEM",
       "category": "Mining",
       "tag": "jasper,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/be/SkyBlock_items_perfect_jasper_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_jasper_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_JASPER_GEM"],
@@ -1718,13 +1714,13 @@
       "id": "ROUGH_OPAL_GEM",
       "category": "Mining",
       "tag": "opal,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/f/fd/SkyBlock_items_rough_opal_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_opal_gem.png"
     },
     {
       "id": "FLAWED_OPAL_GEM",
       "category": "Mining",
       "tag": "opal,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/a/ac/SkyBlock_items_flawed_opal_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_opal_gem.png",
       "craft": [
         {
           "material": ["ROUGH_OPAL_GEM"],
@@ -1736,7 +1732,7 @@
       "id": "FINE_OPAL_GEM",
       "category": "Mining",
       "tag": "opal,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/2/2a/SkyBlock_items_fine_opal_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_opal_gem.png",
       "craft": [
         {
           "material": ["FLAWED_OPAL_GEM"],
@@ -1748,7 +1744,7 @@
       "id": "FLAWLESS_OPAL_GEM",
       "category": "Mining",
       "tag": "opal,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/9/9d/SkyBlock_items_flawless_opal_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_opal_gem.png",
       "craft": [
         {
           "material": ["FINE_OPAL_GEM"],
@@ -1760,7 +1756,7 @@
       "id": "PERFECT_OPAL_GEM",
       "category": "Mining",
       "tag": "opal,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/f/f3/SkyBlock_items_perfect_opal_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_opal_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_OPAL_GEM"],
@@ -1772,13 +1768,13 @@
       "id": "ROUGH_AQUAMARINE_GEM",
       "category": "Mining",
       "tag": "aquamarine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/2/22/SkyBlock_items_rough_aquamarine_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_aquamarine_gem.png"
     },
     {
       "id": "FLAWED_AQUAMARINE_GEM",
       "category": "Mining",
       "tag": "aquamarine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/0/05/SkyBlock_items_flawed_aquamarine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_aquamarine_gem.png",
       "craft": [
         {
           "material": ["ROUGH_AQUAMARINE_GEM"],
@@ -1790,7 +1786,7 @@
       "id": "FINE_AQUAMARINE_GEM",
       "category": "Mining",
       "tag": "aquamarine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/4/45/SkyBlock_items_fine_aquamarine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_aquamarine_gem.png",
       "craft": [
         {
           "material": ["FLAWED_AQUAMARINE_GEM"],
@@ -1802,7 +1798,7 @@
       "id": "FLAWLESS_AQUAMARINE_GEM",
       "category": "Mining",
       "tag": "aquamarine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/0/0b/SkyBlock_items_flawless_aquamarine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_aquamarine_gem.png",
       "craft": [
         {
           "material": ["FINE_AQUAMARINE_GEM"],
@@ -1814,7 +1810,7 @@
       "id": "PERFECT_AQUAMARINE_GEM",
       "category": "Mining",
       "tag": "aquamarine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/2/2b/SkyBlock_items_perfect_aquamarine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_aquamarine_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_AQUAMARINE_GEM"],
@@ -1826,13 +1822,13 @@
       "id": "ROUGH_CITRINE_GEM",
       "category": "Mining",
       "tag": "citrine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/d/d8/SkyBlock_items_rough_citrine_gem.png"
+      "image": "hassets/item/mining/SkyBlock_items_rough_citrine_gem.png"
     },
     {
       "id": "FLAWED_CITRINE_GEM",
       "category": "Mining",
       "tag": "citrine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/c/c9/SkyBlock_items_flawed_citrine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_citrine_gem.png",
       "craft": [
         {
           "material": ["ROUGH_CITRINE_GEM"],
@@ -1844,7 +1840,7 @@
       "id": "FINE_CITRINE_GEM",
       "category": "Mining",
       "tag": "citrine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/d/d2/SkyBlock_items_fine_citrine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_citrine_gem.png",
       "craft": [
         {
           "material": ["FLAWED_CITRINE_GEM"],
@@ -1856,7 +1852,7 @@
       "id": "FLAWLESS_CITRINE_GEM",
       "category": "Mining",
       "tag": "citrine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/f/f2/SkyBlock_items_flawless_citrine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_citrine_gem.png",
       "craft": [
         {
           "material": ["FINE_CITRINE_GEM"],
@@ -1868,7 +1864,7 @@
       "id": "PERFECT_CITRINE_GEM",
       "category": "Mining",
       "tag": "citrine,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/c/c0/SkyBlock_items_perfect_citrine_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_citrine_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_CITRINE_GEM"],
@@ -1880,13 +1876,13 @@
       "id": "ROUGH_ONYX_GEM",
       "category": "Mining",
       "tag": "onyx,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/8/8c/SkyBlock_items_rough_onyx_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_onyx_gem.png"
     },
     {
       "id": "FLAWED_ONYX_GEM",
       "category": "Mining",
       "tag": "onyx,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/0/08/SkyBlock_items_flawed_onyx_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_onyx_gem.png",
       "craft": [
         {
           "material": ["ROUGH_ONYX_GEM"],
@@ -1898,7 +1894,7 @@
       "id": "FINE_ONYX_GEM",
       "category": "Mining",
       "tag": "onyx,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/b/bf/SkyBlock_items_fine_onyx_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_onyx_gem.png",
       "craft": [
         {
           "material": ["FLAWED_ONYX_GEM"],
@@ -1910,7 +1906,7 @@
       "id": "FLAWLESS_ONYX_GEM",
       "category": "Mining",
       "tag": "onyx,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/f/f1/SkyBlock_items_flawless_onyx_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_onyx_gem.png",
       "craft": [
         {
           "material": ["FINE_ONYX_GEM"],
@@ -1922,7 +1918,7 @@
       "id": "PERFECT_ONYX_GEM",
       "category": "Mining",
       "tag": "onyx,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/4/45/SkyBlock_items_perfect_onyx_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_onyx_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_ONYX_GEM"],
@@ -1934,13 +1930,13 @@
       "id": "ROUGH_PERIDOT_GEM",
       "category": "Mining",
       "tag": "peridot,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/2/24/SkyBlock_items_rough_peridot_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_peridot_gem.png"
     },
     {
       "id": "FLAWED_PERIDOT_GEM",
       "category": "Mining",
       "tag": "peridot,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/c/cc/SkyBlock_items_flawed_peridot_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawed_peridot_gem.png",
       "craft": [
         {
           "material": ["ROUGH_PERIDOT_GEM"],
@@ -1952,7 +1948,7 @@
       "id": "FINE_PERIDOT_GEM",
       "category": "Mining",
       "tag": "peridot,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/1/1f/SkyBlock_items_fine_peridot_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_fine_peridot_gem.png",
       "craft": [
         {
           "material": ["FLAWED_PERIDOT_GEM"],
@@ -1964,7 +1960,7 @@
       "id": "FLAWLESS_PERIDOT_GEM",
       "category": "Mining",
       "tag": "peridot,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/f/f6/SkyBlock_items_flawless_peridot_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_flawless_peridot_gem.png",
       "craft": [
         {
           "material": ["FINE_PERIDOT_GEM"],
@@ -1976,7 +1972,7 @@
       "id": "PERFECT_PERIDOT_GEM",
       "category": "Mining",
       "tag": "peridot,gemstone,crystal hollows",
-      "image": "https://wiki.hypixel.net/images/9/92/SkyBlock_items_perfect_peridot_gem.png",
+      "image": "assets/item/mining/SkyBlock_items_perfect_peridot_gem.png",
       "craft": [
         {
           "material": ["FLAWLESS_PERIDOT_GEM"],
@@ -2132,7 +2128,7 @@
       "id": "GEMSTONE_MIXTURE",
       "category": "Mining",
       "tag": "gemstone,crystal hollows,forge",
-      "image": "https://wiki.hypixel.net/images/d/d7/SkyBlock_items_gemstone_mixture.png",
+      "image": "assets/item/mining/SkyBlock_items_gemstone_mixture.png",
       "craft": [
         {
           "material": ["FINE_JADE_GEM","FINE_AMBER_GEM","FINE_AMETHYST_GEM","FINE_SAPPHIRE_GEM","SLUDGE_JUICE"],
@@ -2520,13 +2516,13 @@
       "id": "BLAZE_ROD",
       "category": "Combat",
       "tag": "blaze",
-      "image": "https://wiki.hypixel.net/images/b/ba/Minecraft_items_blaze_rod.png"
+      "image": "assets/item/mining/Minecraft_items_blaze_rod.png"
     },
     {
       "id": "ENCHANTED_BLAZE_POWDER",
       "category": "Combat",
       "tag": "blaze",
-      "image": "https://wiki.hypixel.net/images/1/19/SkyBlock_items_enchanted_blaze_powder.gif",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_blaze_powder.gif",
       "craft": [
         {
           "material": ["BLAZE_ROD"],
@@ -2538,7 +2534,7 @@
       "id": "ENCHANTED_BLAZE_ROD",
       "category": "Combat",
       "tag": "blaze",
-      "image": "https://wiki.hypixel.net/images/3/39/SkyBlock_items_enchanted_blaze_rod.gif",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_blaze_rod.gif",
       "craft": [
         {
           "material": ["ENCHANTED_BLAZE_POWDER"],
@@ -2556,85 +2552,91 @@
       "id": "TARANTULA_WEB",
       "category": "Combat",
       "tag": "slayer,Tarantula Broodfather",
-      "image": "https://wiki.hypixel.net/images/3/32/SkyBlock_items_enchanted_string.gif"
+      "image": "assets/item/combat/SkyBlock_items_enchanted_string.gif"
     },
     {
       "id": "PROTECTOR_FRAGMENT",
       "category": "Combat",
       "tag": "The End,Dragon Fragments",
-      "image": "https://wiki.hypixel.net/images/f/fe/SkyBlock_items_protector_fragment.png"
+      "image": "assets/item/combat/SkyBlock_items_protector_fragment.png"
     },
     {
       "id": "OLD_FRAGMENT",
       "category": "Combat",
       "tag": "The End,Dragon Fragments",
-      "image": "https://wiki.hypixel.net/images/a/ad/SkyBlock_items_old_fragment.png"
+      "image": "assets/item/combat/SkyBlock_items_old_fragment.png"
     },
     {
       "id": "UNSTABLE_FRAGMENT",
       "category": "Combat",
       "tag": "The End,Dragon Fragments",
-      "image": "https://wiki.hypixel.net/images/f/f8/SkyBlock_items_unstable_fragment.png"
+      "image": "assets/item/combat/SkyBlock_items_unstable_fragment.png"
     },
     {
       "id": "TWILIGHT_ARROW_POISON",
       "category": "Combat",
       "tag": "Slayer,Voidgloom Seraph",
-      "image": "https://wiki.hypixel.net/images/5/59/Minecraft_items_purple_dye.png"
+      "image": "assets/item/oddities/Minecraft_items_purple_dye.png"
     },
     {
       "id": "TOXIC_ARROW_POISON",
       "category": "Combat",
       "tag": "Slayer,Tarantula Broodfather",
-      "image": "https://wiki.hypixel.net/images/7/7d/Minecraft_items_lime_dye.png"
-    },
-    {
-      "id": "DUNGEON_TRAP",
-      "category": "Catacombs",
-      "tag": "Secret Drops",
-      "image": "https://wiki.hypixel.net/images/6/6d/Minecraft_items_heavy_weighted_pressure_plate.png"
-    },
-    {
-      "id": "DARK_ORB",
-      "category": "Power Stone",
-      "tag": "shaded",
-      "image": "https://wiki.hypixel.net/images/e/ed/SkyBlock_items_dark_orb.png"
-    },
-    {
-      "id": "ARCHITECT_FIRST_DRAFT",
-      "category": "Catacombs",
-      "tag": "Secret Drops",
-      "image": "https://wiki.hypixel.net/images/c/c0/Minecraft_items_paper.png"
+      "image": "assets/item/oddities/Minecraft_items_lime_dye.png"
     },
     {
       "id": "RITUAL_RESIDUE",
       "category": "The End",
       "tag": "Draconic Sacrifice",
-      "image": "https://wiki.hypixel.net/images/f/f3/SkyBlock_items_ritual_residue.png"
+      "image": "assets/item/combat/SkyBlock_items_ritual_residue.png"
     },
     {
       "id": "GIANT_FRAGMENT_LASER",
       "category": "Catacombs",
       "tag": "Special Fragments",
-      "image": "https://wiki.hypixel.net/images/7/7b/Minecraft_items_eye_of_ender.png"
+      "image": "assets/item/combat/Minecraft_items_eye_of_ender.png"
     },
     {
-      "id": "DARK_ORB",
-      "category": "Power Stone",
-      "tag": "",
-      "image": "https://wiki.hypixel.net/images/7/7b/Minecraft_items_eye_of_ender.png"
+      "id": "DUNGEON_CHEST_KEY",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/oddities/Minecraft_items_tripwire_hook.png"
     },
     {
-      "id": "ROCK_GEMSTONE",
-      "category": "Reforge Stone",
-      "tag": "Auspicious",
-      "image": "https://wiki.hypixel.net/images/0/06/SkyBlock_items_rock_gemstone.png",
-      "craft": [
-        {
-          "material": ["ENCHANTED_COBBLESTONE","TREASURITE"],
-          "quantity": [128,64]
-        }
-      ]
+      "id": "SUPERBOOM_TNT",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_tnt.gif"
+    },
+    {
+      "id": "DUNGEON_TRAP",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/oddities/Minecraft_items_heavy_weighted_pressure_plate.png"
+    },
+    {
+      "id": "SPIRIT_LEAP",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ender_pearl.gif"
+    },
+    {
+      "id": "INFLATABLE_JERRY",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/oddities/Minecraft_items_villager_spawn_egg.png"
+    },
+    {
+      "id": "DUNGEON_DECOY",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/oddities/Minecraft_items_spawn_egg.png"
+    },
+    {
+      "id": "ARCHITECT_FIRST_DRAFT",
+      "category": "Catacombs",
+      "tag": "Secret Drops",
+      "image": "assets/item/farming/Minecraft_items_paper.png"
     },
     {
       "id": "LOG",
@@ -2988,7 +2990,7 @@
       "id": "CARROT_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/c/c4/SkyBlock_items_carrot_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_carrot_bait.png",
       "craft": [
         {
           "material": ["CARROT_ITEM", "RAW_FISH"],
@@ -3000,7 +3002,7 @@
       "id": "MINNOW_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/c/c4/SkyBlock_items_minnow_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_minnow_bait.png",
       "craft": [
         {
           "material": ["RAW_FISH"],
@@ -3012,7 +3014,7 @@
       "id": "FISH_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/2/23/SkyBlock_items_fish_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_fish_bait.png",
       "craft": [
         {
           "material": ["RAW_FISH:1","RAW_FISH"],
@@ -3024,7 +3026,7 @@
       "id": "LIGHT_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/4/40/SkyBlock_items_light_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_light_bait.png",
       "craft": [
         {
           "material": ["RAW_FISH","PRISMARINE_CRYSTALS"],
@@ -3036,7 +3038,7 @@
       "id": "DARK_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/6/6c/SkyBlock_items_dark_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_dark_bait.png",
       "craft": [
         {
           "material": ["RAW_FISH","INK_SACK"],
@@ -3048,7 +3050,7 @@
       "id": "SPOOKY_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/0/05/SkyBlock_items_spooky_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_spooky_bait.png",
       "craft": [
         {
           "material": ["PUMPKIN","RAW_FISH"],
@@ -3060,7 +3062,7 @@
       "id": "SPIKED_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/e/ec/SkyBlock_items_spiked_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_spiked_bait.png",
       "craft": [
         {
           "material": ["RAW_FISH:3","RAW_FISH"],
@@ -3072,7 +3074,7 @@
       "id": "BLESSED_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/e/e5/SkyBlock_items_blessed_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_blessed_bait.png",
       "craft": [
         {
           "material": ["RAW_FISH","GOLD_INGOT","PRISMARINE_CRYSTALS"],
@@ -3084,7 +3086,7 @@
       "id": "ICE_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/9/9a/SkyBlock_items_ice_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_ice_bait.png",
       "craft": [
         {
           "material": ["ICE","RAW_FISH"],
@@ -3096,13 +3098,13 @@
       "id": "FROZEN_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/f/ff/SkyBlock_items_frozen_bait.png"
+      "image": "assets/item/fishing/SkyBlock_items_frozen_bait.png"
     },
     {
       "id": "WHALE_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/8/80/SkyBlock_items_whale_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_whale_bait.png",
       "craft": [
         {
           "material": ["FISH_BAIT","LIGHT_BAIT","DARK_BAIT","BLESSED_BAIT"],
@@ -3114,7 +3116,7 @@
       "id": "SHARK_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/9/9f/SkyBlock_items_shark_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_shark_bait.png",
       "craft": [
         {
           "material": ["SHARK_FIN"],
@@ -3126,13 +3128,13 @@
       "id": "CORRUPTED_BAIT",
       "category": "FISHING",
       "tag": "bait",
-      "image": "https://wiki.hypixel.net/images/f/f7/SkyBlock_items_corrupted_bait.png"
+      "image": "assets/item/fishing/SkyBlock_items_corrupted_bait.png"
     },
     {
       "id": "HOT_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/4/43/SkyBlock_items_hot_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_hot_bait.png",
       "craft": [
         {
           "material": ["BLAZE_ASHES","MAGMA_FISH"],
@@ -3144,7 +3146,7 @@
       "id": "GLOWY_CHUM_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/0/0a/SkyBlock_items_glowy_chum_bait.png",
+      "image": "assets/item/fishing/SkyBlock_items_glowy_chum_bait.png",
       "craft": [
         {
           "material": ["GLOWING_MUSHROOM", "FULL_CHUM_BUCKET"],
@@ -3156,7 +3158,7 @@
       "id": "WORM_BAIT",
       "category": "Fishing",
       "tag": "Bait",
-      "image": "https://wiki.hypixel.net/images/e/e5/SkyBlock_pets_scatha.png",
+      "image": "assets/item/fishing/SkyBlock_pets_scatha.png",
       "craft": [
         {
           "material": ["WORM_MEMBRANE","CLAY_BALL"],
@@ -3393,70 +3395,46 @@
       ]
     },
     {
-      "id": "BOOK_OF_STATS",
-      "category": "Cosmetic",
-      "tag": "Bingo",
-      "image": "https://wiki.hypixel.net/images/2/26/Minecraft_items_book.png"
-    },
-    {
-      "id": "SIMPLE_CARROT_CANDY",
-      "category": "Pet",
-      "tag": "Pet Candie",
-      "image": "https://wiki.hypixel.net/images/7/7b/Minecraft_items_carrot.png",
-      "craft": [
-        {
-          "material": ["CARROT_ITEM"],
-          "quantity": [576]
-        }
-      ]
-    },
-    {
-      "id": "GREAT_CARROT_CANDY",
-      "category": "Pet",
-      "tag": "Pet Candie",
-      "image": "https://wiki.hypixel.net/images/9/98/SkyBlock_items_enchanted_carrot.gif",
-      "craft": [
-        {
-          "material": ["ENCHANTED_CARROT","SIMPLE_CARROT_CANDY"],
-          "quantity": [320,1]
-        }
-      ]
-    },
-    {
-      "id": "SUPERB_CARROT_CANDY",
-      "category": "Pet",
-      "tag": "Pet Candie",
-      "image": "https://wiki.hypixel.net/images/f/fc/SkyBlock_items_enchanted_golden_carrot.gif",
-      "craft": [
-        {
-          "material": ["ENCHANTED_GOLDEN_CARROT","GREAT_CARROT_CANDY"],
-          "quantity": [24,1]
-        }
-      ]
-    },
-    {
-      "id": "ULTIMATE_CARROT_CANDY",
-      "category": "Pet",
-      "tag": "Pet Candie",
-      "image": "https://wiki.hypixel.net/images/f/fc/SkyBlock_items_enchanted_golden_carrot.gif"
-    },
-    {
-      "id": "PET_CAKE",
-      "category": "Pet",
-      "tag": "Pet Candie",
-      "image": "https://wiki.hypixel.net/images/0/0c/Minecraft_items_cake.png"
-    },
-    {
       "id": "BOOSTER_COOKIE",
       "category": "Oddity",
       "tag": "Booster Cookie",
-      "image": "https://wiki.hypixel.net/images/1/13/SkyBlock_items_enchanted_cookie.gif"
+      "image": "assets/item/farming/SkyBlock_items_enchanted_cookie.gif"
+    },
+    {
+      "id": "RECOMBOBULATOR_3000",
+      "category": "Modifier",
+      "tag": "Item Upgrade",
+      "image": "assets/item/oddities/SkyBlock_items_recombobulator_3000.png"
+    },
+    {
+      "id": "WOOD_SINGULARITY",
+      "category": "Item Upgrade",
+      "tag": "Wooden sword upgrade",
+      "image": "assets/item/oddities/SkyBlock_items_wood_singularity.png"
+    },
+    {
+      "id": "SIL_EX",
+      "category": "Item Upgrade",
+      "tag": "efficiency",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_flint.gif"
+    },
+    {
+      "id": "TRANSMISSION_TUNER",
+      "category": "Item Upgrade",
+      "tag": "aspect",
+      "image": "assets/item/oddities/SkyBlock_items_transmission_tuner.png"
+    },
+    {
+      "id": "BOOK_OF_STATS",
+      "category": "Modifier",
+      "tag": "Book Modifiers",
+      "image": "assets/item/oddities/Minecraft_items_book.png"
     },
     {
       "id": "HOT_POTATO_BOOK",
       "category": "Item Upgrade",
       "tag": "armor upgrade,weapon upgrade",
-      "image": "https://wiki.hypixel.net/images/e/ef/SkyBlock_items_enchanted_book_2.gif",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_book_2.gif",
       "craft": [
         {
           "material": ["ENCHANTED_BAKED_POTATO","PAPER"],
@@ -3468,121 +3446,169 @@
       "id": "FUMING_POTATO_BOOK",
       "category": "Item Upgrade",
       "tag": "armor upgrade,weapon upgrade",
-      "image": "https://wiki.hypixel.net/images/e/ef/SkyBlock_items_enchanted_book_2.gif"
-    },
-    {
-      "id": "RECOMBOBULATOR_3000",
-      "category": "Item Upgrade",
-      "tag": "",
-      "image": "https://wiki.hypixel.net/images/b/b8/SkyBlock_items_recombobulator_3000.png"
-    },
-    {
-      "id": "WOOD_SINGULARITY",
-      "category": "Item Upgrade",
-      "tag": "Wooden sword upgrade",
-      "image": "https://wiki.hypixel.net/images/2/25/SkyBlock_items_wood_singularity.png"
-    },
-    {
-      "id": "SIL_EX",
-      "category": "Item Upgrade",
-      "tag": "efficiency",
-      "image": "https://wiki.hypixel.net/images/0/01/SkyBlock_items_enchanted_flint.gif"
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_book_2.gif"
     },
     {
       "id": "FARMING_FOR_DUMMIES",
       "category": "Item upgrade",
       "tag": "axe,hoe,forming fortune",
-      "image": "https://wiki.hypixel.net/images/2/26/Minecraft_items_book.png"
-    },
-    {
-      "id": "TRANSMISSION_TUNER",
-      "category": "Item Upgrade",
-      "tag": "",
-      "image": "https://wiki.hypixel.net/images/0/0f/SkyBlock_items_transmission_tuner.png"
+      "image": "assets/item/oddities/Minecraft_items_book.png"
     },
     {
       "id": "FIRST_MASTER_STAR",
       "category": "Item Upgrade",
       "tag": "Master Star",
-      "image": "https://wiki.hypixel.net/images/1/1d/SkyBlock_items_first_master_star.png"
+      "image": "assets/item/oddities/SkyBlock_items_first_master_star.png"
     },
     {
       "id": "SECOND_MASTER_STAR",
       "category": "Item Upgrade",
       "tag": "Master Star",
-      "image": "https://wiki.hypixel.net/images/c/c6/SkyBlock_items_second_master_star.png"
+      "image": "assets/item/oddities/SkyBlock_items_second_master_star.png"
     },
     {
       "id": "THIRD_MASTER_STAR",
       "category": "Item Upgrade",
       "tag": "Master Star",
-      "image": "https://wiki.hypixel.net/images/6/6f/SkyBlock_items_third_master_star.png"
+      "image": "assets/item/oddities/SkyBlock_items_third_master_star.png"
     },
     {
       "id": "FOURTH_MASTER_STAR",
       "category": "Item Upgrade",
       "tag": "Master Star",
-      "image": "https://wiki.hypixel.net/images/3/33/SkyBlock_items_fourth_master_star.png"
+      "image": "assets/item/oddities/SkyBlock_items_fourth_master_star.png"
     },
     {
       "id": "FIFTH_MASTER_STAR",
       "category": "Item Upgrade",
       "tag": "Master Star",
-      "image": "https://wiki.hypixel.net/images/a/a4/SkyBlock_items_fifth_master_star.png"
+      "image": "assets/item/oddities/SkyBlock_items_fifth_master_star.png"
+    },
+    {
+      "id": "DARK_ORB",
+      "category": "Power Stone",
+      "tag": "shaded",
+      "image": "assets/item/oddities/SkyBlock_items_dark_orb.png"
+    },
+    {
+      "id": "ROCK_GEMSTONE",
+      "category": "Reforge Stone",
+      "tag": "Auspicious",
+      "image": "assets/item/oddities/SkyBlock_items_rock_gemstone.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_COBBLESTONE","TREASURITE"],
+          "quantity": [128,64]
+        }
+      ]
+    },
+    {
+      "id": "SIMPLE_CARROT_CANDY",
+      "category": "Pet",
+      "tag": "Pet Candie",
+      "image": "assets/item/farming/Minecraft_items_carrot.png",
+      "craft": [
+        {
+          "material": ["CARROT_ITEM"],
+          "quantity": [576]
+        }
+      ]
+    },
+    {
+      "id": "GREAT_CARROT_CANDY",
+      "category": "Pet",
+      "tag": "Pet Candie",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_carrot.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_CARROT","SIMPLE_CARROT_CANDY"],
+          "quantity": [320,1]
+        }
+      ]
+    },
+    {
+      "id": "SUPERB_CARROT_CANDY",
+      "category": "Pet",
+      "tag": "Pet Candie",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_golden_carrot.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_GOLDEN_CARROT","GREAT_CARROT_CANDY"],
+          "quantity": [24,1]
+        }
+      ]
+    },
+    {
+      "id": "ULTIMATE_CARROT_CANDY",
+      "category": "Pet",
+      "tag": "Pet Candie",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_golden_carrot.gif"
+    },
+    {
+      "id": "CHYME",
+      "category": "Pet",
+      "tag": "Pet Candie",
+      "image": "assets/item/oddities/SkyBlock_items_chyme.png"
+    },
+    {
+      "id": "PET_CAKE",
+      "category": "Pet",
+      "tag": "Pet Candie",
+      "image": "assets/item/farming/Minecraft_items_cake.png"
     },
     {
       "id": "POTATO_SPREADING",
       "category": "Minion",
       "tag": "minion upgrade",
-      "image": "https://wiki.hypixel.net/images/4/45/SkyBlock_items_potato_spreading.png"
+      "image": "assets/item/oddities/SkyBlock_items_potato_spreading.png"
     },
     {
       "id": "ESSENCE_DRAGON",
       "category": "Essence",
       "tag": "Essence,End",
-      "image": "https://wiki.hypixel.net/images/7/75/SkyBlock_items_dragon_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_dragon_essence.png"
     },
     {
       "id": "ESSENCE_WITHER",
       "category": "Essence",
       "tag": "Essence,Dungeon",
-      "image": "https://wiki.hypixel.net/images/a/a8/SkyBlock_items_wither_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_wither_essence.png"
     },
     {
       "id": "ESSENCE_SPIDER",
       "category": "Essence",
       "tag": "Essence,Arachnids",
-      "image": "https://wiki.hypixel.net/images/a/a5/SkyBlock_items_spider_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_spider_essence.png"
     },
     {
       "id": "ESSENCE_UNDEAD",
       "category": "Essence",
       "tag": "Essence,Dungeon",
-      "image": "https://wiki.hypixel.net/images/5/58/SkyBlock_items_undead_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_undead_essence.png"
     },
     {
       "id": "ESSENCE_ICE",
       "category": "Essence",
       "tag": "Essence,Event",
-      "image": "https://wiki.hypixel.net/images/d/d7/SkyBlock_items_ice_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_ice_essence.png"
     },
     {
       "id": "ESSENCE_DIAMOND",
       "category": "Essence",
       "tag": "Essence,Mining",
-      "image": "https://wiki.hypixel.net/images/0/0c/SkyBlock_items_diamond_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_diamond_essence.png"
     },
     {
       "id": "ESSENCE_GOLD",
       "category": "Essence",
       "tag": "Essence,Mining",
-      "image": "https://wiki.hypixel.net/images/8/8d/SkyBlock_items_gold_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_gold_essence.png"
     },
     {
       "id": "ESSENCE_CRIMSON",
       "category": "Essence",
       "tag": "Essence,Kuudra",
-      "image": "https://wiki.hypixel.net/images/6/66/SkyBlock_items_crimson_essence.png"
+      "image": "assets/item/oddities/SkyBlock_items_crimson_essence.png"
     },
     {
       "id": "GREEN_CANDY",
@@ -3673,7 +3699,7 @@
       "name": "SLEEPY_HOLLOW",
       "category": "Event",
       "tag": "Halloween",
-      "image": "https://wiki.hypixel.net/images/f/ff/SkyBlock_items_sleepy_hollow.png"
+      "image": "assets/item/oddities/SkyBlock_items_sleepy_hollow.png"
     },
     {
       "id": "EXPIRED_PUMPKIN",
@@ -3799,7 +3825,7 @@
       "id": "EXPORTABLE_CARROTS",
       "category": "Rift Item",
       "tag": "carrot fortune,health boost",
-      "image": "https://wiki.hypixel.net/images/8/85/SkyBlock_items_exportable_carrots.png"
+      "image": "assets/item/oddities/SkyBlock_items_exportable_carrots.png"
     }
   ]
 }
