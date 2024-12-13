@@ -45,7 +45,7 @@ public class RequestController {
     }
 
     @CrossOrigin
-    @GetMapping(value = {"/compress"})
+    @GetMapping(value = {"/bazaar/compress"})
     String compressData() {
         LocalDateTime now = LocalDateTime.now();
         // compress last week

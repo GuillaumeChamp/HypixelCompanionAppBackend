@@ -159,7 +159,7 @@ public class DataProcessorService {
      *
      * @param item  the item to update
      * @param craft one craft of the item to check
-     * @throws InvalidObjectException if unable to compute craft cost or if the item has no pricing
+     * @throws InvalidObjectException if unable to compute craft cost
      */
     private void updateMinimalCostUsingOneCraft(CompleteItem item, Craft craft) throws InvalidObjectException {
         if (craft.getCraftingCost() == null) {
@@ -167,7 +167,8 @@ public class DataProcessorService {
         }
         // check pricing after because craft cost can be useful even if there is no pricing
         if (item.getPricing() == null) {
-            throw new InvalidObjectException(item.getName() + " : has no pricing");
+            logger.fine(item.getName() + " : has no pricing");
+            return;
         }
         updateMinimalPrice(item.getPricing(), craft.getCraftingCost());
     }
@@ -192,7 +193,7 @@ public class DataProcessorService {
      * Compute the crafting cost of an item
      *
      * @param craft the craft to complete
-     * @throws InvalidObjectException is thrown if cannot compute cost of a material
+     * @throws InvalidObjectException is thrown if it cannot compute cost of a material
      */
     private void computeCraftCost(Craft craft) throws InvalidObjectException {
         double craftingCost = 0;
@@ -207,11 +208,11 @@ public class DataProcessorService {
     }
 
     /**
-     * Extract the cost of a material multiplied
+     * Extract the cost of a material
      *
      * @param materialId id of a material to find
      * @return the extracted value
-     * @throws InvalidObjectException is thrown when a material has no pricing
+     * @throws InvalidObjectException is thrown when a material is not found or if an item have no minimal price even after a call to compute item minimal price
      */
     private double extractCostForAMaterial(String materialId) throws InvalidObjectException {
         if (!completeItemHashMap.containsKey(materialId)) {
@@ -227,7 +228,7 @@ public class DataProcessorService {
                 computeItemMinimalCost(completeItem);
             }
             if (itemPricing.getMinimalPrice()==null){
-                throw new InvalidObjectException(materialId.concat(" : unable to compute craft cost"));
+                throw new InvalidObjectException(materialId.concat(" : unable to compute minimal cost"));
             }
             minimalPrice = itemPricing.getMinimalPrice();
         }

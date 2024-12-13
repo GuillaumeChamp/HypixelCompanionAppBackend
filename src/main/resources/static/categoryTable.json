@@ -262,7 +262,7 @@
       "id": "ENCHANTED_GLISTERING_MELON",
       "category": "Farming",
       "tag": "melon",
-      "image": "https://wiki.hypixel.net/images/9/95/SkyBlock_items_enchanted_glistering_melon.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_glistering_melon.gif",
       "craft": [
         {
           "material": ["MELON", "GOLD_INGOT"],
@@ -500,7 +500,7 @@
       "id": "LEATHER",
       "category": "Farming",
       "tag": "Cow,Leather",
-      "image": "https://wiki.hypixel.net/images/0/01/Minecraft_items_leather.png"
+      "image": "assets/item/farming/Minecraft_items_leather.png"
     },
     {
       "id": "ENCHANTED_LEATHER",
@@ -518,13 +518,13 @@
       "id": "RAW_BEEF",
       "category": "Farming",
       "tag": "Cow,Beef",
-      "image": "https://wiki.hypixel.net/images/f/fb/Minecraft_items_raw_beef.png"
+      "image": "assets/item/farming/Minecraft_items_raw_beef.png"
     },
     {
       "id": "ENCHANTED_RAW_BEEF",
       "category": "Farming",
       "tag": "Cow,Beef",
-      "image": "https://wiki.hypixel.net/images/d/d9/SkyBlock_items_enchanted_raw_beef.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_raw_beef.gif",
       "craft": [
         {
           "material": ["RAW_BEEF"],
@@ -536,13 +536,13 @@
       "id": "PORK",
       "category": "Farming",
       "tag": "Pork,Pig",
-      "image": "https://wiki.hypixel.net/images/1/1a/Minecraft_items_raw_porkchop.png"
+      "image": "assets/item/farming/Minecraft_items_raw_porkchop.png"
     },
     {
       "id": "ENCHANTED_PORK",
       "category": "Farming",
       "tag": "Pork,Pig",
-      "image": "https://wiki.hypixel.net/images/f/fa/SkyBlock_items_enchanted_porkchop.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_porkchop.gif",
       "craft": [
         {
           "material": ["PORK"],
@@ -554,7 +554,7 @@
       "id": "ENCHANTED_GRILLED_PORK",
       "category": "Farming",
       "tag": "Pork,Pig",
-      "image": "https://wiki.hypixel.net/images/1/1a/Minecraft_items_raw_porkchop.png",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_grilled_porkchop.gif",
       "craft": [
         {
           "material": ["ENCHANTED_PORK"],
@@ -566,13 +566,13 @@
       "id": "RAW_CHICKEN",
       "category": "Farming",
       "tag": "Chicken",
-      "image": "https://wiki.hypixel.net/images/a/ab/Minecraft_items_raw_chicken.png"
+      "image": "assets/item/farming/Minecraft_items_raw_chicken.png"
     },
     {
       "id": "ENCHANTED_RAW_CHICKEN",
       "category": "Farming",
       "tag": "Chicken",
-      "image": "https://wiki.hypixel.net/images/b/b3/SkyBlock_items_enchanted_raw_chicken.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_raw_chicken.gif",
       "craft": [
         {
           "material": ["RAW_CHICKEN"],
@@ -584,13 +584,13 @@
       "id": "FEATHER",
       "category": "Farming",
       "tag": "Chicken,Feather",
-      "image": "https://wiki.hypixel.net/images/1/1b/Minecraft_items_feather.png"
+      "image": "assets/item/farming/Minecraft_items_feather.png"
     },
     {
       "id": "ENCHANTED_FEATHER",
       "category": "Farming",
       "tag": "Chicken,Feather",
-      "image": "https://wiki.hypixel.net/images/a/a9/SkyBlock_items_enchanted_feather.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_feather.gif",
       "craft": [
         {
           "material": ["FEATHER"],
@@ -602,13 +602,13 @@
       "id": "EGG",
       "category": "Farming",
       "tag": "Chicken,Egg",
-      "image": "https://wiki.hypixel.net/images/4/45/Minecraft_items_egg.png"
+      "image": "assets/item/farming/Minecraft_items_egg.png"
     },
     {
       "id": "ENCHANTED_EGG",
       "category": "Farming",
       "tag": "Chicken,Egg",
-      "image": "https://wiki.hypixel.net/images/a/a1/SkyBlock_items_enchanted_egg.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_egg.gif",
       "craft": [
         {
           "material": ["EGG"],
@@ -620,7 +620,7 @@
       "id": "SUPER_EGG",
       "category": "Farming",
       "tag": "Chicken,Egg",
-      "image": "https://wiki.hypixel.net/images/e/e0/SkyBlock_items_enchanted_ghast_spawn_egg.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_ghast_spawn_egg.gif",
       "craft": [
         {
           "material": ["ENCHANTED_EGG"],
@@ -632,7 +632,7 @@
       "id": "OMEGA_EGG",
       "category": "Farming",
       "tag": "Chicken,Egg",
-      "image": "https://wiki.hypixel.net/images/8/8f/SkyBlock_items_enchanted_wither_skeleton_spawn_egg.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_wither_skeleton_spawn_egg.gif",
       "craft": [
         {
           "material": ["SUPER_EGG"],
@@ -644,7 +644,7 @@
       "id": "ENCHANTED_CAKE",
       "category": "Farming",
       "tag": "Chicken,Egg,Sugar",
-      "image": "https://wiki.hypixel.net/images/7/71/SkyBlock_items_enchanted_cake.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_cake.gif",
       "craft": [
         {
           "material": ["ENCHANTED_EGG","ENCHANTED_SUGAR","WHEAT"],
@@ -656,13 +656,13 @@
       "id": "MUTTON",
       "category": "Farming",
       "tag": "Mutton",
-      "image": "https://wiki.hypixel.net/images/d/d3/Minecraft_items_raw_mutton.png"
+      "image": "assets/item/farming/Minecraft_items_raw_mutton.png"
     },
     {
       "id": "ENCHANTED_MUTTON",
       "category": "Farming",
       "tag": "Mutton",
-      "image": "https://wiki.hypixel.net/images/d/d6/SkyBlock_items_enchanted_mutton.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_mutton.gif",
       "craft": [
         {
           "material": ["MUTTON"],
@@ -674,7 +674,7 @@
       "id": "ENCHANTED_COOKED_MUTTON",
       "category": "Farming",
       "tag": "Mutton",
-      "image": "https://wiki.hypixel.net/images/c/c1/SkyBlock_items_enchanted_cooked_mutton.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_cooked_mutton.gif",
       "craft": [
         {
           "material": ["ENCHANTED_MUTTON"],
@@ -686,13 +686,13 @@
       "id": "WOOL",
       "category": "Farming",
       "tag": "Mutton,Wool",
-      "image": "https://wiki.hypixel.net/images/f/fe/Minecraft_items_white_wool.png"
+      "image": "assets/item/farming/Minecraft_items_white_wool.png"
     },
     {
       "id": "ENCHANTED_WOOL",
       "category": "Farming",
       "tag": "Mutton,Wool",
-      "image": "https://wiki.hypixel.net/images/1/1d/SkyBlock_items_enchanted_white_wool.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_white_wool.gif",
       "craft": [
         {
           "material": ["WOOL"],
@@ -704,25 +704,25 @@
       "id": "RABBIT",
       "category": "Farming",
       "tag": "Rabbit",
-      "image": "https://wiki.hypixel.net/images/e/e1/Minecraft_items_raw_rabbit.png"
+      "image": "assets/item/farming/Minecraft_items_raw_rabbit.png"
     },
     {
       "id": "RABBIT_FOOT",
       "category": "Farming",
       "tag": "Rabbit,Foot",
-      "image": "https://wiki.hypixel.net/images/7/7e/Minecraft_items_rabbits_foot.png"
+      "image": "assets/item/farming/Minecraft_items_rabbits_foot.png"
     },
     {
       "id": "RABBIT_HIDE",
       "category": "Farming",
       "tag": "Rabbit,Hide",
-      "image": "https://wiki.hypixel.net/images/b/ba/Minecraft_items_rabbit_hide.png"
+      "image": "assets/item/farming/Minecraft_items_rabbit_hide.png"
     },
     {
       "id": "ENCHANTED_RABBIT",
       "category": "Farming",
       "tag": "Rabbit",
-      "image": "https://wiki.hypixel.net/images/1/19/SkyBlock_items_enchanted_raw_rabbit.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_raw_rabbit.gif",
       "craft": [
         {
           "material": ["RABBIT"],
@@ -734,7 +734,7 @@
       "id": "ENCHANTED_RABBIT_FOOT",
       "category": "Farming",
       "tag": "Rabbit,Foot",
-      "image": "https://wiki.hypixel.net/images/f/ff/SkyBlock_items_enchanted_rabbit_foot.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_rabbit_foot.gif",
       "craft": [
         {
           "material": ["RABBIT_FOOT"],
@@ -746,7 +746,7 @@
       "id": "ENCHANTED_RABBIT_HIDE",
       "category": "Farming",
       "tag": "Rabbit,Hide",
-      "image": "https://wiki.hypixel.net/images/d/d6/SkyBlock_items_enchanted_rabbit_hide.gif",
+      "image": "assets/item/farming/SkyBlock_items_enchanted_rabbit_hide.gif",
       "craft": [
         {
           "material": ["RABBIT_HIDE"],
@@ -780,7 +780,7 @@
       "craft": [
         {
           "material": ["ENCHANTED_NETHER_STALK"],
-          "quantity": [128]
+          "quantity": [160]
         }
       ]
     },

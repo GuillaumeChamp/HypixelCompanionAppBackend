@@ -44,6 +44,7 @@ public class SchedulerService {
         scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
         logger.log(Level.INFO, "Scheduler started !");
     }
+
     private void processNewestData(){
         try {
             String response = DataFetcher.queryBazaarData();

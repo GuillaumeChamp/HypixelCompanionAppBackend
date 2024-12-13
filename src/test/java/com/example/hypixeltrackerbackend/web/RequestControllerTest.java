@@ -1,7 +1,6 @@
 package com.example.hypixeltrackerbackend.web;
 
 import com.example.hypixeltrackerbackend.constant.TimeConstant;
-import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
 import com.example.hypixeltrackerbackend.services.DataProcessorService;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,14 +16,11 @@ import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @SpringBootTest
 class RequestControllerTest {
-    @Autowired
-    ItemPricingRepository itemPricingRepository;
     @Autowired
     DataProcessorService dataProcessorService;
     MockMvc mockMvc;
@@ -91,7 +87,7 @@ class RequestControllerTest {
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
                 .until(() -> dataProcessorService.getLastData() != null);
 
-        mockMvc.perform(get("/compress").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/bazaar/compress").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }
