@@ -2516,13 +2516,13 @@
       "id": "BLAZE_ROD",
       "category": "Combat",
       "tag": "blaze",
-      "image": "assets/item/mining/Minecraft_items_blaze_rod.png"
+      "image": "assets/item/combat/Minecraft_items_blaze_rod.png"
     },
     {
       "id": "ENCHANTED_BLAZE_POWDER",
       "category": "Combat",
       "tag": "blaze",
-      "image": "assets/item/mining/SkyBlock_items_enchanted_blaze_powder.gif",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_blaze_powder.gif",
       "craft": [
         {
           "material": ["BLAZE_ROD"],
@@ -2534,7 +2534,7 @@
       "id": "ENCHANTED_BLAZE_ROD",
       "category": "Combat",
       "tag": "blaze",
-      "image": "assets/item/mining/SkyBlock_items_enchanted_blaze_rod.gif",
+      "image": "assets/item/combat/SkyBlock_items_enchanted_blaze_rod.gif",
       "craft": [
         {
           "material": ["ENCHANTED_BLAZE_POWDER"],
