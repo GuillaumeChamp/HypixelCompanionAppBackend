@@ -1822,7 +1822,7 @@
       "id": "ROUGH_CITRINE_GEM",
       "category": "Mining",
       "tag": "citrine,gemstone,crystal hollows",
-      "image": "hassets/item/mining/SkyBlock_items_rough_citrine_gem.png"
+      "image": "assets/item/mining/SkyBlock_items_rough_citrine_gem.png"
     },
     {
       "id": "FLAWED_CITRINE_GEM",
@@ -2086,7 +2086,7 @@
       "id": "SORROW",
       "category": "Mining",
       "tag": "dwarven Mines",
-      "image": "assets/item/mining/SkyBlock_items_enchanted_ghast_tear.gif"
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "PLASMA",
@@ -3771,25 +3771,25 @@
       "id": "NURSE_SHARK_TOOTH",
       "category": "Fishing",
       "tag": "fishing festival",
-      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "BLUE_SHARK_TOOTH",
       "category": "Fishing",
       "tag": "fishing festival",
-      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "TIGER_SHARK_TOOTH",
       "category": "Fishing",
       "tag": "fishing festival",
-      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "GREAT_WHITE_SHARK_TOOTH",
       "category": "Fishing",
       "tag": "fishing festival",
-      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.png"
+      "image": "assets/item/combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "SHARK_FIN",
