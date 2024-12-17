@@ -1,6 +1,8 @@
 package com.example.hypixeltrackerbackend.web;
 
 import com.example.hypixeltrackerbackend.data.CompleteItem;
+import com.example.hypixeltrackerbackend.data.MuseumItem;
+import com.example.hypixeltrackerbackend.data.MuseumItemMapper;
 import com.example.hypixeltrackerbackend.data.PricingRecord;
 import com.example.hypixeltrackerbackend.services.DataProcessorService;
 import com.example.hypixeltrackerbackend.utils.CollectionsUtils;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +45,16 @@ public class RequestController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item not found : " + itemId);
         }
         return history;
+    }
+
+    @CrossOrigin
+    @GetMapping("/museum")
+    List<MuseumItem> getMuseumItems(){
+        try {
+            return MuseumItemMapper.generateMuseumItemList();
+        }catch (IOException io){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to get Museum Items");
+        }
     }
 
     @CrossOrigin

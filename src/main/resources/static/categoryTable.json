@@ -3425,14 +3425,86 @@
       "image": "assets/item/oddities/SkyBlock_items_transmission_tuner.png"
     },
     {
-      "id": "BOOK_OF_STATS",
-      "category": "Modifier",
-      "tag": "Book Modifiers",
-      "image": "assets/item/oddities/Minecraft_items_book.png"
+      "id": "DIVAN_POWDER_COATING",
+      "category": "Item Upgrade",
+      "tag": "armor upgrade,drill upgrade,forge",
+      "image": "assets/item/oddities/SkyBlock_items_divan_powder_coating.png",
+      "craft": [
+        {
+          "material": ["GLOSSY_GEMSTONE","REFINED_MINERAL","DIVAN_FRAGMENT","ENCHANTED_GOLD_BLOCK"],
+          "quantity": [32,32,5,16]
+        }
+      ]
+    },
+    {
+      "id": "GOLDEN_BOUNTY",
+      "category": "Item Upgrade",
+      "tag": "weapon upgrade,diaz",
+      "image": "assets/item/oddities/SkyBlock_items_golden_bounty.png",
+      "craft": [
+        {
+          "material": ["STOCK_OF_STONKS"],
+          "quantity": [20]
+        }
+      ]
+    },
+    {
+      "id": "MANA_DISINTEGRATOR",
+      "category": "Item Upgrade",
+      "tag": "wand upgrade",
+      "image": "assets/item/oddities/SkyBlock_items_mana_disintegrator.png"
+    },
+    {
+      "id": "IMPLOSION_SCROLL",
+      "category": "Wither Scrolls",
+      "tag": "necron's blade",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_book_and_quill.gif"
+    },
+    {
+      "id": "WITHER_SHIELD_SCROLL",
+      "category": "Wither Scrolls",
+      "tag": "necron's blade",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_book_and_quill.gif"
+    },
+    {
+      "id": "SHADOW_WARP_SCROLL",
+      "category": "Wither Scrolls",
+      "tag": "necron's blade",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_book_and_quill.gif"
+    },
+    {
+      "id": "FIRST_MASTER_STAR",
+      "category": "Master Star",
+      "tag": "",
+      "image": "assets/item/oddities/SkyBlock_items_first_master_star.png"
+    },
+    {
+      "id": "SECOND_MASTER_STAR",
+      "category": "Master Star",
+      "tag": "",
+      "image": "assets/item/oddities/SkyBlock_items_second_master_star.png"
+    },
+    {
+      "id": "THIRD_MASTER_STAR",
+      "category": "Master Star",
+      "tag": "",
+      "image": "assets/item/oddities/SkyBlock_items_third_master_star.png"
+    },
+    {
+      "id": "FOURTH_MASTER_STAR",
+      "category": "Master Star",
+      "tag": "",
+      "image": "assets/item/oddities/SkyBlock_items_fourth_master_star.png"
+    },
+    {
+      "id": "FIFTH_MASTER_STAR",
+      "category": "Master Star",
+      "tag": "",
+      "image": "assets/item/oddities/SkyBlock_items_fifth_master_star.png"
     },
     {
       "id": "HOT_POTATO_BOOK",
-      "category": "Item Upgrade",
+      "category": "Book Modifiers",
       "tag": "armor upgrade,weapon upgrade",
       "image": "assets/item/oddities/SkyBlock_items_enchanted_book_2.gif",
       "craft": [
@@ -3444,45 +3516,99 @@
     },
     {
       "id": "FUMING_POTATO_BOOK",
-      "category": "Item Upgrade",
+      "category": "Book Modifiers",
       "tag": "armor upgrade,weapon upgrade",
       "image": "assets/item/oddities/SkyBlock_items_enchanted_book_2.gif"
     },
     {
-      "id": "FARMING_FOR_DUMMIES",
-      "category": "Item upgrade",
-      "tag": "axe,hoe,forming fortune",
+      "id": "BOOK_OF_STATS",
+      "category": "Book Modifiers",
+      "tag": "cosmetic,bingo",
       "image": "assets/item/oddities/Minecraft_items_book.png"
     },
     {
-      "id": "FIRST_MASTER_STAR",
-      "category": "Item Upgrade",
-      "tag": "Master Star",
-      "image": "assets/item/oddities/SkyBlock_items_first_master_star.png"
+      "id": "THE_ART_OF_WAR",
+      "category": "Book Modifiers",
+      "tag": "weapon upgrade",
+      "image": "assets/item/oddities/Minecraft_items_book.png"
     },
     {
-      "id": "SECOND_MASTER_STAR",
-      "category": "Item Upgrade",
-      "tag": "Master Star",
-      "image": "assets/item/oddities/SkyBlock_items_second_master_star.png"
+      "id": "FARMING_FOR_DUMMIES",
+      "category": "Book Modifiers",
+      "tag": "axe,hoe,farming fortune",
+      "image": "assets/item/oddities/Minecraft_items_book.png"
     },
     {
-      "id": "THIRD_MASTER_STAR",
-      "category": "Item Upgrade",
-      "tag": "Master Star",
-      "image": "assets/item/oddities/SkyBlock_items_third_master_star.png"
+      "id": "THE_ART_OF_PEACE",
+      "category": "Book Modifiers",
+      "tag": "armor upgrade",
+      "image": "assets/item/oddities/Minecraft_items_book.png"
     },
     {
-      "id": "FOURTH_MASTER_STAR",
-      "category": "Item Upgrade",
-      "tag": "Master Star",
-      "image": "assets/item/oddities/SkyBlock_items_fourth_master_star.png"
+      "id": "JALAPENO_BOOK",
+      "category": "Book Modifiers",
+      "tag": "armor upgrade,weapon upgrade",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_book_2.gif",
+      "craft": [
+        {
+          "material": ["STUFFED_CHILI_PEPPER","PAPER"],
+          "quantity": [1,3]
+        }
+      ]
     },
     {
-      "id": "FIFTH_MASTER_STAR",
-      "category": "Item Upgrade",
-      "tag": "Master Star",
-      "image": "assets/item/oddities/SkyBlock_items_fifth_master_star.png"
+      "id": "BOOKWORM_BOOK",
+      "category": "Book Modifiers",
+      "tag": "vacuum upgrade",
+      "image": "assets/item/oddities/Minecraft_items_book.png"
+    },
+    {
+      "id": "POLARVOID_BOOK",
+      "category": "Book Modifiers",
+      "tag": "drill upgrade",
+      "image": "assets/item/oddities/Minecraft_items_book.png"
+    },
+    {
+      "id": "EXP_BOTTLE",
+      "category": "EXP Bottles",
+      "tag": "",
+      "image": "assets/item/oddities/Minecraft_items_exp_bottle.png",
+      "craft": [
+        {
+          "material": ["INK_SACK:4"],
+          "quantity": [6]
+        }
+      ]
+    },
+    {
+      "id": "GRAND_EXP_BOTTLE",
+      "category": "EXP Bottles",
+      "tag": "",
+      "image": "assets/item/oddities/Minecraft_items_exp_bottle.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_LAPIS_LAZULI"],
+          "quantity": [6]
+        }
+      ]
+    },
+    {
+      "id": "TITANIC_EXP_BOTTLE",
+      "category": "EXP Bottles",
+      "tag": "",
+      "image": "assets/item/oddities/Minecraft_items_exp_bottle.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_LAPIS_LAZULI_BLOCK"],
+          "quantity": [6]
+        }
+      ]
+    },
+    {
+      "id": "COLOSSAL_EXP_BOTTLE",
+      "category": "EXP Bottles",
+      "tag": "",
+      "image": "assets/item/oddities/Minecraft_items_exp_bottle.png"
     },
     {
       "id": "DARK_ORB",
@@ -3501,6 +3627,12 @@
           "quantity": [128,64]
         }
       ]
+    },
+    {
+      "id": "STOCK_OF_STONKS",
+      "category": "Stock of Stonks",
+      "tag": "",
+      "image": "assets/item/farming/Minecraft_items_paper.png"
     },
     {
       "id": "SIMPLE_CARROT_CANDY",
@@ -3555,6 +3687,24 @@
       "category": "Pet",
       "tag": "Pet Candie",
       "image": "assets/item/farming/Minecraft_items_cake.png"
+    },
+    {
+      "id": "CHILI_PEPPER",
+      "category": "Inferno Minion",
+      "tag": "Hypergolic",
+      "image": "assets/item/oddities/SkyBlock_items_chili_pepper.png"
+    },
+    {
+      "id": "STUFFED_CHILI_PEPPER",
+      "category": "Inferno Minion",
+      "tag": "Hypergolic",
+      "image": "assets/item/farming/SkyBlock_items_stuffed_chili_pepper.png",
+      "craft": [
+        {
+          "material": ["CHILI_PEPPER"],
+          "quantity": [160]
+        }
+      ]
     },
     {
       "id": "POTATO_SPREADING",
@@ -3696,10 +3846,16 @@
     },
     {
       "id": "SLEEPY_HOLLOW",
-      "name": "SLEEPY_HOLLOW",
+      "name": "Sleepy Hollow",
       "category": "Event",
       "tag": "Halloween",
-      "image": "assets/item/oddities/SkyBlock_items_sleepy_hollow.png"
+      "image": "assets/item/oddities/SkyBlock_items_sleepy_hollow.png",
+      "craft": [
+        {
+          "material": ["DARK_CANDY"],
+          "quantity": [150]
+        }
+      ]
     },
     {
       "id": "EXPIRED_PUMPKIN",
@@ -3764,6 +3920,54 @@
         {
           "material": ["VOLCANIC_ROCK"],
           "quantity": [0.5]
+        }
+      ]
+    },
+    {
+      "id": "REFINED_MINERAL",
+      "category": "Mining",
+      "tag": "event,cole",
+      "image": "assets/item/combat/Minecraft_items_light_blue_dye.png"
+    },
+    {
+      "id": "GLOSSY_GEMSTONE",
+      "category": "Mining",
+      "tag": "event,cole",
+      "image": "assets/item/combat/Minecraft_items_light_purple_dye.png"
+    },
+    {
+      "id": "JACOBS_TICKET",
+      "category": "Farming",
+      "tag": "",
+      "image": "assets/item/oddities/Minecraft_items_name_tag.png"
+    },
+    {
+      "id": "GRIFFIN_FEATHER",
+      "category": "Mythological",
+      "tag": "diana",
+      "image": "assets/item/farming/Minecraft_items_feather.png"
+    },
+    {
+      "id": "DAEDALUS_STICK",
+      "category": "Mythological",
+      "tag": "diana",
+      "image": "assets/item/oddities/SkyBlock_items_enchanted_stick.gif"
+    },
+    {
+      "id": "ANCIENT_CLAW",
+      "category": "Mythological",
+      "tag": "diana",
+      "image": "assets/item/mining/Minecraft_items_flint.png"
+    },
+    {
+      "id": "ENCHANTED_ANCIENT_CLAW",
+      "category": "Mythological",
+      "tag": "diana",
+      "image": "assets/item/mining/SkyBlock_items_enchanted_flint.gif",
+      "craft": [
+        {
+          "material": ["ANCIENT_CLAW"],
+          "quantity": [160]
         }
       ]
     },
