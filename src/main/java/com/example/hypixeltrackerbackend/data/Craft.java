@@ -30,7 +30,7 @@ public class Craft {
     public Double getCraftingCost() {
         return this.craftingCost;
     }
-    public void setCraftingCost(double craftingCost) {
+    public void setCraftingCost(Double craftingCost) {
         this.craftingCost = craftingCost;
     }
 }

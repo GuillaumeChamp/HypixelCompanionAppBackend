@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
-import java.io.InvalidObjectException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
@@ -64,6 +63,7 @@ public class DataProcessorService {
 
     /**
      * Group all the records from the given date time and the given date time plus one hour
+     *
      * @param beginning the beginning of the compression
      * @see TimeConstant
      */
@@ -81,6 +81,7 @@ public class DataProcessorService {
 
     /**
      * Group all the records from the given date time and the given date time plus one day
+     *
      * @param beginning the beginning of the compression
      * @see TimeConstant
      */
@@ -93,7 +94,7 @@ public class DataProcessorService {
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
         }
         String logString = "Successfully compress data from " + beginning + " to " + startOfWindow;
-        logger.log(Level.INFO,logString);
+        logger.log(Level.INFO, logString);
     }
 
     private void groupRecordsWithTimeStampAndWindowSize(LocalDateTime begin, Integer samplingTimeWindow) {
@@ -129,8 +130,8 @@ public class DataProcessorService {
      * @param item a completeItem to resolve, will be call recursively if needed
      */
     private void computeItemMinimalCost(CompleteItem item) {
-        if (item.getName()==null){
-            logger.log(Level.WARNING,"item without name : {0} please check if item database is up to date",item);
+        if (item.getName() == null) {
+            logger.log(Level.WARNING, "item without name : {0} please check if item database is up to date", item);
             return;
         }
         if (CollectionsUtils.isEmpty(item.getCrafts())) {
@@ -148,7 +149,7 @@ public class DataProcessorService {
         for (Craft craft : item.getCrafts()) {
             try {
                 updateMinimalCostUsingOneCraft(item, craft);
-            } catch (InvalidObjectException e) {
+            } catch (DataProcessingException e) {
                 logger.log(Level.INFO, e::getMessage);
             }
         }
@@ -159,9 +160,9 @@ public class DataProcessorService {
      *
      * @param item  the item to update
      * @param craft one craft of the item to check
-     * @throws InvalidObjectException if unable to compute craft cost
+     * @throws DataProcessingException if unable to compute craft cost
      */
-    private void updateMinimalCostUsingOneCraft(CompleteItem item, Craft craft) throws InvalidObjectException {
+    private void updateMinimalCostUsingOneCraft(CompleteItem item, Craft craft) throws DataProcessingException {
         if (craft.getCraftingCost() == null) {
             computeCraftCost(craft);
         }
@@ -193,16 +194,20 @@ public class DataProcessorService {
      * Compute the crafting cost of an item
      *
      * @param craft the craft to complete
-     * @throws InvalidObjectException is thrown if it cannot compute cost of a material
+     * @throws DataProcessingException is thrown if it cannot compute cost of a material
      */
-    private void computeCraftCost(Craft craft) throws InvalidObjectException {
+    private void computeCraftCost(Craft craft) throws DataProcessingException {
         double craftingCost = 0;
         List<String> materials = craft.getMaterialIdList();
         List<Float> quantities = craft.getQuantityOfMaterial();
         for (int i = 0; i < materials.size(); i++) {
             String materialId = materials.get(i);
             float quantity = quantities.get(i);
-            craftingCost += extractCostForAMaterial(materialId) * quantity;
+            Double extractedCost = extractCostForAMaterial(materialId);
+            if (extractedCost == null) {
+                throw new DataProcessingException("Cannot extract cost of : " + materialId);
+            }
+            craftingCost += extractedCost * quantity;
         }
         craft.setCraftingCost(craftingCost);
     }
@@ -212,11 +217,11 @@ public class DataProcessorService {
      *
      * @param materialId id of a material to find
      * @return the extracted value
-     * @throws InvalidObjectException is thrown when a material is not found or if an item have no minimal price even after a call to compute item minimal price
+     * @throws DataProcessingException is thrown when a material is not found or if an item have no minimal price even after a call to compute item minimal price
      */
-    private double extractCostForAMaterial(String materialId) throws InvalidObjectException {
+    private Double extractCostForAMaterial(String materialId) throws DataProcessingException {
         if (!completeItemHashMap.containsKey(materialId)) {
-            throw new InvalidObjectException(materialId.concat(" : is missing from local database"));
+            throw new DataProcessingException(materialId.concat(" : is missing from local database"));
         }
         CompleteItem completeItem = completeItemHashMap.get(materialId);
         ItemPricing itemPricing = completeItem.getPricing();
@@ -227,22 +232,25 @@ public class DataProcessorService {
             if (itemPricing.getMinimalPrice() == null) {
                 computeItemMinimalCost(completeItem);
             }
-            if (itemPricing.getMinimalPrice()==null){
-                throw new InvalidObjectException(materialId.concat(" : unable to compute minimal cost"));
+            if (itemPricing.getMinimalPrice() == null) {
+                throw new DataProcessingException("unable to compute minimal cost", completeItem);
             }
             minimalPrice = itemPricing.getMinimalPrice();
         }
         return minimalPrice;
     }
 
-    private double handleMissingPricing(CompleteItem completeItem) throws InvalidObjectException {
+    private double handleMissingPricing(CompleteItem completeItem) throws DataProcessingException {
         if (CollectionsUtils.isNotEmpty(completeItem.getCrafts())) {
             if (completeItem.getCrafts().get(0).getCraftingCost() == null) {
-                computeItemMinimalCost(completeItem);
+                // old school for loop to handle exception
+                for (Craft craft : completeItem.getCrafts()) {
+                    computeCraftCost(craft);
+                }
             }
             return completeItem.getCrafts().get(0).getCraftingCost();
         } else {
-            throw new InvalidObjectException(completeItem.getName() + " : no pricing and no craft, craft aborted");
+            throw new DataProcessingException("no pricing and no craft, craft aborted", completeItem);
         }
     }
 
