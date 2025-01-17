@@ -74,7 +74,7 @@ public class StaticItemMapper {
         }
         String image = object.getString(field_image);
 
-        CompleteItem completeItem = new CompleteItem(category,tag,image);
+        CompleteItem completeItem = new CompleteItem(id,category,tag,image);
         handleMissingName(completeItem,id);
 
         if (object.has("craft")){
@@ -97,6 +97,7 @@ public class StaticItemMapper {
             completeItemForEssence(completeItem,id);
         } else if (id.equals("SLEEPY_HOLLOW")) {
             completeItem.setName("Sleepy Hollow");
+            completeItem.setTier("EPIC");
         }
     }
 

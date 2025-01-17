@@ -7,6 +7,7 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompleteItem {
+    private String id;
     @JsonProperty(index=0)
     private String name;
     @JsonProperty(index=1)
@@ -24,7 +25,8 @@ public class CompleteItem {
     @JsonProperty(index = 7)
     private Float npcBuyPrice;
 
-    public CompleteItem(String category, String tag, String imagePath) {
+    public CompleteItem(String id,String category, String tag, String imagePath) {
+        this.id = id;
         this.category = category;
         this.tag = tag;
         this.imagePath = imagePath;
@@ -36,6 +38,14 @@ public class CompleteItem {
 
     public void setPricing(ItemPricing pricing) {
         this.pricing = pricing;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -90,7 +100,8 @@ public class CompleteItem {
     @Override
     public String toString() {
         return "CompleteItem{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", tier='" + tier + '\'' +
                 ", tag='" + tag + '\'' +

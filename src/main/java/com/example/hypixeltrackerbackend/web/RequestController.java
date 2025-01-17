@@ -17,7 +17,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
@@ -32,8 +31,8 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping("/bazaar")
-    Map<String, CompleteItem> current() {
-        return dataProcessorService.getLastData();
+    List<CompleteItem> current() {
+        return dataProcessorService.getLastData().values().stream().toList();
     }
 
     @CrossOrigin
