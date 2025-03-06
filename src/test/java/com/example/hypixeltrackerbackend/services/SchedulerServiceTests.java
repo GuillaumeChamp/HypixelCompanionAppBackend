@@ -24,15 +24,15 @@ class SchedulerServiceTests {
 
     @Test
     void assertDelay() {
-        LocalDateTime before = DataFetcher.getLastAnswer();
+        LocalDateTime before = HypixelApiCaller.getLastBazaarAnswer();
         if (before == null) {
             Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND+1,TimeUnit.SECONDS)
-                    .until(()-> DataFetcher.getLastAnswer()!=null);
-            before = DataFetcher.getLastAnswer();
+                    .until(()-> HypixelApiCaller.getLastBazaarAnswer()!=null);
+            before = HypixelApiCaller.getLastBazaarAnswer();
         }
         LocalDateTime finalBefore = before;
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND*2, TimeUnit.SECONDS)
-                .until(() -> !finalBefore.toLocalTime().equals(DataFetcher.getLastAnswer().toLocalTime()));
+                .until(() -> !finalBefore.toLocalTime().equals(HypixelApiCaller.getLastBazaarAnswer().toLocalTime()));
     }
 
     @Test

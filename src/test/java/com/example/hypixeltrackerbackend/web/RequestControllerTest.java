@@ -42,8 +42,8 @@ class RequestControllerTest {
                 .andDo(result -> assertThat(result.getResponse().getContentAsString())
                         .hasSizeGreaterThan(1500)
                         .contains("INK_SACK:3")
-                        .startsWith("{")
-                        .endsWith("}")
+                        .startsWith("[")
+                        .endsWith("]")
                 );
     }
 

@@ -47,7 +47,7 @@ public class SchedulerService {
 
     private void processNewestData(){
         try {
-            String response = DataFetcher.queryBazaarData();
+            String response = HypixelApiCaller.getBazaar();
             if (response == null) {
                 //already logged
                 return;
