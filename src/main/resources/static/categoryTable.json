@@ -259,7 +259,7 @@
       ]
     },
     {
-      "id": "ENCHANTED_GLISTERING_MELON",
+      "id": "SPECKLED_MELON",
       "category": "Farming",
       "tag": "melon",
       "image": "farming/SkyBlock_items_enchanted_glistering_melon.gif",
@@ -267,6 +267,18 @@
         {
           "material": ["MELON", "GOLD_INGOT"],
           "quantity": [1, 0.88888889]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_GLISTERING_MELON",
+      "category": "Farming",
+      "tag": "melon",
+      "image": "farming/SkyBlock_items_enchanted_glistering_melon.gif",
+      "craft": [
+        {
+          "material": ["SPECKLED_MELON"],
+          "quantity": [256]
         }
       ]
     },
@@ -2471,6 +2483,192 @@
       ]
     },
     {
+      "id": "UMBER",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber",
+      "image": "mining/SkyBlock_items_umber.png"
+    },
+    {
+      "id": "ENCHANTED_UMBER",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber",
+      "image": "mining/SkyBlock_items_enchanted_umber.png",
+      "craft": [
+        {
+          "material": ["UMBER"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "REFINED_UMBER",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber",
+      "image": "mining/SkyBlock_items_refined_umber.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_UMBER"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "UMBER_PLATE",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber,forge",
+      "image": "mining/SkyBlock_items_umber_plate.png",
+      "craft": [
+        {
+          "material": ["REFINED_UMBER","GLACITE_AMALGAMATION"],
+          "quantity": [4,1]
+        }
+      ]
+    },
+    {
+      "id": "UMBER_KEY",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber,forge",
+      "image": "oddities/SkyBlock_items_enchanted_dead_bush.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_UMBER","BEJEWELED_HANDLE"],
+          "quantity": [192,1]
+        }
+      ]
+    },
+    {
+      "id": "TUNGSTEN",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber",
+      "image": "mining/SkyBlock_items_tungsten.png"
+    },
+    {
+      "id": "ENCHANTED_TUNGSTEN",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber",
+      "image": "mining/SkyBlock_items_enchanted_tungsten.png",
+      "craft": [
+        {
+          "material": ["TUNGSTEN"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "REFINED_TUNGSTEN",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber",
+      "image": "mining/SkyBlock_items_refined_tungsten.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_TUNGSTEN"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "TUNGSTEN_PLATE",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber,forge",
+      "image": "mining/SkyBlock_items_umber_plate.png",
+      "craft": [
+        {
+          "material": ["REFINED_TUNGSTEN","GLACITE_AMALGAMATION"],
+          "quantity": [4,1]
+        }
+      ]
+    },
+    {
+      "id": "TUNGSTEN_KEY",
+      "category": "Mining",
+      "tag": "glacite tunnels,umber,forge",
+      "image": "oddities/SkyBlock_items_enchanted_lever.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_TUNGSTEN","BEJEWELED_HANDLE"],
+          "quantity": [192,1]
+        }
+      ]
+    },
+    {
+      "id": "GLACITE",
+      "category": "Mining",
+      "tag": "glacite tunnels,glacite",
+      "image": "mining/Minecraft_items_packed_ice.png"
+    },
+    {
+      "id": "ENCHANTED_GLACITE",
+      "category": "Mining",
+      "tag": "glacite tunnels,glacite",
+      "image": "mining/SkyBlock_items_enchanted_packed_ice.gif",
+      "craft": [
+        {
+          "material": ["GLACITE"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "GLACITE_AMALGAMATION",
+      "category": "Mining",
+      "tag": "glacite tunnels,glacite,forge",
+      "image": "mining/SkyBlock_items_glacite_amalgamation.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_GLACITE","FINE_AQUAMARINE_GEM","FINE_ONYX_GEM","FINE_PERIDOT_GEM","FINE_CITRINE_GEM"],
+          "quantity": [256,4,4,4,4]
+        }
+      ]
+    },
+    {
+      "id": "PERFECT_PLATE",
+      "category": "Mining",
+      "tag": "glacite tunnels,forge",
+      "image": "mining/SkyBlock_items_perfect_plate.png",
+      "craft": [
+        {
+          "material": ["MITHRIL_PLATE","UMBER_PLATE","TUNGSTEN_PLATE"],
+          "quantity": [1,1,1]
+        }
+      ]
+    },
+    {
+      "id": "SKELETON_KEY",
+      "category": "Mining",
+      "tag": "glacite tunnels,forge",
+      "image": "oddities/Minecraft_items_tripwire_hook.png",
+      "craft": [
+        {
+          "material": ["PERFECT_PLATE","BEJEWELED_HANDLE"],
+          "quantity": [1,1]
+        }
+      ]
+    },
+    {
+      "id": "SUSPICIOUS_SCRAP",
+      "category": "Mining",
+      "tag": "glacite tunnels",
+      "image": "mining/SkyBlock_items_suspicious_scrap.png"
+    },
+    {
+      "id": "ROTTEN_FLESH",
+      "category": "Combat",
+      "tag": "zombie,rotten flesh",
+      "image": "combat/Minecraft_items_rotten_flesh.png"
+    },
+    {
+      "id": "ENCHANTED_ROTTEN_FLESH",
+      "category": "Combat",
+      "tag": "zombie,rotten flesh",
+      "image": "combat/SkyBlock_items_enchanted_rotten_flesh.gif",
+      "craft": [
+        {
+          "material": ["ROTTEN_FLESH"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
       "id": "BONE",
       "category": "Combat",
       "tag": "skeleton,bone",
@@ -2513,10 +2711,262 @@
       ]
     },
     {
+      "id": "STRING",
+      "category": "Combat",
+      "tag": "spider,arachnids,string",
+      "image": "combat/Minecraft_items_string.png"
+    },
+    {
+      "id": "ENCHANTED_STRING",
+      "category": "Combat",
+      "tag": "spider,arachnids,string",
+      "image": "combat/SkyBlock_items_enchanted_string.gif",
+      "craft": [
+        {
+          "material": ["STRING"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "SPIDER_EYE",
+      "category": "Combat",
+      "tag": "spider,arachnids,spider eye",
+      "image": "combat/Minecraft_items_spider_eye.png"
+    },
+    {
+      "id": "ENCHANTED_SPIDER_EYE",
+      "category": "Combat",
+      "tag": "spider,arachnids,spider eye",
+      "image": "combat/SkyBlock_items_enchanted_spider_eye.gif",
+      "craft": [
+        {
+          "material": ["STRING"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_FERMENTED_SPIDER_EYE",
+      "category": "Combat",
+      "tag": "spider,arachnids,spider eye",
+      "image": "combat/SkyBlock_items_enchanted_spider_eye.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_SPIDER_EYE","SUGAR","BROWN_MUSHROOM"],
+          "quantity": [64,64,64]
+        }
+      ]
+    },
+    {
+      "id": "SOUL_STRING",
+      "category": "Combat",
+      "tag": "arachne,arachnids",
+      "image": "combat/Minecraft_items_string.png"
+    },
+    {
+      "id": "ARACHNE_KEEPER_FRAGMENT",
+      "category": "Combat",
+      "tag": "arachne,arachnids",
+      "image": "combat/SkyBlock_items_arachne_keeper_fragment.png"
+    },
+    {
+      "id": "ARACHNE_FRAGMENT",
+      "category": "Combat",
+      "tag": "arachne,arachnids",
+      "image": "combat/SkyBlock_items_arachne_fragment.png"
+    },
+    {
+      "id": "ARACHNE_FANG",
+      "category": "Combat",
+      "tag": "arachne,arachnids",
+      "image": "combat/SkyBlock_items_arachne_fang.png"
+    },
+    {
+      "id": "SULPHUR",
+      "category": "Combat",
+      "tag": "creeper,gunpowder",
+      "image": "combat/Minecraft_items_gunpowder.png"
+    },
+    {
+      "id": "ENCHANTED_GUNPOWDER",
+      "category": "Combat",
+      "tag": "creeper,gunpowder",
+      "image": "combat/SkyBlock_items_enchanted_gunpowder.gif",
+      "craft": [
+        {
+          "material": ["SULPHUR"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_FIREWORK_ROCKET",
+      "category": "Combat",
+      "tag": "creeper,gunpowder",
+      "image": "combat/SkyBlock_items_enchanted_firework_rocket.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_GUNPOWDER","PAPER"],
+          "quantity": [64,16]
+        }
+      ]
+    },
+    {
+      "id": "ENDER_PEARL",
+      "category": "Combat",
+      "tag": "enderman,ender pearl",
+      "image": "combat/Minecraft_items_ender_pearl.png"
+    },
+    {
+      "id": "ENCHANTED_ENDER_PEARL",
+      "category": "Combat",
+      "tag": "enderman,ender pearl",
+      "image": "combat/SkyBlock_items_enchanted_ender_pearl.gif",
+      "craft": [
+        {
+          "material": ["ENDER_PEARL"],
+          "quantity": [20]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_EYE_OF_ENDER",
+      "category": "Combat",
+      "tag": "enderman,ender pearl",
+      "image": "combat/SkyBlock_items_enchanted_ender_pearl.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_ENDER_PEARL","BLAZE_POWDER"],
+          "quantity": [16,64]
+        }
+      ]
+    },
+    {
+      "id": "ABSOLUTE_ENDER_PEARL",
+      "category": "Combat",
+      "tag": "enderman,ender pearl",
+      "image": "combat/SkyBlock_items_absolute_ender_pearl.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_ENDER_PEARL"],
+          "quantity": [80]
+        }
+      ]
+    },
+    {
+      "id": "TESSELLATED_ENDER_PEARL",
+      "category": "Combat",
+      "tag": "enderman,ender pearl",
+      "image": "combat/SkyBlock_items_tessellated_ender_pearl.png",
+      "craft": [
+        {
+          "material": ["ABSOLUTE_ENDER_PEARL","ENCHANTED_LAPIS_LAZULI_BLOCK"],
+          "quantity": [80,32]
+        }
+      ]
+    },
+    {
+      "id": "GHAST_TEAR",
+      "category": "Combat",
+      "tag": "ghast",
+      "image": "combat/Minecraft_items_ghast_tear.png"
+    },
+    {
+      "id": "ENCHANTED_GHAST_TEAR",
+      "category": "Combat",
+      "tag": "ghast",
+      "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif",
+      "craft": [
+        {
+          "material": ["GHAST_TEAR"],
+          "quantity": [5]
+        }
+      ]
+    },
+    {
+      "id": "SLIME_BALL",
+      "category": "Combat",
+      "tag": "slime",
+      "image": "combat/Minecraft_items_slimeball.png"
+    },
+    {
+      "id": "ENCHANTED_SLIME_BALL",
+      "category": "Combat",
+      "tag": "slime",
+      "image": "combat/SkyBlock_items_enchanted_slimeball.gif",
+      "craft": [
+        {
+          "material": ["SLIME_BALL"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_SLIME_BLOCK",
+      "category": "Combat",
+      "tag": "slime",
+      "image": "combat/SkyBlock_items_enchanted_slime_block.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_SLIME_BALL"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "POISON_SAMPLE",
+      "category": "Combat",
+      "tag": "toxic slime",
+      "image": "combat/SkyBlock_items_poison_sample.png"
+    },
+    {
+      "id": "MAGMA_CREAM",
+      "category": "Combat",
+      "tag": "magma cube",
+      "image": "combat/Minecraft_items_magma_cream.png"
+    },
+    {
+      "id": "ENCHANTED_MAGMA_CREAM",
+      "category": "Combat",
+      "tag": "magma cube",
+      "image": "combat/SkyBlock_items_enchanted_magma_cream.gif",
+      "craft": [
+        {
+          "material": ["MAGMA_CREAM"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "WHIPPED_MAGMA_CREAM",
+      "category": "Combat",
+      "tag": "magma cube",
+      "image": "combat/SkyBlock_items_whipped_magma_cream.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_MAGMA_CREAM"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
       "id": "BLAZE_ROD",
       "category": "Combat",
       "tag": "blaze",
       "image": "combat/Minecraft_items_blaze_rod.png"
+    },
+    {
+      "id": "ENCHANTED_BLAZE_POWDER",
+      "category": "Combat",
+      "tag": "blaze",
+      "image": "combat/Minecraft_items_blaze_powder.png",
+      "craft": [
+        {
+          "material": ["BLAZE_ROD"],
+          "quantity": [0.5]
+        }
+      ]
     },
     {
       "id": "ENCHANTED_BLAZE_POWDER",
@@ -2541,18 +2991,6 @@
           "quantity": [160]
         }
       ]
-    },
-    {
-      "id": "BLAZE_ASHES",
-      "category": "Combat",
-      "tag": "blaze",
-      "image": "combat/SkyBlock_items_blaze_ashes.png"
-    },
-    {
-      "id": "TARANTULA_WEB",
-      "category": "Combat",
-      "tag": "slayer,Tarantula Broodfather",
-      "image": "combat/SkyBlock_items_enchanted_string.gif"
     },
     {
       "id": "PROTECTOR_FRAGMENT",
@@ -2589,6 +3027,18 @@
       "category": "The End",
       "tag": "Draconic Sacrifice",
       "image": "combat/SkyBlock_items_ritual_residue.png"
+    },
+    {
+      "id": "BLAZE_ASHES",
+      "category": "Combat",
+      "tag": "blaze",
+      "image": "combat/SkyBlock_items_blaze_ashes.png"
+    },
+    {
+      "id": "TARANTULA_WEB",
+      "category": "Combat",
+      "tag": "slayer,Tarantula Broodfather",
+      "image": "combat/SkyBlock_items_enchanted_string.gif"
     },
     {
       "id": "GIANT_FRAGMENT_LASER",
@@ -2760,7 +3210,7 @@
       "craft": [
         {
           "material": ["RED_ROSE"],
-          "quantity": [160]
+          "quantity": [576]
         }
       ]
     },
@@ -2778,7 +3228,7 @@
       "craft": [
         {
           "material": ["YELLOW_FLOWER"],
-          "quantity": [160]
+          "quantity": [576]
         }
       ]
     },
