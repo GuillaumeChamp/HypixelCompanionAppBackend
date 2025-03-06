@@ -1,9 +1,8 @@
-package com.example.hypixeltrackerbackend.data;
+package com.example.hypixeltrackerbackend.services;
 
 import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
 import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
-import com.example.hypixeltrackerbackend.services.DataProcessorService;
-import com.example.hypixeltrackerbackend.services.SchedulerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,19 +17,16 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @SpringBootTest
 @ActiveProfiles("test")
-class GroupingDataTest {
+class DataProcessorServiceTest {
     @Autowired
     private DataProcessorService dataProcessorService;
     @Autowired
     private ItemPricingRepository repository;
-    @Autowired
-    private SchedulerService schedulerService;
 
     private static final String TEST_STRING = "test";
 
     @BeforeEach
     void setup() {
-        schedulerService.stop();
         repository.deleteAll();
     }
 
@@ -55,19 +51,15 @@ class GroupingDataTest {
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
-        assertThat(pricing).hasSize(2)
-                .allSatisfy(e -> assertThat(e.getLastUpdate())
-                        .isEqualTo(testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES)))
-                .anySatisfy(e -> {
-                    assertThat(e.getItemId()).isEqualTo(testItemId1);
-                    assertThat(e.getSellPrice()).isEqualTo(9);
-                    assertThat(e.getBuyPrice()).isEqualTo(11);
-                })
-                .anySatisfy(e -> {
-                    assertThat(e.getItemId()).isEqualTo(testItemId2);
-                    assertThat(e.getSellPrice()).isEqualTo(3);
-                    assertThat(e.getBuyPrice()).isEqualTo(7);
-                });
+        assertThat(pricing).hasSize(2).allSatisfy(e -> assertThat(e.getLastUpdate()).isEqualTo(testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES))).anySatisfy(e -> {
+            assertThat(e.getItemId()).isEqualTo(testItemId1);
+            assertThat(e.getSellPrice()).isEqualTo(9);
+            assertThat(e.getBuyPrice()).isEqualTo(11);
+        }).anySatisfy(e -> {
+            assertThat(e.getItemId()).isEqualTo(testItemId2);
+            assertThat(e.getSellPrice()).isEqualTo(3);
+            assertThat(e.getBuyPrice()).isEqualTo(7);
+        });
     }
 
     @Test
@@ -84,20 +76,17 @@ class GroupingDataTest {
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
-        assertThat(pricing).hasSize(2)
-                .allSatisfy(e -> assertThat(e.getItemId()).isEqualTo(TEST_STRING))
-                .anySatisfy(e -> {
-                    assertThat(e.getSellPrice()).isEqualTo(9);
-                    assertThat(e.getBuyPrice()).isEqualTo(11);
-                    final LocalDateTime expectedTimestamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
-                    assertThat(e.getLastUpdate().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
-                })
-                .anySatisfy(e -> {
-                    assertThat(e.getSellPrice()).isEqualTo(18);
-                    assertThat(e.getBuyPrice()).isEqualTo(35);
-                    final LocalDateTime expectedTimestamp = secondTimeStamp.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
-                    assertThat(e.getLastUpdate().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
-                });
+        assertThat(pricing).hasSize(2).allSatisfy(e -> assertThat(e.getItemId()).isEqualTo(TEST_STRING)).anySatisfy(e -> {
+            assertThat(e.getSellPrice()).isEqualTo(9);
+            assertThat(e.getBuyPrice()).isEqualTo(11);
+            final LocalDateTime expectedTimestamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+            assertThat(e.getLastUpdate().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
+        }).anySatisfy(e -> {
+            assertThat(e.getSellPrice()).isEqualTo(18);
+            assertThat(e.getBuyPrice()).isEqualTo(35);
+            final LocalDateTime expectedTimestamp = secondTimeStamp.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+            assertThat(e.getLastUpdate().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
+        });
     }
 
     @Test

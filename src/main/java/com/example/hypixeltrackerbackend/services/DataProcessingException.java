@@ -1,7 +1,7 @@
 package com.example.hypixeltrackerbackend.services;
 
-import com.example.hypixeltrackerbackend.data.CompleteItem;
-import com.example.hypixeltrackerbackend.data.Craft;
+import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
+import com.example.hypixeltrackerbackend.data.bazaar.Craft;
 
 import java.io.IOException;
 

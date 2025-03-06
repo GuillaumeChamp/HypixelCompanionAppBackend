@@ -26,7 +26,7 @@ class UUIDRequestParserTest {
     void shouldParseSampleRequest() throws IOException, HTTPRequestException {
         String payload = Files.readString(Path.of("src/test/resources/playerdb_sample_request.json"));
         HttpResponse<String> response = createMockHttpResponse(500, payload);
-        assertThat(UUIDRequestParser.parse(response)).isEqualTo(AYPIERRE_ID);
+        assertThat(UUIDRequestParser.parse(response).uuid()).isEqualTo(AYPIERRE_ID);
     }
 
     @Test

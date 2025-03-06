@@ -1,5 +1,6 @@
 package com.example.hypixeltrackerbackend.services;
 
+import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +13,7 @@ class HypixelApiCallerTest {
     @Test
     void shouldDataBeRecovered() {
         String payload = HypixelApiCaller.getBazaar();
-        assertThat(payload)
-                .isNotEmpty()
-                .startsWith("{")
-                .contains("\"success\":true,")
-                .contains("\"products\":{")
-                .endsWith("}");
+        assertThat(payload).isNotEmpty().startsWith("{").contains("\"success\":true,").contains("\"products\":{").endsWith("}");
     }
 
     @Test
@@ -30,23 +26,23 @@ class HypixelApiCallerTest {
 
     @Disabled("Disabled util received a permanent api key")
     @Test
-    void shouldProfileQueryWorkProperly(){
-        assertThatNoException().isThrownBy(()->{
+    void shouldProfileQueryWorkProperly() {
+        assertThatNoException().isThrownBy(() -> {
             String answer = HypixelApiCaller.getProfileByUUID("75957f87-aaea-4952-953b-6ca217a2654d");
             assertThat(answer).isNotEmpty();
         });
     }
 
     @Test
-    void shouldUUIDRequestWorkProperly(){
-        assertThatNoException().isThrownBy(()->{
-            String responseCode = HypixelApiCaller.getUUIDFromUsername("TestSubject14840");
-            assertThat(responseCode).isEqualTo("75957f87-aaea-4952-953b-6ca217a2654d");
+    void shouldUUIDRequestWorkProperly() {
+        assertThatNoException().isThrownBy(() -> {
+            UUIDResponse responseCode = HypixelApiCaller.getUUIDFromUsername("TestSubject14840");
+            assertThat(responseCode.uuid()).isEqualTo("75957f87-aaea-4952-953b-6ca217a2654d");
         });
     }
 
     @Test
-    void shouldUUIDRequestFailProperly(){
-        assertThatThrownBy(()-> HypixelApiCaller.getUUIDFromUsername("eazehbjkasjlcjxjcbkjsgblkjzaze")).isInstanceOf(HTTPRequestException.class).hasMessageContaining("bad request");
+    void shouldUUIDRequestFailProperly() {
+        assertThatThrownBy(() -> HypixelApiCaller.getUUIDFromUsername("eazehbjkasjlcjxjcbkjsgblkjzaze")).isInstanceOf(HTTPRequestException.class).hasMessageContaining("bad request");
     }
 }

@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.data;
+package com.example.hypixeltrackerbackend.data.museum;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.json.JSONObject;

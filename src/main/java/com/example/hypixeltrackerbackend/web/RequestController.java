@@ -1,10 +1,13 @@
 package com.example.hypixeltrackerbackend.web;
 
-import com.example.hypixeltrackerbackend.data.CompleteItem;
-import com.example.hypixeltrackerbackend.data.MuseumItem;
-import com.example.hypixeltrackerbackend.data.MuseumItemMapper;
-import com.example.hypixeltrackerbackend.data.PricingRecord;
+import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
+import com.example.hypixeltrackerbackend.data.museum.MuseumItem;
+import com.example.hypixeltrackerbackend.data.mapper.MuseumItemMapper;
+import com.example.hypixeltrackerbackend.data.bazaar.PricingRecord;
+import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.services.DataProcessorService;
+import com.example.hypixeltrackerbackend.services.HTTPRequestException;
+import com.example.hypixeltrackerbackend.services.HypixelApiCaller;
 import com.example.hypixeltrackerbackend.utils.CollectionsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,6 +50,16 @@ public class RequestController {
     }
 
     @CrossOrigin
+    @GetMapping(value = {"/uuid/{username}"})
+    UUIDResponse getPlayerUUID(@PathVariable("username") String username ) {
+        try {
+            return HypixelApiCaller.getUUIDFromUsername(username);
+        } catch (HTTPRequestException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username) ;
+        }
+    }
+
+    @CrossOrigin
     @GetMapping("/museum")
     List<MuseumItem> getMuseumItems(){
         try {
@@ -60,15 +73,17 @@ public class RequestController {
     @GetMapping(value = {"/bazaar/compress"})
     String compressData() {
         LocalDateTime now = LocalDateTime.now();
-        // compress last week
-        for (int i = 2; i < 7; i++) {
-            dataProcessorService.groupOneDayRecords(now.minusDays(i));
-        }
-        // compress last day
-        for (int i=2;i<24;i++){
-            dataProcessorService.groupOneHourRecords(now.minusHours(i));
-        }
-        return "ok";
+        new Thread(()->{
+            // compress last week
+            for (int i = 2; i < 7; i++) {
+                dataProcessorService.groupOneDayRecords(now.minusDays(i));
+            }
+            // compress last day
+            for (int i=2;i<24;i++){
+                dataProcessorService.groupOneHourRecords(now.minusHours(i));
+            }
+        }).start();
+        return "compressing data...";
     }
 
 

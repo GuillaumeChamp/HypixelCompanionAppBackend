@@ -1,5 +1,6 @@
 package com.example.hypixeltrackerbackend.services;
 
+import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.utils.UUIDRequestParser;
 import org.springframework.http.HttpStatus;
 
@@ -21,6 +22,10 @@ public class HypixelApiCaller {
     private static final String API_KEY = System.getenv("HYPIXEL_API_KEY");
 
     private HypixelApiCaller() {
+    }
+
+    public static LocalDateTime getLastBazaarAnswer() {
+        return HypixelApiCaller.lastBazaarAnswer;
     }
 
     /**
@@ -68,7 +73,7 @@ public class HypixelApiCaller {
      * @return a full player uuid
      * @throws HTTPRequestException if player is not found or an error occurred with the http response
      */
-    public static String getUUIDFromUsername(String username) throws HTTPRequestException {
+    public static UUIDResponse getUUIDFromUsername(String username) throws HTTPRequestException {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .uri(URI.create(PLAYER_DB_ENDPOINT + username))
@@ -92,7 +97,4 @@ public class HypixelApiCaller {
         }
     }
 
-    public static LocalDateTime getLastBazaarAnswer() {
-        return HypixelApiCaller.lastBazaarAnswer;
-    }
 }

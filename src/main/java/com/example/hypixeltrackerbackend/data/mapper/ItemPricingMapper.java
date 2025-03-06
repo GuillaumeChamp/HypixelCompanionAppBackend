@@ -1,5 +1,6 @@
-package com.example.hypixeltrackerbackend.data;
+package com.example.hypixeltrackerbackend.data.mapper;
 
+import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

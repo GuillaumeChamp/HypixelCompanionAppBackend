@@ -1,1 +1,25 @@
-{"code":"player.found","message":"Successfully found player by given ID.","data":{"player":{"meta":{"cached_at":1740952822},"username":"aypierre","id":"6c4ea7ff-b834-408c-9368-fbd2a164ee0c","raw_id":"6c4ea7ffb834408c9368fbd2a164ee0c","avatar":"https://crafthead.net/avatar/6c4ea7ffb834408c9368fbd2a164ee0c","skin_texture":"http://textures.minecraft.net/texture/fc3a2e8e6071108667a0d138945712dc6bb45afefb6d7fed403e9797b2e1a0f","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTc0MDY2ODMwNDU0OCwKICAicHJvZmlsZUlkIiA6ICI2YzRlYTdmZmI4MzQ0MDhjOTM2OGZiZDJhMTY0ZWUwYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJheXBpZXJyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mYzNhMmU4ZTYwNzExMDg2NjdhMGQxMzg5NDU3MTJkYzZiYjQ1YWZlZmI2ZDdmZWQ0MDNlOTc5N2IyZTFhMGYiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EyZThkOTdlYzc5MTAwZTkwYTc1ZDM2OWQxYjNiYTgxMjczYzRmODJiYzFiNzM3ZTkzNGVlZDRhODU0YmUxYjYiCiAgICB9CiAgfQp9","signature":"NdbMa/fl51n9wEaVlZEnzeN7HROMpWJ9YDiR5W+gf1br3lGANFn02V0xt0PhVJXWDAmUL0tn0LmwE6PY0ORI+octMs6bvzdS6VjZokWoFWVZ12Fd7R0eEVV6CfMpKgJ/Yo3DfCHhrH5o8RHkWF559wGmw2QU9YQzYcPmlXVvRCGGc5EOYiX09gite923d+nUaWSm21wmlaHzCZIycYNnfLOmxpm0GJ+dKhnlIw7JIHYX4Rd+XmmZfCPYAx669cE2AHRQmqolOdPwLkXtWerDLAl1Y3JO9wc1AZ4/5bvw4OvqW1OFRXt9xfqfjFjF3h5Lwl3/FUURQvqDeWRavFtDobBvFjmTu/Ul2vvUSyjvpmH04U2JUG6xKPxHG1wxmA2ZHhLX13xmtuLEFvzE9z3lOpCMavaAAnAjq+n1gsPRoF4FbwXu4Sm/rBFpit46PpmT0+6UJ+4PIBGNZJYh0d6hf5zLvZRP86Fmn3EbfFxMpLGhdRWA0nAXvXK+hCag0dWxWLfrDrBvOn1tlYxARoxr0Q1W7D/bRQAcwVeRGa8W0V8sJJRKqT+/I1xjgSr7ubSUnO6/TpULW1X1rRUGIIaYdj4BHqxh2wZqnUGaxX0wYaqglS5mh7IsI+RgISubqQ1O9TkQDIeXH9vofPy7Dc4FiYyo+5CVhiLOarog88gvh9c="}],"name_history":[]}},"success":true}
+{
+  "code": "player.found",
+  "message": "Successfully found player by given ID.",
+  "data": {
+    "player": {
+      "meta": {
+        "cached_at": 1740952822
+      },
+      "username": "aypierre",
+      "id": "6c4ea7ff-b834-408c-9368-fbd2a164ee0c",
+      "raw_id": "6c4ea7ffb834408c9368fbd2a164ee0c",
+      "avatar": "https://crafthead.net/avatar/6c4ea7ffb834408c9368fbd2a164ee0c",
+      "skin_texture": "http://textures.minecraft.net/texture/fc3a2e8e6071108667a0d138945712dc6bb45afefb6d7fed403e9797b2e1a0f",
+      "properties": [
+        {
+          "name": "textures",
+          "value": "ewogICJ0aW1lc3RhbXAiIDogMTc0MDY2ODMwNDU0OCwKICAicHJvZmlsZUlkIiA6ICI2YzRlYTdmZmI4MzQ0MDhjOTM2OGZiZDJhMTY0ZWUwYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJheXBpZXJyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mYzNhMmU4ZTYwNzExMDg2NjdhMGQxMzg5NDU3MTJkYzZiYjQ1YWZlZmI2ZDdmZWQ0MDNlOTc5N2IyZTFhMGYiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EyZThkOTdlYzc5MTAwZTkwYTc1ZDM2OWQxYjNiYTgxMjczYzRmODJiYzFiNzM3ZTkzNGVlZDRhODU0YmUxYjYiCiAgICB9CiAgfQp9",
+          "signature": "NdbMa/fl51n9wEaVlZEnzeN7HROMpWJ9YDiR5W+gf1br3lGANFn02V0xt0PhVJXWDAmUL0tn0LmwE6PY0ORI+octMs6bvzdS6VjZokWoFWVZ12Fd7R0eEVV6CfMpKgJ/Yo3DfCHhrH5o8RHkWF559wGmw2QU9YQzYcPmlXVvRCGGc5EOYiX09gite923d+nUaWSm21wmlaHzCZIycYNnfLOmxpm0GJ+dKhnlIw7JIHYX4Rd+XmmZfCPYAx669cE2AHRQmqolOdPwLkXtWerDLAl1Y3JO9wc1AZ4/5bvw4OvqW1OFRXt9xfqfjFjF3h5Lwl3/FUURQvqDeWRavFtDobBvFjmTu/Ul2vvUSyjvpmH04U2JUG6xKPxHG1wxmA2ZHhLX13xmtuLEFvzE9z3lOpCMavaAAnAjq+n1gsPRoF4FbwXu4Sm/rBFpit46PpmT0+6UJ+4PIBGNZJYh0d6hf5zLvZRP86Fmn3EbfFxMpLGhdRWA0nAXvXK+hCag0dWxWLfrDrBvOn1tlYxARoxr0Q1W7D/bRQAcwVeRGa8W0V8sJJRKqT+/I1xjgSr7ubSUnO6/TpULW1X1rRUGIIaYdj4BHqxh2wZqnUGaxX0wYaqglS5mh7IsI+RgISubqQ1O9TkQDIeXH9vofPy7Dc4FiYyo+5CVhiLOarog88gvh9c="
+        }
+      ],
+      "name_history": []
+    }
+  },
+  "success": true
+}

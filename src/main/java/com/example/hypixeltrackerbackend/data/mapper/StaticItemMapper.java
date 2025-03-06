@@ -1,5 +1,7 @@
-package com.example.hypixeltrackerbackend.data;
+package com.example.hypixeltrackerbackend.data.mapper;
 
+import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
+import com.example.hypixeltrackerbackend.data.bazaar.Craft;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,7 +27,7 @@ public class StaticItemMapper {
      * @return a map of the items using the id as a key
      * @throws IOException if an error occurred while reading the local database
      */
-    public static Map<String,CompleteItem> generate() throws IOException {
+    public static Map<String, CompleteItem> generate() throws IOException {
 
         try (InputStream stream1 = StaticItemMapper.class.getResourceAsStream("/static/categoryTable.json");
              InputStream stream2 = StaticItemMapper.class.getResourceAsStream("/static/items.json")

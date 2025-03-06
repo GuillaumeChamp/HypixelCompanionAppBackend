@@ -1,11 +1,14 @@
 package com.example.hypixeltrackerbackend.utils;
 
+import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.services.HTTPRequestException;
 import org.json.JSONObject;
 
 import java.net.http.HttpResponse;
 
 public class UUIDRequestParser {
+    private static final String DATA_FIELD = "data";
+
     private UUIDRequestParser() {
     }
 
@@ -16,7 +19,7 @@ public class UUIDRequestParser {
      * @return the player full uuid
      * @throws HTTPRequestException if a bad request answer is processed
      */
-    public static String parse(HttpResponse<String> responseBody) throws HTTPRequestException {
+    public static UUIDResponse parse(HttpResponse<String> responseBody) throws HTTPRequestException {
         // unnecessary check because bad response are not parsed
         if (responseBody == null) {
             throw new HTTPRequestException("Response body is null");
@@ -26,7 +29,7 @@ public class UUIDRequestParser {
         if (!answerBody.getBoolean("success")) {
             throw new HTTPRequestException("player not found");
         }
-        JSONObject player = answerBody.getJSONObject("data").getJSONObject("player");
-        return player.getString("id");
+        JSONObject player = answerBody.getJSONObject(DATA_FIELD).getJSONObject("player");
+        return new UUIDResponse(player.getString("id"), player.getString("username"), player.getString("avatar"));
     }
 }

@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.data;
+package com.example.hypixeltrackerbackend.data.bazaar;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
