@@ -49,17 +49,20 @@ class DataProcessorServiceTest {
         repository.save(itemPricing4);
 
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
-
-        List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
-        assertThat(pricing).hasSize(2).allSatisfy(e -> assertThat(e.getLastUpdate()).isEqualTo(testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES))).anySatisfy(e -> {
-            assertThat(e.getItemId()).isEqualTo(testItemId1);
+        LocalDateTime compressedUpdateTime = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        List<ItemPricing> pricing1 = repository.findAllByItemId(testItemId1);
+        assertThat(pricing1).singleElement().satisfies(e->{
+            assertThat(e.getLastUpdate()).isEqualTo(compressedUpdateTime);
             assertThat(e.getSellPrice()).isEqualTo(9);
             assertThat(e.getBuyPrice()).isEqualTo(11);
-        }).anySatisfy(e -> {
-            assertThat(e.getItemId()).isEqualTo(testItemId2);
-            assertThat(e.getSellPrice()).isEqualTo(3);
-            assertThat(e.getBuyPrice()).isEqualTo(7);
         });
+
+        List<ItemPricing> pricing2 = repository.findAllByItemId(testItemId2);
+        assertThat(pricing2).singleElement().satisfies(e -> {
+                    assertThat(e.getLastUpdate()).isEqualTo(compressedUpdateTime);
+                    assertThat(e.getSellPrice()).isEqualTo(3);
+                    assertThat(e.getBuyPrice()).isEqualTo(7);
+                });
     }
 
     @Test
@@ -75,8 +78,8 @@ class DataProcessorServiceTest {
 
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
-        List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
-        assertThat(pricing).hasSize(2).allSatisfy(e -> assertThat(e.getItemId()).isEqualTo(TEST_STRING)).anySatisfy(e -> {
+        List<ItemPricing> pricing = repository.findAllByItemId(TEST_STRING);
+        assertThat(pricing).hasSize(2).anySatisfy(e -> {
             assertThat(e.getSellPrice()).isEqualTo(9);
             assertThat(e.getBuyPrice()).isEqualTo(11);
             final LocalDateTime expectedTimestamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
@@ -103,7 +106,7 @@ class DataProcessorServiceTest {
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
-        List<ItemPricing> pricing = (List<ItemPricing>) repository.findAll();
+        List<ItemPricing> pricing = repository.findAllByItemId(TEST_STRING);
         assertThat(pricing).hasSize(2);
     }
 }

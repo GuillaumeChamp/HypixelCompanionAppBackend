@@ -20,4 +20,6 @@ public interface ItemPricingRepository extends CrudRepository<ItemPricing, Long>
                                                  @Param("after") LocalDateTime after);
 
     void deleteAllByLastUpdateBetween(LocalDateTime before, LocalDateTime after);
+
+    List<ItemPricing> findAllByItemId(String itemId);
 }
