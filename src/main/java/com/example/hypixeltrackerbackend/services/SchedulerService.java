@@ -40,21 +40,17 @@ public class SchedulerService {
         scheduleTaskExecutor = Executors.newScheduledThreadPool(3);
         dataProcessorService.preloadData();
         scheduleTaskExecutor.scheduleAtFixedRate(this::processNewestData, 0, TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS);
-        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
-        scheduleTaskExecutor.scheduleAtFixedRate(()->dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
+        scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
+        scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
         logger.log(Level.INFO, "Scheduler started !");
     }
 
-    private void processNewestData(){
+    private void processNewestData() {
         try {
             String response = HypixelApiCaller.getBazaar();
-            if (response == null) {
-                //already logged
-                return;
-            }
             dataProcessorService.updateBazaarPrice(response);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, ()->"Error while processing request : " + e.getMessage());
+            logger.log(Level.WARNING, parseException(e));
         }
     }
 
@@ -64,7 +60,11 @@ public class SchedulerService {
         logger.log(Level.INFO, "Scheduler stopped !");
     }
 
-    public boolean isStarted(){
-        return this.scheduleTaskExecutor !=null && this.isRunning;
+    public boolean isStarted() {
+        return this.scheduleTaskExecutor != null && this.isRunning;
+    }
+
+    private String parseException(Exception e) {
+        return "Error while processing bazaar request : [" + e.getClass().getName() + "] " + e.getMessage();
     }
 }

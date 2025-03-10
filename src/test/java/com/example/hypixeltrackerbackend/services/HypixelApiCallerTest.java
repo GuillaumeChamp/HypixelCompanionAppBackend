@@ -11,13 +11,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.*;
 class HypixelApiCallerTest {
 
     @Test
-    void shouldDataBeRecovered() {
+    void shouldDataBeRecovered() throws HTTPRequestException {
         String payload = HypixelApiCaller.getBazaar();
         assertThat(payload).isNotEmpty().startsWith("{").contains("\"success\":true,").contains("\"products\":{").endsWith("}");
     }
 
     @Test
-    void shouldLastAnswerBeUpdated() {
+    void shouldLastAnswerBeUpdated() throws HTTPRequestException {
         LocalDateTime before = HypixelApiCaller.getLastBazaarAnswer();
         HypixelApiCaller.getBazaar();
         LocalDateTime after = HypixelApiCaller.getLastBazaarAnswer();

@@ -33,20 +33,15 @@ public class HypixelApiCaller {
      *
      * @return a string with the content of the request, null if an error occurred and log the error
      */
-    public static String getBazaar() {
+    public static String getBazaar() throws HTTPRequestException {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .uri(URI.create(API_ENDPOINT.concat("bazaar")))
                 .build();
-        try {
-            HttpResponse<String> response = sendRequest(request);
-            logger.log(Level.INFO, () -> "successfully recovered bazaar data.");
-            HypixelApiCaller.lastBazaarAnswer = LocalDateTime.now();
-            return response.body();
-        } catch (HTTPRequestException e) {
-            logger.log(Level.WARNING, () -> "No response received");
-            return null;
-        }
+        HttpResponse<String> response = sendRequest(request);
+        logger.log(Level.INFO, () -> "successfully recovered bazaar data.");
+        HypixelApiCaller.lastBazaarAnswer = LocalDateTime.now();
+        return response.body();
     }
 
     /**
