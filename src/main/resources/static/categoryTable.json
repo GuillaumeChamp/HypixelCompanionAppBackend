@@ -2957,7 +2957,7 @@
       "image": "combat/Minecraft_items_blaze_rod.png"
     },
     {
-      "id": "ENCHANTED_BLAZE_POWDER",
+      "id": "BLAZE_POWDER",
       "category": "Combat",
       "tag": "blaze",
       "image": "combat/Minecraft_items_blaze_powder.png",
@@ -2993,6 +2993,18 @@
       ]
     },
     {
+      "id": "SUMMONING_EYE",
+      "category": "Combat",
+      "tag": "The End,summoning eye",
+      "image": "combat/SkyBlock_items_summoning_eye.png"
+    },
+    {
+      "id": "CRYSTAL_FRAGMENT",
+      "category": "Combat",
+      "tag": "The End,Crystal Fragment",
+      "image": "mining/SkyBlock_items_enchanted_quartz.gif"
+    },
+    {
       "id": "PROTECTOR_FRAGMENT",
       "category": "Combat",
       "tag": "The End,Dragon Fragments",
@@ -3011,10 +3023,118 @@
       "image": "combat/SkyBlock_items_unstable_fragment.png"
     },
     {
-      "id": "TWILIGHT_ARROW_POISON",
+      "id": "STRONG_FRAGMENT",
       "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "tag": "The End,Dragon Fragments",
+      "image": "combat/SkyBlock_items_strong_fragment.png"
+    },
+    {
+      "id": "WISE_FRAGMENT",
+      "category": "Combat",
+      "tag": "The End,Dragon Fragments",
+      "image": "combat/SkyBlock_items_wise_fragment.png"
+    },
+    {
+      "id": "YOUNG_FRAGMENT",
+      "category": "Combat",
+      "tag": "The End,Dragon Fragments",
+      "image": "combat/SkyBlock_items_young_fragment.png"
+    },
+    {
+      "id": "SUPERIOR_FRAGMENT",
+      "category": "Combat",
+      "tag": "The End,Dragon Fragments",
+      "image": "combat/SkyBlock_items_superior_fragment.png"
+    },
+    {
+      "id": "HOLY_FRAGMENT",
+      "category": "Combat",
+      "tag": "The End,Dragon Fragments",
+      "image": "combat/SkyBlock_items_holy_fragment.png"
+    },
+    {
+      "id": "RITUAL_RESIDUE",
+      "category": "Combat",
+      "tag": "The End,Draconic Sacrifice",
+      "image": "combat/SkyBlock_items_ritual_residue.png"
+    },
+    {
+      "id": "MITE_GEL",
+      "category": "Combat",
+      "tag": "The End,Draconic Sacrifice",
       "image": "oddities/Minecraft_items_purple_dye.png"
+    },
+    {
+      "id": "BLAZE_ASHES",
+      "category": "Combat",
+      "tag": "Crimson Isle,Mob Drops,blaze",
+      "image": "combat/SkyBlock_items_blaze_ashes.png"
+    },
+    {
+      "id": "REVENANT_FLESH",
+      "category": "Combat",
+      "tag": "slayer,Revenant Horror",
+      "image": "combat/SkyBlock_items_enchanted_rotten_flesh.gif"
+    },
+    {
+      "id": "REVENANT_VISCERA",
+      "category": "Combat",
+      "tag": "slayer,Revenant Horror",
+      "image": "farming/SkyBlock_items_enchanted_grilled_porkchop.gif",
+      "craft": [
+        {
+          "material": ["REVENANT_FLESH", "ENCHANTED_STRING"],
+          "quantity": [128, 32]
+        }
+      ]
+    },
+    {
+      "id": "GOLDEN_POWDER",
+      "category": "Combat",
+      "tag": "slayer,Revenant Horror, golden ghoul",
+      "image": "mining/SkyBlock_items_enchanted_glowstone_dust.gif"
+    },
+    {
+      "id": "UNDEAD_CATALYST",
+      "category": "Combat",
+      "tag": "slayer,Revenant Horror",
+      "image": "combat/SkyBlock_items_undead_catalyst.png"
+    },
+    {
+      "id": "REVENANT_CATALYST",
+      "category": "Combat",
+      "tag": "slayer,Revenant Horror",
+      "image": "combat/SkyBlock_items_revenant_catalyst.png"
+    },
+    {
+      "id": "TARANTULA_WEB",
+      "category": "Combat",
+      "tag": "slayer,Tarantula Broodfather",
+      "image": "combat/SkyBlock_items_enchanted_string.gif"
+    },
+    {
+      "id": "TARANTULA_SILK",
+      "category": "Combat",
+      "tag": "slayer,Tarantula Broodfather",
+      "image": "combat/SkyBlock_items_enchanted_cobweb.gif",
+      "craft": [
+        {
+          "material": ["TARANTULA_WEB", "ENCHANTED_FLINT"],
+          "quantity": [128, 32]
+        }
+      ]
+    },
+    {
+      "id": "SPIDER_CATALYST",
+      "category": "Combat",
+      "tag": "slayer,Tarantula Broodfather",
+      "image": "combat/SkyBlock_items_spider_catalyst.png"
+    },
+    {
+      "id": "FLY_SWATTER",
+      "category": "Combat",
+      "tag": "slayer,Tarantula Broodfather",
+      "image": "oddities/SkyBlock_items_enchanted_golden_shovel.gif"
     },
     {
       "id": "TOXIC_ARROW_POISON",
@@ -3023,22 +3143,130 @@
       "image": "oddities/Minecraft_items_lime_dye.png"
     },
     {
-      "id": "RITUAL_RESIDUE",
-      "category": "The End",
-      "tag": "Draconic Sacrifice",
-      "image": "combat/SkyBlock_items_ritual_residue.png"
+      "id": "WOLF_TOOTH",
+      "category": "Combat",
+      "tag": "Slayer,Sven Packmaster",
+      "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
-      "id": "BLAZE_ASHES",
+      "id": "GOLDEN_TOOTH",
       "category": "Combat",
-      "tag": "blaze",
-      "image": "combat/SkyBlock_items_blaze_ashes.png"
+      "tag": "Slayer,Sven Packmaster",
+      "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif",
+      "craft": [
+        {
+          "material": ["WOLF_TOOTH", "ENCHANTED_GOLD"],
+          "quantity": [128, 32]
+        }
+      ]
     },
     {
-      "id": "TARANTULA_WEB",
+      "id": "WEAK_WOLF_CATALYST",
       "category": "Combat",
-      "tag": "slayer,Tarantula Broodfather",
-      "image": "combat/SkyBlock_items_enchanted_string.gif"
+      "tag": "Slayer,Sven Packmaster",
+      "image": "combat/SkyBlock_items_enchanted_bone.gif"
+    },
+    {
+      "id": "NULL_SPHERE",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "oddities/SkyBlock_items_enchanted_firework_star.gif"
+    },
+    {
+      "id": "NULL_OVOID",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "combat/SkyBlock_items_enchanted_enderman_spawn_egg.gif",
+      "craft": [
+        {
+          "material": ["NULL_SPHERE", "ENCHANTED_OBSIDIAN"],
+          "quantity": [128, 32]
+        }
+      ]
+    },
+    {
+      "id": "NULL_ATOM",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "oddities/SkyBlock_items_enchanted_oak_button.gif"
+    },
+    {
+      "id": "RAW_SOULFLOW",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph,soulflow",
+      "image": "combat/SkyBlock_items_raw_soulflow.png"
+    },
+    {
+      "id": "SOULFLOW",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph,soulflow",
+      "image": "combat/SkyBlock_items_soulflow.png",
+      "craft": [
+        {
+          "material": ["RAW_SOULFLOW"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "BRAIDED_GRIFFIN_FEATHER",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "combat/SkyBlock_items_enchanted_string.gif",
+      "craft": [
+        {
+          "material": ["GRIFFIN_FEATHER","SOUL_STRING"],
+          "quantity": [160, 256]
+        }
+      ]
+    },
+    {
+      "id": "TWILIGHT_ARROW_POISON",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "oddities/Minecraft_items_purple_dye.png"
+    },
+    {
+      "id": "NULL_BLADE",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "oddities/SkyBlock_items_enchanted_shears.gif",
+      "craft": [
+        {
+          "material": ["NULL_OVOID", "ENCHANTED_QUARTZ_BLOCK", "NULL_EDGE"],
+          "quantity": [64, 64, 3]
+        }
+      ]
+    },
+    {
+      "id": "NULL_EDGE",
+      "category": "Combat",
+      "tag": "Slayer,Voidgloom Seraph",
+      "image": "oddities/SkyBlock_items_enchanted_stick.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_MITHRIL", "NULL_ATOM"],
+          "quantity": [192, 3]
+        }
+      ]
+    },
+    {
+      "id": "DERELICT_ASHE",
+      "category": "Combat",
+      "tag": "slayer,Inferno Demonlord",
+      "image": "combat/SkyBlock_items_enchanted_spider_spawn_egg.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_GLOWSTONE_DUST", "ENCHANTED_MAGMA_CREAM", "ENCHANTED_BLAZE_POWDER", "ENCHANTED_NETHER_STALK", "ENCHANTED_MYCELIUM", "ENCHANTED_RED_SAND"],
+          "quantity": [32, 32, 32, 32, 8, 8]
+        }
+      ]
+    },
+    {
+      "id": "DERELICT_ASHE",
+      "category": "Combat",
+      "tag": "slayer,Inferno Demonlord",
+      "image": "combat/SkyBlock_items_enchanted_gunpowder.gif"
     },
     {
       "id": "GIANT_FRAGMENT_LASER",
