@@ -6,8 +6,8 @@ import com.example.hypixeltrackerbackend.data.mapper.MuseumItemMapper;
 import com.example.hypixeltrackerbackend.data.bazaar.PricingRecord;
 import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.services.DataProcessorService;
-import com.example.hypixeltrackerbackend.services.HTTPRequestException;
-import com.example.hypixeltrackerbackend.services.HypixelApiCaller;
+import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
+import com.example.hypixeltrackerbackend.services.ApiFetcherService;
 import com.example.hypixeltrackerbackend.utils.CollectionsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,10 +26,12 @@ import java.util.List;
 public class RequestController {
     private static final String DEFAULT_TIME_WINDOW = "hour";
     private final DataProcessorService dataProcessorService;
+    private final ApiFetcherService apiFetcherService;
 
     @Autowired
-    public RequestController(DataProcessorService dataProcessorService) {
+    public RequestController(DataProcessorService dataProcessorService, ApiFetcherService apiFetcherService) {
         this.dataProcessorService = dataProcessorService;
+        this.apiFetcherService = apiFetcherService;
     }
 
     @CrossOrigin
@@ -53,7 +55,7 @@ public class RequestController {
     @GetMapping(value = {"/uuid/{username}"})
     UUIDResponse getPlayerUUID(@PathVariable("username") String username ) {
         try {
-            return HypixelApiCaller.getUUIDFromUsername(username);
+            return apiFetcherService.getUUIDFromUsername(username);
         } catch (HTTPRequestException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username) ;
         }

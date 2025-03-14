@@ -16,6 +16,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 class SchedulerServiceTests {
     @Autowired
     SchedulerService schedulerService;
+    @Autowired
+    ApiFetcherService apiFetcherService;
 
     @Test
     void shouldSchedulerStartAutomatically(){
@@ -24,15 +26,15 @@ class SchedulerServiceTests {
 
     @Test
     void assertDelay() {
-        LocalDateTime before = HypixelApiCaller.getLastBazaarAnswer();
+        LocalDateTime before = apiFetcherService.getLastBazaarAnswer();
         if (before == null) {
             Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND+1,TimeUnit.SECONDS)
-                    .until(()-> HypixelApiCaller.getLastBazaarAnswer()!=null);
-            before = HypixelApiCaller.getLastBazaarAnswer();
+                    .until(()-> apiFetcherService.getLastBazaarAnswer()!=null);
+            before = apiFetcherService.getLastBazaarAnswer();
         }
         LocalDateTime finalBefore = before;
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND*2, TimeUnit.SECONDS)
-                .until(() -> !finalBefore.toLocalTime().equals(HypixelApiCaller.getLastBazaarAnswer().toLocalTime()));
+                .until(() -> !finalBefore.toLocalTime().equals(apiFetcherService.getLastBazaarAnswer().toLocalTime()));
     }
 
     @Test

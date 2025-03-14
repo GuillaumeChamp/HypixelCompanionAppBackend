@@ -3,7 +3,7 @@ package com.example.hypixeltrackerbackend.utils;
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.bazaar.Craft;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.services.DataProcessingException;
+import com.example.hypixeltrackerbackend.services.exceptions.DataProcessingException;
 
 import java.util.List;
 import java.util.Map;
@@ -104,7 +104,7 @@ public class ItemPricingUtil {
             float quantity = quantities.get(i);
             Double extractedCost = extractCostForAMaterial(materialId);
             if (extractedCost == null) {
-                throw new DataProcessingException("Cannot extract cost of : " + materialId);
+                throw new DataProcessingException("Cannot extract cost of : " + materialId, craft);
             }
             craftingCost += extractedCost * quantity;
         }

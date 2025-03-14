@@ -1,7 +1,7 @@
 package com.example.hypixeltrackerbackend.utils;
 
 import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
-import com.example.hypixeltrackerbackend.services.HTTPRequestException;
+import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
 import org.json.JSONObject;
 
 import java.net.http.HttpResponse;

@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.services;
+package com.example.hypixeltrackerbackend.services.exceptions;
 
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.bazaar.Craft;
@@ -25,12 +25,6 @@ public class DataProcessingException extends IOException {
         super(message);
         this.completeItem = completeItem;
         this.craft = null;
-    }
-
-    public DataProcessingException(String message, CompleteItem completeItem, Craft craft) {
-        super(message);
-        this.completeItem = completeItem;
-        this.craft = craft;
     }
 
     @Override

@@ -23,11 +23,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class RequestControllerTest {
     @Autowired
     DataProcessorService dataProcessorService;
+    @Autowired
+    RequestController requestController;
     MockMvc mockMvc;
 
     @BeforeEach
     void setup() {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new RequestController(dataProcessorService)).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(requestController).build();
     }
 
     @Test

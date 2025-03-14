@@ -21,11 +21,12 @@ public class SchedulerService {
     private final Logger logger = Logger.getLogger(SchedulerService.class.getName());
     private boolean isRunning = false;
     private ScheduledExecutorService scheduleTaskExecutor;
-
+    private final ApiFetcherService apiFetcherService;
 
     @Autowired
-    public SchedulerService(DataProcessorService dataProcessorService) {
+    public SchedulerService(DataProcessorService dataProcessorService, ApiFetcherService apiFetcherService) {
         this.dataProcessorService = dataProcessorService;
+        this.apiFetcherService = apiFetcherService;
     }
 
     /**
@@ -47,7 +48,7 @@ public class SchedulerService {
 
     private void processNewestData() {
         try {
-            String response = HypixelApiCaller.getBazaar();
+            String response = apiFetcherService.getBazaar();
             dataProcessorService.updateBazaarPrice(response);
         } catch (Exception e) {
             logger.log(Level.WARNING, parseException(e));
