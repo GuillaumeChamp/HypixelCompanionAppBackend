@@ -2804,7 +2804,7 @@
       "id": "ENCHANTED_FIREWORK_ROCKET",
       "category": "Combat",
       "tag": "creeper,gunpowder",
-      "image": "combat/SkyBlock_items_enchanted_firework_rocket.gif",
+      "image": "oddities/SkyBlock_items_enchanted_firework_rocket.gif",
       "craft": [
         {
           "material": ["ENCHANTED_GUNPOWDER","PAPER"],
