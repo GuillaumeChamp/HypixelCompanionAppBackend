@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface ItemPricingRepository extends JpaRepository<ItemPricing, Long> {
 
-    List<ItemPricing> findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(String itemId, LocalDateTime lastUpdate, LocalDateTime lastUpdate2);
+    List<ItemPricing> findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(String itemId, LocalDateTime lowerDateTime, LocalDateTime upperDateTime);
     @Query("""
          select new com.example.hypixeltrackerbackend.data.bazaar.ItemPricing(p.itemId,avg(p.sellPrice),avg(p.buyPrice),:before)
          from ItemPricing p

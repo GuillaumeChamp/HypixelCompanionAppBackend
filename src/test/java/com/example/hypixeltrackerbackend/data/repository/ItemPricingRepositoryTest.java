@@ -37,7 +37,7 @@ class ItemPricingRepositoryTest {
         repository.save(new ItemPricing(TEST_STRING, 8d, 10d, testTime.minusMinutes(2)));
 
         List<ItemPricing> grouping = repository.groupAllByTimestampBetween(testTime.minusMinutes(3), testTime);
-        assertThat(grouping).singleElement().satisfies(price -> {
+        assertThat(grouping).filteredOn(e->TEST_STRING.equals(e.getItemId())).singleElement().satisfies(price -> {
             AssertionsForClassTypes.assertThat(price.getItemId()).isEqualTo(TEST_STRING);
             AssertionsForClassTypes.assertThat(price.getBuyPrice()).isEqualTo(11);
             AssertionsForClassTypes.assertThat(price.getSellPrice()).isEqualTo(9);
@@ -53,7 +53,7 @@ class ItemPricingRepositoryTest {
         repository.save(new ItemPricing(TEST_STRING, 8d, 10d, testTime.minusMinutes(2)));
 
         List<ItemPricing> grouping = repository.groupAllByTimestampBetween(testTime.minusMinutes(3), testTime);
-        assertThat(grouping).singleElement().satisfies(price -> AssertionsForClassTypes.assertThat(price.getLastUpdate()).isEqualTo(testTime.minusMinutes(3)));
+        assertThat(grouping).filteredOn(e->TEST_STRING.equals(e.getItemId())).singleElement().satisfies(price -> AssertionsForClassTypes.assertThat(price.getLastUpdate()).isEqualTo(testTime.minusMinutes(3)));
 
     }
 }

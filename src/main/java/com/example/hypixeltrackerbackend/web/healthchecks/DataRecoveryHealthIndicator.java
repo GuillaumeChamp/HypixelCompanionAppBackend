@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.web;
+package com.example.hypixeltrackerbackend.web.healthchecks;
 
 import com.example.hypixeltrackerbackend.services.ApiFetcherService;
 import org.springframework.boot.actuate.health.Health;
