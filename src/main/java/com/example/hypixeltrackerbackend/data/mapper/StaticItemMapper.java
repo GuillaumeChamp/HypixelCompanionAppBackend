@@ -8,10 +8,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,19 +29,16 @@ public class StaticItemMapper {
         try (InputStream stream1 = StaticItemMapper.class.getResourceAsStream("/static/categoryTable.json");
              InputStream stream2 = StaticItemMapper.class.getResourceAsStream("/static/items.json")
         ) {
+            String ourItemDatabaseFile = new String(Objects.requireNonNull(stream1).readAllBytes());
+            String hypixelProvidedItemsFile = new String(Objects.requireNonNull(stream2).readAllBytes());
 
-            assert stream1 != null;
-            String myFile = new String(stream1.readAllBytes());
-            assert stream2 != null;
-            String itemFile = new String(stream2.readAllBytes());
+            JSONArray ourItemDatabase = new JSONObject(ourItemDatabaseFile).getJSONArray("myTable");
+            JSONArray hypixelProvidedItemList = new JSONObject(hypixelProvidedItemsFile).getJSONArray("items");
 
-            JSONArray myArray = new JSONObject(myFile).getJSONArray("myTable");
-            JSONArray itemArray = new JSONObject(itemFile).getJSONArray("items");
+            Map<String,CompleteItem> completeItemMap = new HashMap<>(ourItemDatabase.length());
 
-            Map<String,CompleteItem> completeItemMap = new HashMap<>(myArray.length());
-
-            myArray.forEach(object -> appendANewEntry(completeItemMap,(JSONObject) object));
-            itemArray.forEach(object -> updateEntry(completeItemMap,(JSONObject) object));
+            ourItemDatabase.forEach(object -> appendANewEntry(completeItemMap,(JSONObject) object));
+            hypixelProvidedItemList.forEach(object -> processItemFromHypixelDatabase(completeItemMap,(JSONObject) object));
 
             return completeItemMap;
         }catch (IOException io){
@@ -109,21 +103,24 @@ public class StaticItemMapper {
     }
 
     /**
-     * Use the given object to complete the relative item in the map
+     * Use the given newItemFromHypixelDatabase to complete the relative item in the map
      * Remarque : even if the map is way shorter than the item database, it is still better to work this way.
-     * @param map the map of item from local database already parsed
-     * @param object the current process json entry
+     * @param completeItemMap the map of item from local database already parsed
+     * @param newItemFromHypixelDatabase the current process json entry
      */
-    private static void updateEntry(Map<String,CompleteItem> map, JSONObject object){
-        String id = object.getString("id");
-        CompleteItem matchingEntry = map.get(id);
-        if (matchingEntry == null) {
-            return;
+    private static void processItemFromHypixelDatabase(Map<String,CompleteItem> completeItemMap, JSONObject newItemFromHypixelDatabase){
+        String id = newItemFromHypixelDatabase.getString("id");
+        CompleteItem matchingEntry = completeItemMap.get(id);
+        if (matchingEntry != null) {
+            updatePreviousEntryWithHypixelData(matchingEntry, newItemFromHypixelDatabase);
         }
-        matchingEntry.setName(object.getString("name"));
-        matchingEntry.setNpcBuyPrice(object.optFloat("npc_sell_price"));
-        String rarity = object.has("tier") ? object.getString("tier") : "COMMON";
-        matchingEntry.setTier(rarity);
+    }
+
+    private static void updatePreviousEntryWithHypixelData(CompleteItem previousEntry,JSONObject newItemFromHypixelDatabase){
+        previousEntry.setName(newItemFromHypixelDatabase.getString("name"));
+        previousEntry.setNpcBuyPrice(newItemFromHypixelDatabase.optFloat("npc_sell_price"));
+        String rarity = newItemFromHypixelDatabase.has("tier") ? newItemFromHypixelDatabase.getString("tier") : "COMMON";
+        previousEntry.setTier(rarity);
     }
 
     private static String createErrorMessage(String id,String field){
