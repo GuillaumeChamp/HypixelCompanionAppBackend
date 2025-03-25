@@ -461,6 +461,18 @@
       "image": "farming/Minecraft_items_sugar_cane.png"
     },
     {
+      "id": "SUGAR",
+      "category": "Farming",
+      "tag": "sugar cane",
+      "image": "farming/Minecraft_items_sugar.png",
+      "craft": [
+        {
+          "material": ["SUGAR_CANE"],
+          "quantity": [1]
+        }
+      ]
+    },
+    {
       "id": "PAPER",
       "category": "Farming",
       "tag": "sugar cane",
