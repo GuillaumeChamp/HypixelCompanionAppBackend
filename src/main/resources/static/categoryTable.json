@@ -3803,6 +3803,18 @@
       ]
     },
     {
+      "id": "ENCHANTED_COOKED_SALMON",
+      "category": "Fishing",
+      "tag": "fish",
+      "image": "fishing/SkyBlock_items_enchanted_cooked_salmon.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_RAW_SALMON"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
       "id": "RAW_FISH:2",
       "category": "Fishing",
       "tag": "fish",
@@ -3888,6 +3900,18 @@
       "craft": [
         {
           "material": ["CLAY_BALL"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_CLAY_BLOCK",
+      "category": "Fishing",
+      "tag": "clay",
+      "image": "fishing/SkyBlock_items_enchanted_clay_block.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_CLAY_BALL"],
           "quantity": [160]
         }
       ]
@@ -4139,9 +4163,39 @@
       ]
     },
     {
+      "id": "GOLDEN_BAIT",
+      "category": "Fishing",
+      "tag": "Bait",
+      "image": "fishing/SkyBlock_items_golden_bait.png"
+    },
+    {
+      "id": "TREASURE_BAIT",
+      "category": "Fishing",
+      "tag": "Bait",
+      "image": "fishing/SkyBlock_items_treasure_bait.png",
+      "craft": [
+        {
+          "material": ["RUSTY_COIN"],
+          "quantity": [0.0625]
+        }
+      ]
+    },
+    {
+      "id": "HOTSPOT_BAIT",
+      "category": "Fishing",
+      "tag": "Bait",
+      "image": "fishing/SkyBlock_items_hotspot_bait.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_PUFFERFISH","SCORCHED_CRAB_STICK"],
+          "quantity": [0.03125, 0.03125]
+        }
+      ]
+    },
+    {
       "id": "WORM_MEMBRANE",
       "category": "Fishing",
-      "tag": "crystal hollows,mob drops",
+      "tag": "crystal hollows,mob drops, water worm, poisoned water worm, flaming worm",
       "image": "combat/Minecraft_items_rotten_flesh.png"
     },
     {
@@ -4159,7 +4213,7 @@
     {
       "id": "DIVER_FRAGMENT",
       "category": "Fishing",
-      "tag": "mob drops",
+      "tag": "mob drops, sea emperor",
       "image": "fishing/SkyBlock_items_diver_fragment.png"
     },
     {
@@ -4171,8 +4225,80 @@
     {
       "id": "MAGMA_CORE",
       "category": "Fishing",
-      "tag": "mob drops",
+      "tag": "mob drops, crystal hollows, lava pigman, lava blaze, lava fishing",
       "image": "combat/Minecraft_items_magma_cream.png"
+    },
+    {
+      "id": "HALF_EATEN_MUSHROOM",
+      "category": "Fishing",
+      "tag": "mob drops, Carrolyn export, frog man, hotspot",
+      "image": "fishing/SkyBlock_items_half_eaten_mushroom.png"
+    },
+    {
+      "id": "TITANOBOA_SHED",
+      "category": "Fishing",
+      "tag": "mob drops, Titanoboa, backwater bayou",
+      "image": "fishing/SkyBlock_items_titanoboa_shed.png"
+    },
+    {
+      "id": "SINGED_POWDER",
+      "category": "Fishing",
+      "tag": "mob drops, Fireproof Witch, lava fishing, hotspot, crimson",
+      "image": "fishing/SkyBlock_items_singed_powder.png"
+    },
+    {
+      "id": "FRIED_FEATHER",
+      "category": "Fishing",
+      "tag": "mob drops, Fried Chicken, lava fishing, hotspot, crimson",
+      "image": "farming/Minecraft_items_feather.png"
+    },
+    {
+      "id": "TORN_CLOTH",
+      "category": "Fishing",
+      "tag": "mob drops, Banshee, backwater bayou",
+      "image": "fishing/SkyBlock_items_torn_cloth.png"
+    },
+    {
+      "id": "BRONZE_BOWL",
+      "category": "Fishing",
+      "tag": "mob drops, Dumpster Diver, backwater bayou",
+      "image": "fishing/SkyBlock_items_bronze_bowl.png"
+    },
+    {
+      "id": "ALLIGATOR_SKIN",
+      "category": "Fishing",
+      "tag": "mob drops, Alligator, backwater bayou",
+      "image": "farming/Minecraft_items_green_dye.png"
+    },
+    {
+      "id": "SCORCHED_CRAB_STICK",
+      "category": "Fishing",
+      "tag": "mob drops, Fiery Scuttler, lava fishing, hotspot, crimson",
+      "image": "fishing/SkyBlock_items_scorched_crab_stick.png"
+    },
+    {
+      "id": "BRIMSTONE_HANDLE",
+      "category": "Fishing",
+      "tag": "mob drops, Ragnarok, lava fishing, hotspot, crimson",
+      "image": "oddities/SkyBlock_items_enchanted_stick.gif"
+    },
+    {
+      "id": "BROKEN_RADAR",
+      "category": "Fishing",
+      "tag": "mob drops, Snapping Turtle, hotspot, backwater bayou",
+      "image": "fishing/SkyBlock_items_broken_radar.png"
+    },
+    {
+      "id": "CAN_OF_WORMS",
+      "category": "Fishing",
+      "tag": "mob drops, Trash Gobbler, backwater bayou",
+      "image": "fishing/SkyBlock_items_can_of_worms.png"
+    },
+    {
+      "id": "BLUE_RING",
+      "category": "Fishing",
+      "tag": "mob drops, Blue Ringed Octopus, hotspot, backwater bayou",
+      "image": "fishing/SkyBlock_items_blue_ring.png"
     },
     {
       "id": "MAGMA_FISH",
@@ -4337,6 +4463,30 @@
       ]
     },
     {
+      "id": "BAYOU_WATER_ORB",
+      "category": "Fishing",
+      "tag": "water orb",
+      "image": "fishing/SkyBlock_items_bayou_water_orb.png",
+      "craft": [
+        {
+          "material": ["WATER_ORB", "OLD_LEATHER_BOOT", "POISON_SAMPLE", "ENCHANTED_CLAY_BLOCK", "RUSTY_COIN", "TORN_CLOTH", "BRONZE_BOWL", "ALLIGATOR_SKIN", "BUSTED_BELT_BUCKLE" ],
+          "quantity": [1, 1, 1, 1, 64, 16, 16, 8, 8]
+        }
+      ]
+    },
+    {
+      "id": "HOTSPOT_WATER_ORB",
+      "category": "Fishing",
+      "tag": "water orb",
+      "image": "fishing/SkyBlock_items_hotspot_water_orb.png",
+      "craft": [
+        {
+          "material": ["WATER_ORB", "HALF_EATEN_MUSHROOM", "BLUE_RING", "FRIED_FEATHER", "SINGED_POWDER", "SCORCHED_CRAB_STICK", "ENCHANTED_JUNGLE_LOG", "BROKEN_RADAR", "ENCHANTED_COAL" ],
+          "quantity": [1, 64, 8, 64, 8, 8, 64, 8, 64]
+        }
+      ]
+    },
+    {
       "id": "CHUM",
       "category": "Fishing",
       "tag": "Chum Fishing",
@@ -4365,6 +4515,24 @@
           "quantity": [10, 1]
         }
       ]
+    },
+    {
+      "id": "RUSTY_COIN",
+      "category": "Fishing",
+      "tag": "Backwater Bayou",
+      "image": "fishing/SkyBlock_items_rusty_coin.png"
+    },
+    {
+      "id": "BUSTED_BELT_BUCKLE",
+      "category": "Fishing",
+      "tag": "Backwater Bayou",
+      "image": "fishing/SkyBlock_items_busted_belt_buckle.png"
+    },
+    {
+      "id": "OLD_LEATHER_BOOT",
+      "category": "Fishing",
+      "tag": "Backwater Bayou",
+      "image": "fishing/SkyBlock_items_old_leather_boot.png"
     },
     {
       "id": "BOOSTER_COOKIE",
@@ -4411,7 +4579,7 @@
     {
       "id": "GOLDEN_BOUNTY",
       "category": "Item Upgrade",
-      "tag": "weapon upgrade,diaz",
+      "tag": "weapon upgrade,diaz,Experimentation Table",
       "image": "oddities/SkyBlock_items_golden_bounty.png",
       "craft": [
         {
@@ -4429,8 +4597,44 @@
     {
       "id": "PESTHUNTING_GUIDE",
       "category": "Item Upgrade",
-      "tag": "farming,pest",
+      "tag": "farming,pest,Experimentation Table",
       "image": "oddities/SkyBlock_items_pesthunting_guide.png"
+    },
+    {
+      "id": "GOLD_BOTTLE_CAP",
+      "category": "Item Upgrade",
+      "tag": "Luck of the Sea VII,Experimentation Table,Backwater Bayou",
+      "image": "oddities/SkyBlock_items_gold_bottle_cap.png",
+      "craft": [
+        {
+          "material": ["RUSTY_COIN","BUSTED_BELT_BUCKLE","OLD_LEATHER_BOOT"],
+          "quantity": [512,64,8]
+        }
+      ]
+    },
+    {
+      "id": "TROUBLED_BUBBLE",
+      "category": "Item Upgrade",
+      "tag": "Piscary VII,Wiki Tiki,Hotspot,Backwater Bayou,Experimentation Table",
+      "image": "oddities/SkyBlock_items_troubled_bubble.png"
+    },
+    {
+      "id": "SEVERED_PINCER",
+      "category": "Item Upgrade",
+      "tag": "Frail VII,Experimentation Table",
+      "image": "oddities/SkyBlock_items_severed_pincer.png"
+    },
+    {
+      "id": "OCTOPUS_TENDRIL",
+      "category": "Item Upgrade",
+      "tag": "Spiked Hook VII,Blue Ringed Octopus,Hotspot,Backwater Bayou,Experimentation Table",
+      "image": "oddities/SkyBlock_items_octopus_tendril.png"
+    },
+    {
+      "id": "CHAIN_END_TIMES",
+      "category": "Item Upgrade",
+      "tag": "Charm VI,Ragnarok,Hotspot,Lava fishing,crimson isle,Experimentation Table",
+      "image": "oddities/SkyBlock_items_chain_end_times.png"
     },
     {
       "id": "IMPLOSION_SCROLL",
@@ -4667,15 +4871,205 @@
       "image": "farming/Minecraft_items_cake.png"
     },
     {
+      "id": "PET_ITEM_LUCKY_CLOVER_DROP",
+      "category": "Pet",
+      "tag": "Carrot King,Fishing",
+      "image": "oddities/Minecraft_items_lime_dye.png"
+    },
+    {
+      "id": "PET_ITEM_EXP_SHARE_DROP",
+      "category": "Pet",
+      "tag": "Deep Caverns",
+      "image": "oddities/Minecraft_items_yellow_dye.png"
+    },
+    {
+      "id": "PET_ITEM_TIER_BOOST_DROP",
+      "category": "Pet",
+      "tag": "Endstone Protector",
+      "image": "oddities/Minecraft_items_red_dye.png"
+    },
+    {
+      "id": "RADIOACTIVE_VIAL",
+      "category": "Pet",
+      "tag": "Flying Fish,Lord Jawbus",
+      "image": "oddities/SkyBlock_items_radioactive_vial.png"
+    },
+    {
+      "id": "ENDERMAN_CORTEX_REWRITER",
+      "category": "Pet",
+      "tag": "enderman,voidling extremist",
+      "image": "oddities/SkyBlock_items_enderman_cortex_rewriter.png"
+    },
+    {
+      "id": "PET_ITEM_TOY_JERRY",
+      "category": "Pet",
+      "tag": "jerry",
+      "image": "oddities/SkyBlock_items_pet_item_toy_jerry.png"
+    },
+    {
+      "id": "PET_ITEM_VAMPIRE_FANG",
+      "category": "Pet",
+      "tag": "bat,Grim Reaper",
+      "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
+    },
+    {
+      "id": "MIXED_MITE_GEL",
+      "category": "Pet",
+      "tag": "endermite",
+      "image": "oddities/SkyBlock_items_enchanted_orange_dye.gif",
+      "craft": [
+        {
+          "material": ["MITE_GEL"],
+          "quantity": [160]
+        }
+      ]
+    },
+    {
+      "id": "PET_ITEM_PURE_MITHRIL_GEM",
+      "category": "Pet",
+      "tag": "mithril golem,diamond goblin",
+      "image": "oddities/SkyBlock_items_pet_item_pure_mithril_gem.png"
+    },
+    {
+      "id": "BLACK_WOOLEN_YARN",
+      "category": "Pet",
+      "tag": "black cat,Great Spook",
+      "image": "oddities/Minecraft_items_black_wool.png",
+      "craft": [
+        {
+          "material": ["VOLCANIC_ROCK"],
+          "quantity": [10]
+        }
+      ]
+    },
+    {
+      "id": "MAGIC_TOP_HAT",
+      "category": "Pet",
+      "tag": "snowman,jerry",
+      "image": "oddities/SkyBlock_items_magic_top_hat.png",
+      "craft": [
+        {
+          "material": ["VOLCANIC_ROCK"],
+          "quantity": [10]
+        }
+      ]
+    },
+    {
+      "id": "GUARDIAN_LUCKY_BLOCK",
+      "category": "Pet",
+      "tag": "Guardian,Riftstalker Bloodfiend",
+      "image": "oddities/SkyBlock_items_guardian_lucky_block.png"
+    },
+    {
+      "id": "PET_ITEM_CHOCOLATE_SYRINGE",
+      "category": "Pet",
+      "tag": "Rabbit",
+      "image": "oddities/SkyBlock_items_pet_item_chocolate_syringe.png"
+    },
+    {
+      "id": "SCUTTLER_SHELL",
+      "category": "Pet",
+      "tag": "Hermit Crab,Fiery Scuttler,Hotspot,lava fishing,Crimson Isle",
+      "image": "oddities/SkyBlock_items_scuttler_shell.png"
+    },
+    {
+      "id": "CRUDE_GABAGOOL",
+      "category": "Inferno Minion",
+      "tag": "" ,
+      "image": "oddities/SkyBlock_items_crude_gabagool.png"
+    },
+    {
+      "id": "VERY_CRUDE_GABAGOOL",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_very_crude_gabagool.png",
+      "craft": [
+        {
+          "material": ["CRUDE_GABAGOOL"],
+          "quantity": [192]
+        }
+      ]
+    },
+    {
+      "id": "FUEL_GABAGOOL",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_fuel_gabagool.png",
+      "craft": [
+        {
+          "material": ["CRUDE_GABAGOOL","SULPHURIC_COAL"],
+          "quantity": [24,1]
+        },
+        {
+          "material": ["VERY_CRUDE_GABAGOOL","SULPHURIC_COAL"],
+          "quantity": [0.125,1]
+        }
+      ]
+    },
+    {
+      "id": "HEAVY_GABAGOOL",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_heavy_gabagool.png",
+      "craft": [
+        {
+          "material": ["FUEL_GABAGOOL","SULPHURIC_COAL"],
+          "quantity": [24,1]
+        }
+      ]
+    },
+    {
+      "id": "HYPERGOLIC_GABAGOOL",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_hypergolic_gabagool.png",
+      "craft": [
+        {
+          "material": ["HEAVY_GABAGOOL","SULPHURIC_COAL"],
+          "quantity": [12,1]
+        }
+      ]
+    },
+    {
+      "id": "INFERNO_VERTEX",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_inferno_vertex.png",
+      "craft": [
+        {
+          "material": ["HYPERGOLIC_IONIZED_CERAMICS","MOLTEN_POWDER"],
+          "quantity": [6,64]
+        }
+      ]
+    },
+    {
+      "id": "INFERNO_APEX",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_inferno_apex.png",
+      "craft": [
+        {
+          "material": ["HYPERGOLIC_IONIZED_CERAMICS","INFERNO_VERTEX","MOLTEN_POWDER"],
+          "quantity": [16,64,64]
+        }
+      ]
+    },
+    {
+      "id": "REAPER_PEPPER",
+      "category": "Consumables",
+      "tag": "Inferno Minion" ,
+      "image": "oddities/SkyBlock_items_reaper_pepper.png"
+    },
+    {
       "id": "CHILI_PEPPER",
       "category": "Inferno Minion",
-      "tag": "Hypergolic",
+      "tag": "",
       "image": "oddities/SkyBlock_items_chili_pepper.png"
     },
     {
       "id": "STUFFED_CHILI_PEPPER",
       "category": "Inferno Minion",
-      "tag": "Hypergolic",
+      "tag": "",
       "image": "oddities/SkyBlock_items_stuffed_chili_pepper.png",
       "craft": [
         {
@@ -4685,10 +5079,266 @@
       ]
     },
     {
+      "id": "INFERNO_FUEL_BLOCK",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_inferno_fuel_block.png"
+    },
+    {
+      "id": "HYPERGOLIC_IONIZED_CERAMICS",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_hypergolic_ionized_ceramics.png"
+    },
+    {
+      "id": "SULPHURIC_COAL",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_sulphuric_coal.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_COAL","ENCHANTED_SULPHUR"],
+          "quantity": [4, 0.25]
+        },
+        {
+          "material": ["ENCHANTED_COAL","ENCHANTED_SULPHUR","CHILI_PEPPER"],
+          "quantity": [1.333, 0.083,0.333]
+        }
+      ]
+    },
+    {
+      "id": "REHEATED_GUMMY_POLAR_BEAR",
+      "category": "Inferno Minion",
+      "tag": "Inferno Demonlord",
+      "image": "oddities/SkyBlock_items_reheated_gummy_polar_bear.png",
+      "craft": [
+        {
+          "material": ["CHILI_PEPPER","ENCHANTED_SLIME_BALL","ENCHANTED_SNOW_BLOCK"],
+          "quantity": [4,4,4]
+        }
+      ]
+    },
+    {
+      "id": "CAPSAICIN_EYEDROPS_NO_CHARGES",
+      "category": "Inferno Minion",
+      "tag": "",
+      "image": "oddities/SkyBlock_items_capsaicin_eyedrops_no_charges.png"
+    },
+    {
+      "id": "SMALL_ENCHANTED_CHEST",
+      "category": "Minion Upgrades",
+      "tag": "Minion Storage",
+      "image": "oddities/Minecraft_items_chest.png",
+      "craft": [
+        {
+          "material": ["LOG"],
+          "quantity": [64]
+        }
+      ]
+    },
+    {
+      "id": "MEDIUM_ENCHANTED_CHEST",
+      "category": "Minion Upgrades",
+      "tag": "Minion Storage",
+      "image": "oddities/Minecraft_items_chest.png",
+      "craft": [
+        {
+          "material": ["SMALL_ENCHANTED_CHEST","ENCHANTED_OAK_LOG"],
+          "quantity": [1,8]
+        }
+      ]
+    },
+    {
+      "id": "LARGE_ENCHANTED_CHEST",
+      "category": "Minion Upgrades",
+      "tag": "Minion Storage",
+      "image": "oddities/Minecraft_items_chest.png",
+      "craft": [
+        {
+          "material": ["MEDIUM_ENCHANTED_CHEST","ENCHANTED_OAK_LOG"],
+          "quantity": [1,256]
+        }
+      ]
+    },
+    {
+      "id": "XLARGE_ENCHANTED_CHEST",
+      "category": "Minion Upgrades",
+      "tag": "Minion Storage",
+      "image": "oddities/Minecraft_items_chest.png"
+    },
+    {
+      "id": "XXLARGE_ENCHANTED_CHEST",
+      "category": "Minion Upgrades",
+      "tag": "Minion Storage",
+      "image": "oddities/Minecraft_items_chest.png"
+    },
+    {
+      "id": "COMPACTOR",
+      "category": "Minion Upgrades",
+      "tag": "Compactors",
+      "image": "oddities/SkyBlock_items_enchanted_dropper.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_COBBLESTONE","ENCHANTED_REDSTONE"],
+          "quantity": [7, 1]
+        }
+      ]
+    },
+    {
+      "id": "DWARVEN_COMPACTOR",
+      "category": "Minion Upgrades",
+      "tag": "Compactors",
+      "image": "oddities/SkyBlock_items_enchanted_dropper.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_MITHRIL","AUTO_SMELTER","SUPER_COMPACTOR_3000"],
+          "quantity": [56, 1, 1]
+        }
+      ]
+    },
+    {
+      "id": "SUPER_COMPACTOR_3000",
+      "category": "Minion Upgrades",
+      "tag": "Compactors",
+      "image": "oddities/SkyBlock_items_enchanted_dropper.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_COBBLESTONE","ENCHANTED_REDSTONE","COMPACTOR"],
+          "quantity": [224, 32, 1]
+        }
+      ]
+    },
+    {
+      "id": "DIAMOND_SPREADING",
+      "category": "Minion Upgrades",
+      "tag": "diamond",
+      "image": "oddities/SkyBlock_items_enchanted_command_block.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_DIAMOND"],
+          "quantity": [1]
+        }
+      ]
+    },
+    {
+      "id": "MINION_EXPANDER",
+      "category": "Minion Upgrades",
+      "tag": "minion speed",
+      "image": "oddities/SkyBlock_items_enchanted_command_block.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_QUARTZ","ENCHANTED_REDSTONE"],
+          "quantity": [16,2]
+        }
+      ]
+    },
+    {
       "id": "POTATO_SPREADING",
       "category": "Minion Upgrades",
       "tag": "potato",
       "image": "oddities/SkyBlock_items_potato_spreading.png"
+    },
+    {
+      "id": "AUTO_SMELTER",
+      "category": "Minion Upgrades",
+      "tag": "smelter",
+      "image": "oddities/Minecraft_items_furnace.png",
+      "craft": [
+        {
+          "material": ["COBBLESTONE","COAL"],
+          "quantity": [64,1]
+        }
+      ]
+    },
+    {
+      "id": "SOULFLOW_ENGINE",
+      "category": "Minion Upgrades",
+      "tag": "soulflow",
+      "image": "oddities/SkyBlock_items_soulflow_engine.png",
+      "craft": [
+        {
+          "material": ["NULL_OVOID","REFINED_TITANIUM","LESSER_SOULFLOW_ENGINE","NULL_ATOM"],
+          "quantity": [64,12,4,2]
+        }
+      ]
+    },
+    {
+      "id": "LESSER_SOULFLOW_ENGINE",
+      "category": "Minion Upgrades",
+      "tag": "soulflow",
+      "image": "oddities/SkyBlock_items_lesser_soulflow_engine.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_EYE_OF_ENDER","ENCHANTED_IRON_BLOCK","NULL_OVOID"],
+          "quantity": [48,8,6]
+        }
+      ]
+    },
+    {
+      "id": "BUDGET_HOPPER",
+      "category": "Minion Upgrades",
+      "tag": "hopper",
+      "image": "oddities/Minecraft_items_hopper.png",
+      "craft": [
+        {
+          "material": ["ENCHANTED_IRON"],
+          "quantity": [5]
+        }
+      ]
+    },
+    {
+      "id": "ENCHANTED_HOPPER",
+      "category": "Minion Upgrades",
+      "tag": "hopper",
+      "image": "oddities/SkyBlock_items_enchanted_hopper.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_IRON_BLOCK"],
+          "quantity": [5]
+        }
+      ]
+    },
+    {
+      "id": "CORRUPT_SOIL",
+      "category": "Minion Upgrades",
+      "tag": "corrupted fragment",
+      "image": "oddities/SkyBlock_items_corrupt_soil.png",
+      "craft": [
+        {
+          "material": ["CORRUPTED_FRAGMENT","ENCHANTED_MYCELIUM"],
+          "quantity": [20, 160]
+        }
+      ]
+    },
+    {
+      "id": "MITHRIL_INFUSION",
+      "category": "Minion Upgrades",
+      "tag": "minion speed",
+      "image": "oddities/SkyBlock_items_mithril_infusion.png",
+      "craft": [
+        {
+          "material": ["MAGMA_BUCKET","ENCHANTED_MITHRIL"],
+          "quantity": [1, 512]
+        }
+      ]
+    },
+    {
+      "id": "BERBERIS_FUEL_INJECTOR",
+      "category": "Minion Upgrades",
+      "tag": "minion speed,farming minion",
+      "image": "oddities/SkyBlock_items_enchanted_trapdoor.giff"
+    },
+    {
+      "id": "FLYCATCHER_UPGRADE",
+      "category": "Minion Upgrades",
+      "tag": "minion speed",
+      "image": "combat/SkyBlock_items_enchanted_cobweb.gif",
+      "craft": [
+        {
+          "material": ["TARANTULA_SILK","FLY_SWATTER"],
+          "quantity": [102, 1]
+        }
+      ]
     },
     {
       "id": "SLEEPY_HOLLOW",
@@ -4702,6 +5352,42 @@
           "quantity": [150]
         }
       ]
+    },
+    {
+      "id": "FREE_WILL",
+      "category": "Minion Upgrades",
+      "tag": "minion speed",
+      "image": "combat/SkyBlock_items_enchanted_blaze_powder.gif"
+    },
+    {
+      "id": "GENERATOR_UPGRADE_STONE_FISHING_12",
+      "category": "Minion Upgrades",
+      "tag": "Upgrade Stone",
+      "image": "oddities/SkyBlock_items_generator_upgrade_stone_fishing_12.png"
+    },
+    {
+      "id": "GENERATOR_UPGRADE_STONE_CLAY_12",
+      "category": "Minion Upgrades",
+      "tag": "Upgrade Stone",
+      "image": "oddities/SkyBlock_items_generator_upgrade_stone_clay_12.png"
+    },
+    {
+      "id": "ENCHANTED_LAVA_BUCKET",
+      "category": "Minion Fuels",
+      "tag": "unlimited fuel",
+      "image": "oddities/SkyBlock_items_enchanted_lava_bucket.gif",
+      "craft": [
+        {
+          "material": ["ENCHANTED_IRON","ENCHANTED_COAL_BLOCK"],
+          "quantity": [3,2]
+        }
+      ]
+    },
+    {
+      "id": "MAGMA_BUCKET",
+      "category": "Minion Fuels",
+      "tag": "unlimited fuel",
+      "image": "oddities/SkyBlock_items_enchanted_lava_bucket.gif"
     },
     {
       "id": "PLASMA_BUCKET",
@@ -4934,8 +5620,14 @@
     {
       "id": "REFINED_BOTTLE_OF_JYRRE",
       "category": "Event",
-      "tag": "winter",
+      "tag": "winter,aging",
       "image": "oddities/SkyBlock_items_potion_of_night_vision.gif"
+    },
+    {
+      "id": "MOBY_DUCK_COLLECTOR_EDITION",
+      "category": "Fishing",
+      "tag": "junk,aging",
+      "image": "oddities/SkyBlock_items_enchanted_book_2.gif"
     },
     {
       "id": "VOLCANIC_ROCK",
@@ -5106,6 +5798,18 @@
       "image": "oddities/SkyBlock_items_supreme_chocolate_bar.png"
     },
     {
+      "id": "BOUNCY_BEACH_BALL",
+      "category": "Event",
+      "tag": "Year of the Seal",
+      "image": "oddities/SkyBlock_items_bouncy_beach_ball.png"
+    },
+    {
+      "id": "GIANT_BOUNCY_BEACH_BALL",
+      "category": "Event",
+      "tag": "Year of the Seal",
+      "image": "oddities/SkyBlock_items_giant_bouncy_beach_ball.png"
+    },
+    {
       "id": "REFINED_DARK_CACAO_TRUFFLE",
       "category": "Consumables",
       "tag": "global fortune",
@@ -5148,7 +5852,7 @@
       "image": "oddities/SkyBlock_items_dwarven_os_gemstone_grahams.png"
     },
     {
-      "id": "DWARVEN_OS_GEMSTONE_GRAHAMS",
+      "id": "DWARVEN_OS_METALLIC_MINIS",
       "category": "Consumables",
       "tag": "Dwarven Metal Fortune",
       "image": "oddities/SkyBlock_items_dwarven_os_metallic_minis.png"
@@ -5234,25 +5938,25 @@
     {
       "id": "BONZO_FRAGMENT",
       "category": "Fragments",
-      "tag": "Bonzo",
+      "tag": "Bonzo,Bonzo's Staff,Bonzo's Mask",
       "image": "farming/SkyBlock_items_enchanted_red_mushroom.gif"
     },
     {
       "id": "DARK_QUEENS_SOUL_DROP",
       "category": "Fragments",
-      "tag": "Arachne",
+      "tag": "Arachne,venom's Touch,Souls Rebound,Spider Queen's Stinger",
       "image": "fishing/Minecraft_items_clay_ball.png"
     },
     {
       "id": "GOLDEN_FRAGMENT",
       "category": "Fragments",
-      "tag": "Diaz,Midas",
+      "tag": "Diaz,Midas' Sword,Midas Staff,Daedalus Axe",
       "image": "oddities/SkyBlock_items_golden_fragment.png"
     },
     {
       "id": "LIVID_FRAGMENT",
       "category": "Fragments",
-      "tag": "Livid,Shadow",
+      "tag": "Livid,Shadow Assassin,last Breath,Shadow Fury",
       "image": "mining/SkyBlock_items_enchanted_nether_brick.gif"
     },
     {
@@ -5264,13 +5968,19 @@
     {
       "id": "THORN_FRAGMENT",
       "category": "Fragments",
-      "tag": "Thorn,Spirit",
+      "tag": "Thorn,Spirit boots,Spirit Sceptre,Spirit Shortbow,Spirit Mask,Bonemerang,Bone Necklace",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
+    },
+    {
+      "id": "GIANT_FRAGMENT_DIAMOND",
+      "category": "Fragments",
+      "tag": "The Diamond Giant,Valkyrie,Necron",
+      "image": "combat/Minecraft_items_diamond_horse_armor.png"
     },
     {
       "id": "WINTER_FRAGMENT",
       "category": "Fragments",
-      "tag": "Jerry,Winter",
+      "tag": "Jerry,Glacial Scythe,Yeti Sword,Ice Spray Wand",
       "image": "oddities/SkyBlock_items_winter_fragment.png",
       "craft": [
         {
