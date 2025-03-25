@@ -1,6 +1,7 @@
 package com.example.hypixeltrackerbackend.utils;
 
 import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
+import com.example.hypixeltrackerbackend.utils.request_parsers.UUIDRequestParser;
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
 

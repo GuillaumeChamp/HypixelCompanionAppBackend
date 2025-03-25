@@ -1,7 +1,6 @@
-package com.example.hypixeltrackerbackend.data.repository;
+package com.example.hypixeltrackerbackend.repository;
 
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
 import org.assertj.core.api.AssertionsForClassTypes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

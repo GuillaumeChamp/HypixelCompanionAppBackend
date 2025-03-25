@@ -2,7 +2,7 @@ package com.example.hypixeltrackerbackend.services;
 
 import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
-import com.example.hypixeltrackerbackend.utils.UUIDRequestParser;
+import com.example.hypixeltrackerbackend.utils.request_parsers.UUIDRequestParser;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -54,7 +54,7 @@ public class ApiFetcherService {
      * @return an unparsed response body
      * @throws HTTPRequestException if a bad response is received
      */
-    public String getProfileByUUID(String uuid) throws HTTPRequestException {
+    public String getProfilesByPlayerUUID(String uuid) throws HTTPRequestException {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .uri(URI.create(API_ENDPOINT + "profiles" + "?key=" + API_KEY + "&uuid=" + uuid))

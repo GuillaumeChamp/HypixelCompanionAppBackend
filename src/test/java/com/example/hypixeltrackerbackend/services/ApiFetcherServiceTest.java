@@ -34,7 +34,7 @@ class ApiFetcherServiceTest {
     @Test
     void shouldProfileQueryWorkProperly() {
         assertThatNoException().isThrownBy(() -> {
-            String answer = apiFetcherService.getProfileByUUID("75957f87-aaea-4952-953b-6ca217a2654d");
+            String answer = apiFetcherService.getProfilesByPlayerUUID("75957f87-aaea-4952-953b-6ca217a2654d");
             assertThat(answer).isNotEmpty();
         });
     }

@@ -9,6 +9,7 @@ import com.example.hypixeltrackerbackend.services.DataProcessorService;
 import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
 import com.example.hypixeltrackerbackend.services.ApiFetcherService;
 import com.example.hypixeltrackerbackend.utils.CollectionsUtils;
+import com.example.hypixeltrackerbackend.utils.request_parsers.ProfilesRequestParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +21,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -33,6 +35,10 @@ public class RequestController {
         this.dataProcessorService = dataProcessorService;
         this.apiFetcherService = apiFetcherService;
     }
+
+    /*
+    Bazaar Workflow
+     */
 
     @CrossOrigin
     @GetMapping("/bazaar")
@@ -52,26 +58,6 @@ public class RequestController {
     }
 
     @CrossOrigin
-    @GetMapping(value = {"/uuid/{username}"})
-    UUIDResponse getPlayerUUID(@PathVariable("username") String username ) {
-        try {
-            return apiFetcherService.getUUIDFromUsername(username);
-        } catch (HTTPRequestException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username) ;
-        }
-    }
-
-    @CrossOrigin
-    @GetMapping("/museum")
-    List<MuseumItem> getMuseumItems(){
-        try {
-            return MuseumItemMapper.generateMuseumItemList();
-        }catch (IOException io){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to get Museum Items");
-        }
-    }
-
-    @CrossOrigin
     @GetMapping(value = {"/bazaar/compress"})
     String compressData() {
         LocalDateTime now = LocalDateTime.now();
@@ -88,5 +74,39 @@ public class RequestController {
         return "compressing data...";
     }
 
+    /*
+    Museum Workflow
+     */
+
+    @CrossOrigin
+    @GetMapping("/museum")
+    List<MuseumItem> getMuseumItems(){
+        try {
+            return MuseumItemMapper.generateMuseumItemList();
+        }catch (IOException io){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to get Museum Items");
+        }
+    }
+
+    @CrossOrigin
+    @GetMapping(value = {"/uuid/{username}"})
+    UUIDResponse getPlayerUUID(@PathVariable("username") String username ) {
+        try {
+            return apiFetcherService.getUUIDFromUsername(username);
+        } catch (HTTPRequestException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username) ;
+        }
+    }
+
+    @CrossOrigin
+    @GetMapping(value = {"/profiles/{playerUUID}"})
+    Map<String,String> getProfilesNameByPlayer(@PathVariable("playerUUID") String playerUUID ) {
+        try {
+            String profilesPayload = apiFetcherService.getProfilesByPlayerUUID(playerUUID);
+            return ProfilesRequestParser.extractProfilesNames(profilesPayload);
+        } catch (HTTPRequestException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid playerUUID : " + playerUUID) ;
+        }
+    }
 
 }
