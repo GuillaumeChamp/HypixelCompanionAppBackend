@@ -14,7 +14,9 @@ import java.util.logging.Logger;
 
 public class StaticItemMapper {
     private static final Logger logger = Logger.getLogger(StaticItemMapper.class.getName());
-
+    private static final String ID = "id";
+    private static final String REFORGE_STONE = "REFORGE_STONE";
+    private static final String CATEGORY_FIELD = "category";
     private StaticItemMapper(){
     }
 
@@ -48,17 +50,17 @@ public class StaticItemMapper {
     }
 
     private static void appendANewEntry(Map<String, CompleteItem> completeItemMap, JSONObject object) {
-        final String field_category = "category";
+
         final String field_tag = "tag";
         final String field_image= "image";
 
-        String id = object.getString("id");
-        if (!object.has(field_category)){
-            String message = createErrorMessage(id,field_category);
+        String id = object.getString(ID);
+        if (!object.has(CATEGORY_FIELD)){
+            String message = createErrorMessage(id, CATEGORY_FIELD);
             logger.log(Level.WARNING, message);
             return;
         }
-        String category = object.getString(field_category);
+        String category = object.getString(CATEGORY_FIELD);
         if (!object.has(field_tag)){
             String message = createErrorMessage(id,field_tag);
             logger.log(Level.WARNING, message);
@@ -109,11 +111,19 @@ public class StaticItemMapper {
      * @param newItemFromHypixelDatabase the current process json entry
      */
     private static void processItemFromHypixelDatabase(Map<String,CompleteItem> completeItemMap, JSONObject newItemFromHypixelDatabase){
-        String id = newItemFromHypixelDatabase.getString("id");
+        String id = newItemFromHypixelDatabase.getString(ID);
         CompleteItem matchingEntry = completeItemMap.get(id);
         if (matchingEntry != null) {
             updatePreviousEntryWithHypixelData(matchingEntry, newItemFromHypixelDatabase);
+        }else if (newItemFromHypixelDatabase.has(CATEGORY_FIELD) && REFORGE_STONE.equals(newItemFromHypixelDatabase.getString(CATEGORY_FIELD))){
+            completeItemMap.put(id,createNewEntryForReforgeStone(newItemFromHypixelDatabase));
         }
+    }
+
+    private static CompleteItem createNewEntryForReforgeStone(JSONObject newItemFromHypixelDatabase) {
+        CompleteItem newlyCreatedItem = new CompleteItem(newItemFromHypixelDatabase.getString(ID),REFORGE_STONE,"","oddities/Minecraft_items_anvil.png");
+        updatePreviousEntryWithHypixelData(newlyCreatedItem,newItemFromHypixelDatabase);
+        return newlyCreatedItem;
     }
 
     private static void updatePreviousEntryWithHypixelData(CompleteItem previousEntry,JSONObject newItemFromHypixelDatabase){
