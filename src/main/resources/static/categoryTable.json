@@ -1061,7 +1061,7 @@
     {
       "id": "REFINED_DIAMOND",
       "category": "Mining",
-      "tag": "Forge,Diamond",
+      "tag": "forge,Diamond",
       "image": "mining/SkyBlock_items_refined_diamond.png",
       "craft": [
         {
@@ -1359,13 +1359,13 @@
     {
       "id": "ROUGH_RUBY_GEM",
       "category": "Mining",
-      "tag": "ruby,gemstone,crystal hollows",
+      "tag": "gemstone,ruby",
       "image": "mining/SkyBlock_items_rough_ruby_gem.png"
     },
     {
       "id": "FLAWED_RUBY_GEM",
       "category": "Mining",
-      "tag": "ruby,gemstone,crystal hollows",
+      "tag": "gemstone,ruby",
       "image": "mining/SkyBlock_items_flawed_ruby_gem.png",
       "craft": [
         {
@@ -1377,7 +1377,7 @@
     {
       "id": "FINE_RUBY_GEM",
       "category": "Mining",
-      "tag": "ruby,gemstone,crystal hollows",
+      "tag": "gemstone,ruby",
       "image": "mining/SkyBlock_items_fine_ruby_gem.png",
       "craft": [
         {
@@ -1389,7 +1389,7 @@
     {
       "id": "FLAWLESS_RUBY_GEM",
       "category": "Mining",
-      "tag": "ruby,gemstone,crystal hollows",
+      "tag": "gemstone,ruby",
       "image": "mining/SkyBlock_items_flawless_ruby_gem.png",
       "craft": [
         {
@@ -1401,7 +1401,7 @@
     {
       "id": "PERFECT_RUBY_GEM",
       "category": "Mining",
-      "tag": "ruby,gemstone,crystal hollows",
+      "tag": "gemstone,ruby",
       "image": "mining/SkyBlock_items_perfect_ruby_gem.png",
       "craft": [
         {
@@ -1413,13 +1413,13 @@
     {
       "id": "ROUGH_AMBER_GEM",
       "category": "Mining",
-      "tag": "amber,gemstone,crystal hollows",
+      "tag": "gemstone,amber",
       "image": "mining/SkyBlock_items_rough_amber_gem.png"
     },
     {
       "id": "FLAWED_AMBER_GEM",
       "category": "Mining",
-      "tag": "amber,gemstone,crystal hollows",
+      "tag": "gemstone,amber",
       "image": "mining/SkyBlock_items_flawed_amber_gem.png",
       "craft": [
         {
@@ -1431,7 +1431,7 @@
     {
       "id": "FINE_AMBER_GEM",
       "category": "Mining",
-      "tag": "amber,gemstone,crystal hollows",
+      "tag": "gemstone,amber",
       "image": "mining/SkyBlock_items_fine_amber_gem.png",
       "craft": [
         {
@@ -1443,7 +1443,7 @@
     {
       "id": "FLAWLESS_AMBER_GEM",
       "category": "Mining",
-      "tag": "amber,gemstone,crystal hollows",
+      "tag": "gemstone,amber",
       "image": "mining/SkyBlock_items_flawless_amber_gem.png",
       "craft": [
         {
@@ -1455,7 +1455,7 @@
     {
       "id": "PERFECT_AMBER_GEM",
       "category": "Mining",
-      "tag": "amber,gemstone,crystal hollows",
+      "tag": "gemstone,amber",
       "image": "mining/SkyBlock_items_perfect_amber_gem.png",
       "craft": [
         {
@@ -1467,13 +1467,13 @@
     {
       "id": "ROUGH_SAPPHIRE_GEM",
       "category": "Mining",
-      "tag": "sapphire,gemstone,crystal hollows",
+      "tag": "gemstone,sapphire",
       "image": "mining/SkyBlock_items_rough_sapphire_gem.png"
     },
     {
       "id": "FLAWED_SAPPHIRE_GEM",
       "category": "Mining",
-      "tag": "sapphire,gemstone,crystal hollows",
+      "tag": "gemstone,sapphire",
       "image": "mining/SkyBlock_items_flawed_sapphire_gem.png",
       "craft": [
         {
@@ -1485,7 +1485,7 @@
     {
       "id": "FINE_SAPPHIRE_GEM",
       "category": "Mining",
-      "tag": "sapphire,gemstone,crystal hollows",
+      "tag": "gemstone,sapphire",
       "image": "mining/SkyBlock_items_fine_sapphire_gem.png",
       "craft": [
         {
@@ -1497,7 +1497,7 @@
     {
       "id": "FLAWLESS_SAPPHIRE_GEM",
       "category": "Mining",
-      "tag": "sapphire,gemstone,crystal hollows",
+      "tag": "gemstone,sapphire",
       "image": "mining/SkyBlock_items_flawless_sapphire_gem.png",
       "craft": [
         {
@@ -1509,7 +1509,7 @@
     {
       "id": "PERFECT_SAPPHIRE_GEM",
       "category": "Mining",
-      "tag": "sapphire,gemstone,crystal hollows",
+      "tag": "gemstone,sapphire",
       "image": "mining/SkyBlock_items_perfect_sapphire_gem.png",
       "craft": [
         {
@@ -1521,13 +1521,13 @@
     {
       "id": "ROUGH_JADE_GEM",
       "category": "Mining",
-      "tag": "jade,gemstone,crystal hollows",
+      "tag": "gemstone,jade",
       "image": "mining/SkyBlock_items_rough_jade_gem.png"
     },
     {
       "id": "FLAWED_JADE_GEM",
       "category": "Mining",
-      "tag": "jade,gemstone,crystal hollows",
+      "tag": "gemstone,jade",
       "image": "mining/SkyBlock_items_flawed_jade_gem.png",
       "craft": [
         {
@@ -1539,7 +1539,7 @@
     {
       "id": "FINE_JADE_GEM",
       "category": "Mining",
-      "tag": "jade,gemstone,crystal hollows",
+      "tag": "gemstone,jade",
       "image": "mining/SkyBlock_items_fine_jade_gem.png",
       "craft": [
         {
@@ -1551,7 +1551,7 @@
     {
       "id": "FLAWLESS_JADE_GEM",
       "category": "Mining",
-      "tag": "jade,gemstone,crystal hollows",
+      "tag": "gemstone,jade",
       "image": "mining/SkyBlock_items_flawless_jade_gem.png",
       "craft": [
         {
@@ -1563,7 +1563,7 @@
     {
       "id": "PERFECT_JADE_GEM",
       "category": "Mining",
-      "tag": "jade,gemstone,crystal hollows",
+      "tag": "gemstone,jade",
       "image": "mining/SkyBlock_items_perfect_jade_gem.png",
       "craft": [
         {
@@ -1575,13 +1575,13 @@
     {
       "id": "ROUGH_AMETHYST_GEM",
       "category": "Mining",
-      "tag": "amethyst,gemstone,crystal hollows",
+      "tag": "gemstone,amethyst",
       "image": "mining/SkyBlock_items_rough_amethyst_gem.png"
     },
     {
       "id": "FLAWED_AMETHYST_GEM",
       "category": "Mining",
-      "tag": "amethyst,gemstone,crystal hollows",
+      "tag": "gemstone,amethyst",
       "image": "mining/SkyBlock_items_flawed_amethyst_gem.png",
       "craft": [
         {
@@ -1593,7 +1593,7 @@
     {
       "id": "FINE_AMETHYST_GEM",
       "category": "Mining",
-      "tag": "amethyst,gemstone,crystal hollows",
+      "tag": "gemstone,amethyst",
       "image": "mining/SkyBlock_items_fine_amethyst_gem.png",
       "craft": [
         {
@@ -1605,7 +1605,7 @@
     {
       "id": "FLAWLESS_AMETHYST_GEM",
       "category": "Mining",
-      "tag": "amethyst,gemstone,crystal hollows",
+      "tag": "gemstone,amethyst",
       "image": "mining/SkyBlock_items_flawless_amethyst_gem.png",
       "craft": [
         {
@@ -1617,7 +1617,7 @@
     {
       "id": "PERFECT_AMETHYST_GEM",
       "category": "Mining",
-      "tag": "amethyst,gemstone,crystal hollows",
+      "tag": "gemstone,amethyst",
       "image": "mining/SkyBlock_items_perfect_amethyst_gem.png",
       "craft": [
         {
@@ -1629,13 +1629,13 @@
     {
       "id": "ROUGH_TOPAZ_GEM",
       "category": "Mining",
-      "tag": "topaz,gemstone,crystal hollows",
+      "tag": "gemstone,topaz",
       "image": "mining/SkyBlock_items_rough_topaz_gem.png"
     },
     {
       "id": "FLAWED_TOPAZ_GEM",
       "category": "Mining",
-      "tag": "topaz,gemstone,crystal hollows",
+      "tag": "gemstone,topaz",
       "image": "mining/SkyBlock_items_flawed_topaz_gem.png",
       "craft": [
         {
@@ -1647,7 +1647,7 @@
     {
       "id": "FINE_TOPAZ_GEM",
       "category": "Mining",
-      "tag": "topaz,gemstone,crystal hollows",
+      "tag": "gemstone,topaz",
       "image": "mining/SkyBlock_items_fine_topaz_gem.png",
       "craft": [
         {
@@ -1659,7 +1659,7 @@
     {
       "id": "FLAWLESS_TOPAZ_GEM",
       "category": "Mining",
-      "tag": "topaz,gemstone,crystal hollows",
+      "tag": "gemstone,topaz",
       "image": "mining/SkyBlock_items_flawless_topaz_gem.png",
       "craft": [
         {
@@ -1671,7 +1671,7 @@
     {
       "id": "PERFECT_TOPAZ_GEM",
       "category": "Mining",
-      "tag": "topaz,gemstone,crystal hollows",
+      "tag": "gemstone,topaz",
       "image": "mining/SkyBlock_items_perfect_topaz_gem.png",
       "craft": [
         {
@@ -1683,13 +1683,13 @@
     {
       "id": "ROUGH_JASPER_GEM",
       "category": "Mining",
-      "tag": "jasper,gemstone,crystal hollows",
+      "tag": "gemstone,jasper",
       "image": "mining/SkyBlock_items_rough_jasper_gem.png"
     },
     {
       "id": "FLAWED_JASPER_GEM",
       "category": "Mining",
-      "tag": "jasper,gemstone,crystal hollows",
+      "tag": "gemstone,jasper",
       "image": "mining/SkyBlock_items_flawed_jasper_gem.png",
       "craft": [
         {
@@ -1701,7 +1701,7 @@
     {
       "id": "FINE_JASPER_GEM",
       "category": "Mining",
-      "tag": "jasper,gemstone,crystal hollows",
+      "tag": "gemstone,jasper",
       "image": "mining/SkyBlock_items_fine_jasper_gem.png",
       "craft": [
         {
@@ -1713,7 +1713,7 @@
     {
       "id": "FLAWLESS_JASPER_GEM",
       "category": "Mining",
-      "tag": "jasper,gemstone,crystal hollows",
+      "tag": "gemstone,jasper",
       "image": "mining/SkyBlock_items_flawless_jasper_gem.png",
       "craft": [
         {
@@ -1725,7 +1725,7 @@
     {
       "id": "PERFECT_JASPER_GEM",
       "category": "Mining",
-      "tag": "jasper,gemstone,crystal hollows",
+      "tag": "gemstone,jasper",
       "image": "mining/SkyBlock_items_perfect_jasper_gem.png",
       "craft": [
         {
@@ -1737,13 +1737,13 @@
     {
       "id": "ROUGH_OPAL_GEM",
       "category": "Mining",
-      "tag": "opal,gemstone,crystal hollows",
+      "tag": "gemstone,crimson,opal",
       "image": "mining/SkyBlock_items_rough_opal_gem.png"
     },
     {
       "id": "FLAWED_OPAL_GEM",
       "category": "Mining",
-      "tag": "opal,gemstone,crystal hollows",
+      "tag": "gemstone,crimson,opal",
       "image": "mining/SkyBlock_items_flawed_opal_gem.png",
       "craft": [
         {
@@ -1755,7 +1755,7 @@
     {
       "id": "FINE_OPAL_GEM",
       "category": "Mining",
-      "tag": "opal,gemstone,crystal hollows",
+      "tag": "gemstone,crimson,opal",
       "image": "mining/SkyBlock_items_fine_opal_gem.png",
       "craft": [
         {
@@ -1767,7 +1767,7 @@
     {
       "id": "FLAWLESS_OPAL_GEM",
       "category": "Mining",
-      "tag": "opal,gemstone,crystal hollows",
+      "tag": "gemstone,crimson,opal",
       "image": "mining/SkyBlock_items_flawless_opal_gem.png",
       "craft": [
         {
@@ -1779,7 +1779,7 @@
     {
       "id": "PERFECT_OPAL_GEM",
       "category": "Mining",
-      "tag": "opal,gemstone,crystal hollows",
+      "tag": "gemstone,crimson,opal",
       "image": "mining/SkyBlock_items_perfect_opal_gem.png",
       "craft": [
         {
@@ -1791,13 +1791,13 @@
     {
       "id": "ROUGH_AQUAMARINE_GEM",
       "category": "Mining",
-      "tag": "aquamarine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,aquamarine",
       "image": "mining/SkyBlock_items_rough_aquamarine_gem.png"
     },
     {
       "id": "FLAWED_AQUAMARINE_GEM",
       "category": "Mining",
-      "tag": "aquamarine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,aquamarine",
       "image": "mining/SkyBlock_items_flawed_aquamarine_gem.png",
       "craft": [
         {
@@ -1809,7 +1809,7 @@
     {
       "id": "FINE_AQUAMARINE_GEM",
       "category": "Mining",
-      "tag": "aquamarine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,aquamarine",
       "image": "mining/SkyBlock_items_fine_aquamarine_gem.png",
       "craft": [
         {
@@ -1821,7 +1821,7 @@
     {
       "id": "FLAWLESS_AQUAMARINE_GEM",
       "category": "Mining",
-      "tag": "aquamarine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,aquamarine",
       "image": "mining/SkyBlock_items_flawless_aquamarine_gem.png",
       "craft": [
         {
@@ -1833,7 +1833,7 @@
     {
       "id": "PERFECT_AQUAMARINE_GEM",
       "category": "Mining",
-      "tag": "aquamarine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,aquamarine",
       "image": "mining/SkyBlock_items_perfect_aquamarine_gem.png",
       "craft": [
         {
@@ -1845,13 +1845,13 @@
     {
       "id": "ROUGH_CITRINE_GEM",
       "category": "Mining",
-      "tag": "citrine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,citrine",
       "image": "mining/SkyBlock_items_rough_citrine_gem.png"
     },
     {
       "id": "FLAWED_CITRINE_GEM",
       "category": "Mining",
-      "tag": "citrine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,citrine",
       "image": "mining/SkyBlock_items_flawed_citrine_gem.png",
       "craft": [
         {
@@ -1863,7 +1863,7 @@
     {
       "id": "FINE_CITRINE_GEM",
       "category": "Mining",
-      "tag": "citrine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,citrine",
       "image": "mining/SkyBlock_items_fine_citrine_gem.png",
       "craft": [
         {
@@ -1875,7 +1875,7 @@
     {
       "id": "FLAWLESS_CITRINE_GEM",
       "category": "Mining",
-      "tag": "citrine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,citrine",
       "image": "mining/SkyBlock_items_flawless_citrine_gem.png",
       "craft": [
         {
@@ -1887,7 +1887,7 @@
     {
       "id": "PERFECT_CITRINE_GEM",
       "category": "Mining",
-      "tag": "citrine,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,citrine",
       "image": "mining/SkyBlock_items_perfect_citrine_gem.png",
       "craft": [
         {
@@ -1899,13 +1899,13 @@
     {
       "id": "ROUGH_ONYX_GEM",
       "category": "Mining",
-      "tag": "onyx,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,onyx",
       "image": "mining/SkyBlock_items_rough_onyx_gem.png"
     },
     {
       "id": "FLAWED_ONYX_GEM",
       "category": "Mining",
-      "tag": "onyx,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,onyx",
       "image": "mining/SkyBlock_items_flawed_onyx_gem.png",
       "craft": [
         {
@@ -1917,7 +1917,7 @@
     {
       "id": "FINE_ONYX_GEM",
       "category": "Mining",
-      "tag": "onyx,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,onyx",
       "image": "mining/SkyBlock_items_fine_onyx_gem.png",
       "craft": [
         {
@@ -1929,7 +1929,7 @@
     {
       "id": "FLAWLESS_ONYX_GEM",
       "category": "Mining",
-      "tag": "onyx,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,onyx",
       "image": "mining/SkyBlock_items_flawless_onyx_gem.png",
       "craft": [
         {
@@ -1941,7 +1941,7 @@
     {
       "id": "PERFECT_ONYX_GEM",
       "category": "Mining",
-      "tag": "onyx,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,onyx",
       "image": "mining/SkyBlock_items_perfect_onyx_gem.png",
       "craft": [
         {
@@ -1953,13 +1953,13 @@
     {
       "id": "ROUGH_PERIDOT_GEM",
       "category": "Mining",
-      "tag": "peridot,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,peridot",
       "image": "mining/SkyBlock_items_rough_peridot_gem.png"
     },
     {
       "id": "FLAWED_PERIDOT_GEM",
       "category": "Mining",
-      "tag": "peridot,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,peridot",
       "image": "mining/SkyBlock_items_flawed_peridot_gem.png",
       "craft": [
         {
@@ -1971,7 +1971,7 @@
     {
       "id": "FINE_PERIDOT_GEM",
       "category": "Mining",
-      "tag": "peridot,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,peridot",
       "image": "mining/SkyBlock_items_fine_peridot_gem.png",
       "craft": [
         {
@@ -1983,7 +1983,7 @@
     {
       "id": "FLAWLESS_PERIDOT_GEM",
       "category": "Mining",
-      "tag": "peridot,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,peridot",
       "image": "mining/SkyBlock_items_flawless_peridot_gem.png",
       "craft": [
         {
@@ -1995,7 +1995,7 @@
     {
       "id": "PERFECT_PERIDOT_GEM",
       "category": "Mining",
-      "tag": "peridot,gemstone,crystal hollows",
+      "tag": "gemstone,glacite,peridot",
       "image": "mining/SkyBlock_items_perfect_peridot_gem.png",
       "craft": [
         {
@@ -2151,7 +2151,7 @@
     {
       "id": "GEMSTONE_MIXTURE",
       "category": "Mining",
-      "tag": "gemstone,crystal hollows,forge",
+      "tag": "forge,gemstone,crystal hollows",
       "image": "mining/SkyBlock_items_gemstone_mixture.png",
       "craft": [
         {
@@ -2527,7 +2527,7 @@
     {
       "id": "UMBER_PLATE",
       "category": "Mining",
-      "tag": "glacite tunnels,umber,forge",
+      "tag": "forge,glacite tunnels,umber",
       "image": "mining/SkyBlock_items_umber_plate.png",
       "craft": [
         {
@@ -2539,7 +2539,7 @@
     {
       "id": "UMBER_KEY",
       "category": "Mining",
-      "tag": "glacite tunnels,umber,forge",
+      "tag": "forge,glacite tunnels,umber",
       "image": "oddities/SkyBlock_items_enchanted_dead_bush.gif",
       "craft": [
         {
@@ -2581,7 +2581,7 @@
     {
       "id": "TUNGSTEN_PLATE",
       "category": "Mining",
-      "tag": "glacite tunnels,umber,forge",
+      "tag": "forge,glacite tunnels,umber",
       "image": "mining/SkyBlock_items_umber_plate.png",
       "craft": [
         {
@@ -2593,7 +2593,7 @@
     {
       "id": "TUNGSTEN_KEY",
       "category": "Mining",
-      "tag": "glacite tunnels,umber,forge",
+      "tag": "forge,glacite tunnels,umber",
       "image": "oddities/SkyBlock_items_enchanted_lever.gif",
       "craft": [
         {
@@ -2623,7 +2623,7 @@
     {
       "id": "GLACITE_AMALGAMATION",
       "category": "Mining",
-      "tag": "glacite tunnels,glacite,forge",
+      "tag": "forge,glacite tunnels,glacite",
       "image": "mining/SkyBlock_items_glacite_amalgamation.png",
       "craft": [
         {
@@ -2635,7 +2635,7 @@
     {
       "id": "PERFECT_PLATE",
       "category": "Mining",
-      "tag": "glacite tunnels,forge",
+      "tag": "forge,glacite tunnels",
       "image": "mining/SkyBlock_items_perfect_plate.png",
       "craft": [
         {
@@ -2647,7 +2647,7 @@
     {
       "id": "SKELETON_KEY",
       "category": "Mining",
-      "tag": "glacite tunnels,forge",
+      "tag": "forge,glacite tunnels",
       "image": "oddities/Minecraft_items_tripwire_hook.png",
       "craft": [
         {
