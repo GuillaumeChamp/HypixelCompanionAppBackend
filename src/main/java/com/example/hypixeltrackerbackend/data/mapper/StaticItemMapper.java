@@ -16,6 +16,8 @@ public class StaticItemMapper {
     private static final Logger logger = Logger.getLogger(StaticItemMapper.class.getName());
     private static final String ID = "id";
     private static final String REFORGE_STONE = "REFORGE_STONE";
+    private static final String CLEAN_REFORGE_STONE_CATEGORY_NAME = "Reforge Stone";
+
     private static final String CATEGORY_FIELD = "category";
     private StaticItemMapper(){
     }
@@ -121,7 +123,7 @@ public class StaticItemMapper {
     }
 
     private static CompleteItem createNewEntryForReforgeStone(JSONObject newItemFromHypixelDatabase) {
-        CompleteItem newlyCreatedItem = new CompleteItem(newItemFromHypixelDatabase.getString(ID),REFORGE_STONE,"","oddities/Minecraft_items_anvil.png");
+        CompleteItem newlyCreatedItem = new CompleteItem(newItemFromHypixelDatabase.getString(ID),CLEAN_REFORGE_STONE_CATEGORY_NAME,"","oddities/Minecraft_items_anvil.png");
         updatePreviousEntryWithHypixelData(newlyCreatedItem,newItemFromHypixelDatabase);
         return newlyCreatedItem;
     }

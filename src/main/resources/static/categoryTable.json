@@ -882,14 +882,14 @@
     },
     {
       "id": "WRIGGLING_LARVA",
-      "category": "Farming",
+      "category": "Consumables",
       "tag": "Garden,pest",
       "image": "farming/SkyBlock_items_wriggling_larva.png"
     },
     {
       "id": "FINE_FLOUR",
-      "category": "Farming",
-      "tag": "Garden",
+      "category": "Event",
+      "tag": "Garden,Finnegan",
       "image": "farming/SkyBlock_items_fine_flour.png"
     },
     {
@@ -3667,7 +3667,7 @@
     {
       "id": "ENCHANTED_BIRCH_LOG",
       "category": "Woods",
-      "tag": "spruce",
+      "tag": "birch",
       "image": "woods/SkyBlock_items_enchanted_birch_log.gif",
       "craft": [
         {
@@ -3685,7 +3685,7 @@
     {
       "id": "ENCHANTED_DARK_OAK_LOG",
       "category": "Woods",
-      "tag": "spruce",
+      "tag": "dark oak",
       "image": "woods/SkyBlock_items_enchanted_dark_oak_log.gif",
       "craft": [
         {
@@ -3733,13 +3733,13 @@
     {
       "id": "RED_ROSE",
       "category": "Woods",
-      "tag": "flower",
+      "tag": "flower,poppy",
       "image": "woods/Minecraft_items_poppy.png"
     },
     {
       "id": "ENCHANTED_POPPY",
       "category": "Woods",
-      "tag": "flower",
+      "tag": "flower,poppy",
       "image": "woods/SkyBlock_items_enchanted_poppy.gif",
       "craft": [
         {
@@ -3751,13 +3751,13 @@
     {
       "id": "YELLOW_FLOWER",
       "category": "Woods",
-      "tag": "flower",
+      "tag": "flower,dandelion",
       "image": "woods/Minecraft_items_dandelion.png"
     },
     {
       "id": "ENCHANTED_DANDELION",
       "category": "Woods",
-      "tag": "flower",
+      "tag": "flower,dandelion",
       "image": "woods/SkyBlock_items_enchanted_dandelion.gif",
       "craft": [
         {
@@ -5338,7 +5338,7 @@
       "id": "BERBERIS_FUEL_INJECTOR",
       "category": "Minion Upgrades",
       "tag": "minion speed,farming minion",
-      "image": "oddities/SkyBlock_items_enchanted_trapdoor.giff"
+      "image": "oddities/SkyBlock_items_enchanted_trapdoor.gif"
     },
     {
       "id": "FLYCATCHER_UPGRADE",
