@@ -38,7 +38,7 @@ class UUIDRequestParserTest {
     @Test
     void shouldThrowExceptionWhileParsingPlayerNotFound() {
         HttpResponse<String> response = createMockHttpResponse(200, PLAYER_NOT_FOUND_PAYLOAD);
-        assertThatThrownBy(() -> UUIDRequestParser.parse(response)).isInstanceOf(HTTPRequestException.class).hasMessageContaining("not found");
+        assertThatThrownBy(() -> UUIDRequestParser.parse(response)).isInstanceOf(HTTPRequestException.class).hasMessageContaining("Request failed");
     }
 
     @Test
