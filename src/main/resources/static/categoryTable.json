@@ -3006,158 +3006,158 @@
     },
     {
       "id": "SUMMONING_EYE",
-      "category": "Combat",
-      "tag": "The End,summoning eye",
+      "category": "The End",
+      "tag": "summoning eye",
       "image": "combat/SkyBlock_items_summoning_eye.png"
     },
     {
       "id": "CRYSTAL_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Crystal Fragment",
+      "category": "The End",
+      "tag": "Crystal Fragment",
       "image": "mining/SkyBlock_items_enchanted_quartz.gif"
     },
     {
       "id": "PROTECTOR_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_protector_fragment.png"
     },
     {
       "id": "OLD_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_old_fragment.png"
     },
     {
       "id": "UNSTABLE_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_unstable_fragment.png"
     },
     {
       "id": "STRONG_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_strong_fragment.png"
     },
     {
       "id": "WISE_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_wise_fragment.png"
     },
     {
       "id": "YOUNG_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_young_fragment.png"
     },
     {
       "id": "SUPERIOR_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_superior_fragment.png"
     },
     {
       "id": "HOLY_FRAGMENT",
-      "category": "Combat",
-      "tag": "The End,Dragon Fragments",
+      "category": "The End",
+      "tag": "Dragon Fragments",
       "image": "combat/SkyBlock_items_holy_fragment.png"
     },
     {
       "id": "RITUAL_RESIDUE",
-      "category": "Combat",
-      "tag": "The End,Draconic Sacrifice",
+      "category": "The End",
+      "tag": "Draconic Sacrifice",
       "image": "combat/SkyBlock_items_ritual_residue.png"
     },
     {
       "id": "MITE_GEL",
-      "category": "Combat",
-      "tag": "The End,Draconic Sacrifice",
+      "category": "The End",
+      "tag": "Draconic Sacrifice",
       "image": "oddities/Minecraft_items_purple_dye.png"
     },
     {
       "id": "BLAZE_ASHES",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,blaze",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,blaze",
       "image": "combat/SkyBlock_items_blaze_ashes.png"
     },
     {
       "id": "MUTATED_BLAZE_ASHES",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,mutated blaze",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,mutated blaze",
       "image": "combat/SkyBlock_items_mutated_blaze_ashes.png"
     },
     {
       "id": "MILLENIA_OLD_BLAZE_ASHES",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,millennia-aged blaze",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,millennia-aged blaze",
       "image": "combat/SkyBlock_items_millenia_old_blaze_ashes.png"
     },
     {
       "id": "SPECTRE_DUST",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Wither Spectre",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Wither Spectre",
       "image": "combat/SkyBlock_items_spectre_dust.png"
     },
     {
       "id": "WITHER_SOUL",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Wither Skeleton",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Wither Skeleton",
       "image": "combat/SkyBlock_items_wither_soul.png"
     },
     {
       "id": "BEZOS",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Bezal",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Bezal",
       "image": "combat/SkyBlock_items_bezos.png"
     },
     {
       "id": "MAGMAG",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Pack Magma Cube",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Pack Magma Cube",
       "image": "combat/SkyBlock_items_magmag.png"
     },
     {
       "id": "DIGESTED_MUSHROOMS",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Mushroom Bull",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Mushroom Bull",
       "image": "combat/SkyBlock_items_digested_mushrooms.png"
     },
     {
       "id": "BURNING_EYE",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Flaming Spider",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Flaming Spider",
       "image": "combat/SkyBlock_items_burning_eye.png"
     },
     {
       "id": "MAGMA_CHUNK",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Magma Cube",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Magma Cube",
       "image": "combat/SkyBlock_items_magma_chunk.png"
     },
     {
       "id": "GAZING_PEARL",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,flare",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,flare",
       "image": "combat/SkyBlock_items_gazing_pearl.png"
     },
     {
       "id": "FLAMES",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Cinderbat",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Cinderbat",
       "image": "combat/SkyBlock_items_enchanted_blaze_powder.gif"
     },
     {
       "id": "KADA_LEAD",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Kada Knight",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Kada Knight",
       "image": "oddities/SkyBlock_items_enchanted_lead.gif"
     },
     {
       "id": "MATCH_STICKS",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Matcho",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Matcho",
       "image": "oddities/Minecraft_items_redstone_torch.png",
       "craft": [
         {
@@ -3168,98 +3168,98 @@
     },
     {
       "id": "TENTACLE_MEAT",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,Ghast,Hellwisp",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,Ghast,Hellwisp",
       "image": "combat/SkyBlock_items_tentacle_meat.png"
     },
     {
       "id": "CORRUPTED_FRAGMENT",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mob Drops,corruption",
+      "category": "Crimson Isle",
+      "tag": "Mob Drops,corruption",
       "image": "combat/SkyBlock_items_corrupted_fragment.png"
     },
     {
       "id": "HALLOWED_SKULL",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mini Bosses,Bladesoul",
+      "category": "Crimson Isle",
+      "tag": "Mini Bosses,Bladesoul",
       "image": "combat/SkyBlock_items_hallowed_skull.png"
     },
     {
       "id": "SPELL_POWDER",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mini Bosses,Mage Outlaw",
+      "category": "Crimson Isle",
+      "tag": "Mini Bosses,Mage Outlaw",
       "image": "mining/SkyBlock_items_enchanted_glowstone_dust.gif"
     },
     {
       "id": "LEATHER_CLOTH",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mini Bosses,Barbarian Duke X",
+      "category": "Crimson Isle",
+      "tag": "Mini Bosses,Barbarian Duke X",
       "image": "farming/SkyBlock_items_enchanted_leather.gif"
     },
     {
       "id": "LUMINO_FIBER",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mini Bosses,Ashfang",
+      "category": "Crimson Isle",
+      "tag": "Mini Bosses,Ashfang",
       "image": "combat/SkyBlock_items_enchanted_string.gif"
     },
     {
       "id": "COMPACT_OOZE",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mini Bosses,Magma Boss",
+      "category": "Crimson Isle",
+      "tag": "Mini Bosses,Magma Boss",
       "image": "combat/SkyBlock_items_compact_ooze.png"
     },
     {
       "id": "REKINDLED_EMBER_FRAGMENT",
-      "category": "Combat",
-      "tag": "Crimson Isle,Mini Bosses,Magma Boss",
+      "category": "Crimson Isle",
+      "tag": "Mini Bosses,Magma Boss",
       "image": "combat/SkyBlock_items_rekindled_ember_fragment.png"
     },
     {
       "id": "CORRUPTED_NETHER_STAR",
-      "category": "Combat",
-      "tag": "Crimson Isle,special,Vanquisher",
+      "category": "Crimson Isle",
+      "tag": "special,Vanquisher",
       "image": "oddities/SkyBlock_items_nether_star.gif"
     },
     {
       "id": "HEAVY_PEARL",
-      "category": "Combat",
-      "tag": "Crimson Isle,special,Matriarch",
+      "category": "Crimson Isle",
+      "tag": "special,Matriarch",
       "image": "combat/SkyBlock_items_heavy_pearl.png"
     },
     {
       "id": "KUUDRA_TEETH",
-      "category": "Combat",
-      "tag": "Crimson Isle,special,kuudra",
+      "category": "Crimson Isle",
+      "tag": "special,kuudra",
       "image": "combat/SkyBlock_items_kuudra_teeth.png"
     },
     {
       "id": "X",
-      "category": "Combat",
-      "tag": "Crimson Isle,special,exe",
+      "category": "Crimson Isle",
+      "tag": "special,exe",
       "image": "combat/SkyBlock_items_x.png"
     },
     {
       "id": "Y",
-      "category": "Combat",
-      "tag": "Crimson Isle,special,exe,wai",
+      "category": "Crimson Isle",
+      "tag": "special,exe,wai",
       "image": "combat/SkyBlock_items_y.png"
     },
     {
       "id": "Z",
-      "category": "Combat",
-      "tag": "Crimson Isle,special,exe,wai,zee",
+      "category": "Crimson Isle",
+      "tag": "special,exe,wai,zee",
       "image": "combat/SkyBlock_items_z.png"
     },
     {
       "id": "REVENANT_FLESH",
-      "category": "Combat",
-      "tag": "slayer,Revenant Horror",
+      "category": "Slayer",
+      "tag": "Revenant Horror",
       "image": "combat/SkyBlock_items_enchanted_rotten_flesh.gif"
     },
     {
       "id": "REVENANT_VISCERA",
-      "category": "Combat",
-      "tag": "slayer,Revenant Horror",
+      "category": "Slayer",
+      "tag": "Revenant Horror",
       "image": "farming/SkyBlock_items_enchanted_grilled_porkchop.gif",
       "craft": [
         {
@@ -3270,32 +3270,32 @@
     },
     {
       "id": "GOLDEN_POWDER",
-      "category": "Combat",
-      "tag": "slayer,Revenant Horror, golden ghoul",
+      "category": "Slayer",
+      "tag": "Revenant Horror, golden ghoul",
       "image": "mining/SkyBlock_items_enchanted_glowstone_dust.gif"
     },
     {
       "id": "UNDEAD_CATALYST",
-      "category": "Combat",
-      "tag": "slayer,Revenant Horror",
+      "category": "Slayer",
+      "tag": "Revenant Horror",
       "image": "combat/SkyBlock_items_undead_catalyst.png"
     },
     {
       "id": "REVENANT_CATALYST",
-      "category": "Combat",
-      "tag": "slayer,Revenant Horror",
+      "category": "Slayer",
+      "tag": "Revenant Horror",
       "image": "combat/SkyBlock_items_revenant_catalyst.png"
     },
     {
       "id": "TARANTULA_WEB",
-      "category": "Combat",
-      "tag": "slayer,Tarantula Broodfather",
+      "category": "Slayer",
+      "tag": "Tarantula Broodfather",
       "image": "combat/SkyBlock_items_enchanted_string.gif"
     },
     {
       "id": "TARANTULA_SILK",
-      "category": "Combat",
-      "tag": "slayer,Tarantula Broodfather",
+      "category": "Slayer",
+      "tag": "Tarantula Broodfather",
       "image": "combat/SkyBlock_items_enchanted_cobweb.gif",
       "craft": [
         {
@@ -3306,32 +3306,32 @@
     },
     {
       "id": "SPIDER_CATALYST",
-      "category": "Combat",
-      "tag": "slayer,Tarantula Broodfather",
+      "category": "Slayer",
+      "tag": "Tarantula Broodfather",
       "image": "combat/SkyBlock_items_spider_catalyst.png"
     },
     {
       "id": "FLY_SWATTER",
-      "category": "Combat",
-      "tag": "slayer,Tarantula Broodfather",
+      "category": "Slayer",
+      "tag": "Tarantula Broodfather",
       "image": "oddities/SkyBlock_items_enchanted_golden_shovel.gif"
     },
     {
       "id": "TOXIC_ARROW_POISON",
-      "category": "Combat",
-      "tag": "Slayer,Tarantula Broodfather",
+      "category": "Slayer",
+      "tag": "Tarantula Broodfather",
       "image": "oddities/Minecraft_items_lime_dye.png"
     },
     {
       "id": "WOLF_TOOTH",
-      "category": "Combat",
-      "tag": "Slayer,Sven Packmaster",
+      "category": "Slayer",
+      "tag": "Sven Packmaster",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "GOLDEN_TOOTH",
-      "category": "Combat",
-      "tag": "Slayer,Sven Packmaster",
+      "category": "Slayer",
+      "tag": "Sven Packmaster",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif",
       "craft": [
         {
@@ -3342,20 +3342,20 @@
     },
     {
       "id": "WEAK_WOLF_CATALYST",
-      "category": "Combat",
-      "tag": "Slayer,Sven Packmaster",
+      "category": "Slayer",
+      "tag": "Sven Packmaster",
       "image": "combat/SkyBlock_items_enchanted_bone.gif"
     },
     {
       "id": "NULL_SPHERE",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "oddities/SkyBlock_items_enchanted_firework_star.gif"
     },
     {
       "id": "NULL_OVOID",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "combat/SkyBlock_items_enchanted_enderman_spawn_egg.gif",
       "craft": [
         {
@@ -3366,20 +3366,20 @@
     },
     {
       "id": "NULL_ATOM",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "oddities/SkyBlock_items_enchanted_oak_button.gif"
     },
     {
       "id": "RAW_SOULFLOW",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph,soulflow",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph,soulflow",
       "image": "combat/SkyBlock_items_raw_soulflow.png"
     },
     {
       "id": "SOULFLOW",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph,soulflow",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph,soulflow",
       "image": "combat/SkyBlock_items_soulflow.png",
       "craft": [
         {
@@ -3390,8 +3390,8 @@
     },
     {
       "id": "BRAIDED_GRIFFIN_FEATHER",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "combat/SkyBlock_items_enchanted_string.gif",
       "craft": [
         {
@@ -3402,14 +3402,14 @@
     },
     {
       "id": "TWILIGHT_ARROW_POISON",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "oddities/Minecraft_items_purple_dye.png"
     },
     {
       "id": "NULL_BLADE",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "oddities/SkyBlock_items_enchanted_shears.gif",
       "craft": [
         {
@@ -3420,8 +3420,8 @@
     },
     {
       "id": "NULL_EDGE",
-      "category": "Combat",
-      "tag": "Slayer,Voidgloom Seraph",
+      "category": "Slayer",
+      "tag": "Voidgloom Seraph",
       "image": "oddities/SkyBlock_items_enchanted_stick.gif",
       "craft": [
         {
@@ -3432,14 +3432,14 @@
     },
     {
       "id": "DERELICT_ASHE",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_enchanted_gunpowder.gif"
     },
     {
       "id": "AMALGAMATED_CRIMSONITE_NEW",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_enchanted_spider_spawn_egg.gif",
       "craft": [
         {
@@ -3450,8 +3450,8 @@
     },
     {
       "id": "MOLTEN_POWDER",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_enchanted_blaze_powder.gif",
       "craft": [
         {
@@ -3462,75 +3462,51 @@
     },
     {
       "id": "BLAZE_ROD_DISTILLATE",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_blaze_rod_distillate.png"
     },
     {
       "id": "CRUDE_GABAGOOL_DISTILLATE",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_crude_gabagool_distillate.png"
     },
     {
       "id": "GLOWSTONE_DUST_DISTILLATE",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_glowstone_dust_distillate.png"
     },
     {
       "id": "MAGMA_CREAM_DISTILLATE",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_magma_cream_distillate.png"
     },
     {
       "id": "NETHER_STALK_DISTILLATE",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_nether_stalk_distillate.png"
     },
     {
       "id": "ARROW_BUNDLE_MAGMA",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord",
       "image": "combat/SkyBlock_items_arrow_bundle_magma.png"
     },
     {
       "id": "KELVIN_INVERTER",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord,pet upgrade",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord,pet upgrade",
       "image": "combat/SkyBlock_items_kelvin_inverter.png"
     },
     {
       "id": "SUBZERO_INVERTER",
-      "category": "Combat",
-      "tag": "slayer,Inferno Demonlord,pet upgrade",
+      "category": "Slayer",
+      "tag": "Inferno Demonlord,pet upgrade",
       "image": "combat/SkyBlock_items_subzero_inverter.png"
-    },
-    {
-      "id": "GIANT_FRAGMENT_BOULDER",
-      "category": "Catacombs",
-      "tag": "Special Fragments,Jolly Pink Giant",
-      "image": "oddities/Minecraft_items_firework_star.png"
-    },
-    {
-      "id": "GIANT_FRAGMENT_LASER",
-      "category": "Catacombs",
-      "tag": "Special Fragments,L.A.S.R",
-      "image": "combat/Minecraft_items_eye_of_ender.png"
-    },
-    {
-      "id": "GIANT_FRAGMENT_BIGFOOT",
-      "category": "Catacombs",
-      "tag": "Special Fragments,Bigfoot",
-      "image": "oddities/SkyBlock_items_enchanted_lead.gif"
-    },
-    {
-      "id": "GIANT_FRAGMENT_BIGFOOT",
-      "category": "Catacombs",
-      "tag": "Special Fragments,The Diamond Giant",
-      "image": "oddities/Minecraft_items_diamond_horse_armor.png"
     },
     {
       "id": "MIMIC_FRAGMENT",
@@ -4548,14 +4524,14 @@
     },
     {
       "id": "BOOSTER_COOKIE",
-      "category": "Oddity",
-      "tag": "Booster Cookie",
+      "category": "Booster Cookie",
+      "tag": "Bazaar Cookie",
       "image": "farming/SkyBlock_items_enchanted_cookie.gif"
     },
     {
       "id": "RECOMBOBULATOR_3000",
-      "category": "Modifier",
-      "tag": "Item Upgrade",
+      "category": "Item Upgrade",
+      "tag": "Rarity Upgrade",
       "image": "oddities/SkyBlock_items_recombobulator_3000.png"
     },
     {
@@ -5428,13 +5404,13 @@
     {
       "id": "CATALYST",
       "category": "Minion Fuels",
-      "tag": "",
+      "tag": "x3",
       "image": "oddities/SkyBlock_items_enchanted_nether_star.gif"
     },
     {
       "id": "HYPER_CATALYST",
       "category": "Minion Fuels",
-      "tag": "",
+      "tag": "x4",
       "image": "oddities/SkyBlock_items_enchanted_nether_star.gif"
     },
     {
@@ -5630,18 +5606,6 @@
       "image": "oddities/SkyBlock_items_party_gift.png"
     },
     {
-      "id": "REFINED_BOTTLE_OF_JYRRE",
-      "category": "Event",
-      "tag": "winter,aging",
-      "image": "oddities/SkyBlock_items_potion_of_night_vision.gif"
-    },
-    {
-      "id": "MOBY_DUCK_COLLECTOR_EDITION",
-      "category": "Fishing",
-      "tag": "junk,aging",
-      "image": "oddities/SkyBlock_items_enchanted_book_2.gif"
-    },
-    {
       "id": "VOLCANIC_ROCK",
       "category": "Event",
       "tag": "winter",
@@ -5655,14 +5619,14 @@
     },
     {
       "id": "REFINED_MINERAL",
-      "category": "Mining",
-      "tag": "event,cole",
+      "category": "Event",
+      "tag": "cole",
       "image": "oddities/Minecraft_items_light_blue_dye.png"
     },
     {
       "id": "GLOSSY_GEMSTONE",
-      "category": "Mining",
-      "tag": "event,cole",
+      "category": "Event",
+      "tag": "cole",
       "image": "oddities/Minecraft_items_purple_dye.png"
     },
     {
@@ -5673,26 +5637,26 @@
     },
     {
       "id": "GRIFFIN_FEATHER",
-      "category": "Mythological",
-      "tag": "diana",
+      "category": "Event",
+      "tag": "Mythological,diana",
       "image": "farming/Minecraft_items_feather.png"
     },
     {
       "id": "DAEDALUS_STICK",
-      "category": "Mythological",
-      "tag": "diana",
+      "category": "Event",
+      "tag": "Mythological,diana",
       "image": "oddities/SkyBlock_items_enchanted_stick.gif"
     },
     {
       "id": "ANCIENT_CLAW",
-      "category": "Mythological",
-      "tag": "diana",
+      "category": "Event",
+      "tag": "Mythological,diana",
       "image": "mining/Minecraft_items_flint.png"
     },
     {
       "id": "ENCHANTED_ANCIENT_CLAW",
-      "category": "Mythological",
-      "tag": "diana",
+      "category": "Event",
+      "tag": "Mythological,diana",
       "image": "mining/SkyBlock_items_enchanted_flint.gif",
       "craft": [
         {
@@ -5703,37 +5667,37 @@
     },
     {
       "id": "NURSE_SHARK_TOOTH",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "BLUE_SHARK_TOOTH",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "TIGER_SHARK_TOOTH",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "GREAT_WHITE_SHARK_TOOTH",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
     },
     {
       "id": "SHARK_FIN",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "fishing/Minecraft_items_prismarine_shard.png"
     },
     {
       "id": "ENCHANTED_SHARK_FIN",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "fishing/SkyBlock_items_enchanted_prismarine_shard.gif",
       "craft": [
@@ -5745,7 +5709,7 @@
     },
     {
       "id": "GREAT_WHITE_TOOTH_MEAL",
-      "category": "Fishing",
+      "category": "Event",
       "tag": "fishing festival",
       "image": "combat/Minecraft_items_bone_meal.png",
       "craft": [
@@ -5870,6 +5834,18 @@
       "image": "oddities/SkyBlock_items_dwarven_os_metallic_minis.png"
     },
     {
+      "id": "REFINED_BOTTLE_OF_JYRRE",
+      "category": "Consumables",
+      "tag": "winter,aging",
+      "image": "oddities/SkyBlock_items_potion_of_night_vision.gif"
+    },
+    {
+      "id": "MOBY_DUCK_COLLECTOR_EDITION",
+      "category": "Consumables",
+      "tag": "junk,aging",
+      "image": "oddities/SkyBlock_items_enchanted_book_2.gif"
+    },
+    {
       "id": "SPOTLITE",
       "category": "Consumables",
       "tag": "Health Regen,Rift Time,Rift Transferable",
@@ -5948,6 +5924,30 @@
       "image": "oddities/SkyBlock_items_nether_star.gif"
     },
     {
+      "id": "GIANT_FRAGMENT_BOULDER",
+      "category": "Fragments",
+      "tag": "Jolly Pink Giant,Astraea,Goldor",
+      "image": "oddities/Minecraft_items_firework_star.png"
+    },
+    {
+      "id": "GIANT_FRAGMENT_LASER",
+      "category": "Fragments",
+      "tag": "L.A.S.R,Hyperion,Storm",
+      "image": "combat/Minecraft_items_eye_of_ender.png"
+    },
+    {
+      "id": "GIANT_FRAGMENT_BIGFOOT",
+      "category": "Fragments",
+      "tag": "Bigfoot,Scylla,Flethorn Reaper,Maxor",
+      "image": "oddities/SkyBlock_items_enchanted_lead.gif"
+    },
+    {
+      "id": "GIANT_FRAGMENT_DIAMOND",
+      "category": "Fragments",
+      "tag": "The Diamond Giant,Valkyrie,Necron",
+      "image": "oddities/Minecraft_items_diamond_horse_armor.png"
+    },
+    {
       "id": "BONZO_FRAGMENT",
       "category": "Fragments",
       "tag": "Bonzo,Bonzo's Staff,Bonzo's Mask",
@@ -5982,12 +5982,6 @@
       "category": "Fragments",
       "tag": "Thorn,Spirit boots,Spirit Sceptre,Spirit Shortbow,Spirit Mask,Bonemerang,Bone Necklace",
       "image": "combat/SkyBlock_items_enchanted_ghast_tear.gif"
-    },
-    {
-      "id": "GIANT_FRAGMENT_DIAMOND",
-      "category": "Fragments",
-      "tag": "The Diamond Giant,Valkyrie,Necron",
-      "image": "combat/Minecraft_items_diamond_horse_armor.png"
     },
     {
       "id": "WINTER_FRAGMENT",
