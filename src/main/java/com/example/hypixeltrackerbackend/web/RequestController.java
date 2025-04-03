@@ -26,7 +26,6 @@ import java.util.Map;
 
 @RestController
 public class RequestController {
-    private static final String DEFAULT_TIME_WINDOW = "hour";
     private final DataProcessorService dataProcessorService;
     private final ApiFetcherService apiFetcherService;
 
@@ -49,7 +48,6 @@ public class RequestController {
     @CrossOrigin
     @GetMapping(value = {"/bazaar/{id}", "/bazaar/{id}/{window}"})
     List<PricingRecord> getHistory(@PathVariable("id") String itemId, @PathVariable(value = "window", required = false) String timeWindow) {
-        timeWindow = timeWindow==null ? DEFAULT_TIME_WINDOW : timeWindow;
         List<PricingRecord> history = dataProcessorService.getHistory(itemId, timeWindow).stream().map(PricingRecord::new).toList();
         if (CollectionsUtils.isEmpty(history)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item not found : " + itemId);
@@ -61,13 +59,13 @@ public class RequestController {
     @GetMapping(value = {"/bazaar/compress"})
     String compressData() {
         LocalDateTime now = LocalDateTime.now();
-        new Thread(()->{
+        new Thread(() -> {
             // compress last week
             for (int i = 2; i < 7; i++) {
                 dataProcessorService.groupOneDayRecords(now.minusDays(i));
             }
             // compress last day
-            for (int i=2;i<24;i++){
+            for (int i = 2; i < 24; i++) {
                 dataProcessorService.groupOneHourRecords(now.minusHours(i));
             }
         }).start();
@@ -80,32 +78,32 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping("/museum")
-    List<MuseumItem> getMuseumItems(){
+    List<MuseumItem> getMuseumItems() {
         try {
             return MuseumItemMapper.generateMuseumItemList();
-        }catch (IOException io){
+        } catch (IOException io) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to get Museum Items");
         }
     }
 
     @CrossOrigin
     @GetMapping(value = {"/uuid/{username}"})
-    UUIDResponse getPlayerUUID(@PathVariable("username") String username ) {
+    UUIDResponse getPlayerUUID(@PathVariable("username") String username) {
         try {
             return apiFetcherService.getUUIDFromUsername(username);
         } catch (HTTPRequestException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username) ;
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username);
         }
     }
 
     @CrossOrigin
     @GetMapping(value = {"/profiles/{playerUUID}"})
-    Map<String,String> getProfilesNameByPlayer(@PathVariable("playerUUID") String playerUUID ) {
+    Map<String, String> getProfilesNameByPlayer(@PathVariable("playerUUID") String playerUUID) {
         try {
             String profilesPayload = apiFetcherService.getProfilesByPlayerUUID(playerUUID);
             return ProfilesRequestParser.extractProfilesNames(profilesPayload);
         } catch (HTTPRequestException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid playerUUID : " + playerUUID) ;
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid playerUUID : " + playerUUID);
         }
     }
 

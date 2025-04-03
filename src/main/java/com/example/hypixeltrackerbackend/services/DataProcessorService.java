@@ -54,14 +54,15 @@ public class DataProcessorService {
     public List<ItemPricing> getHistory(String itemId, String timeWindow) {
         LocalDateTime ending = LocalDateTime.now();
         LocalDateTime beginning = switch (timeWindow) {
-            case "day" -> ending.minusHours(24);
-            case "hour" -> ending.minusHours(1);
-            case "week" -> ending.minusDays(7);
-            case "month" -> ending.minusMonths(1);
-            case "year" -> ending.minusYears(1);
-            default -> LocalDateTime.MIN;
+            case TimeConstant.DAY_TIME_WINDOW -> ending.minusHours(24);
+            case TimeConstant.WEEK_TIME_WINDOW -> ending.minusDays(7);
+            case TimeConstant.MOUTH_TIME_WINDOW -> ending.minusMonths(1);
+            case TimeConstant.YEAR_TIME_WINDOW -> ending.minusYears(1);
+            case null, default -> ending.minusHours(1);
         };
-        return pricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(itemId, beginning, ending);
+        List<ItemPricing> answer = pricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(itemId, beginning, ending);
+        logger.log(Level.INFO, () -> "successfully processed history for " + itemId + " for " + timeWindow);
+        return answer;
     }
 
     /**
