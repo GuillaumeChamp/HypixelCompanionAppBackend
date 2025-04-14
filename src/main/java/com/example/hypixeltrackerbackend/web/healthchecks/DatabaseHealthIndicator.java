@@ -22,7 +22,7 @@ public class DatabaseHealthIndicator implements HealthIndicator {
     @Override
     public Health health() {
         Health.Builder status = Health.up();
-        List<ItemPricing> lastEntries = itemPricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(TEST_ITEM_ID, LocalDateTime.now().minusMinutes(3), LocalDateTime.now());
+        List<ItemPricing> lastEntries = itemPricingRepository.findAllByItemIdAndTimeBetweenOrderByTime(TEST_ITEM_ID, LocalDateTime.now().minusMinutes(3), LocalDateTime.now());
         if (CollectionsUtils.isEmpty(lastEntries)) {
             status = Health.down();
         }

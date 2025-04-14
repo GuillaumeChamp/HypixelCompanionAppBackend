@@ -60,7 +60,7 @@ public class DataProcessorService {
             case TimeConstant.YEAR_TIME_WINDOW -> ending.minusYears(1);
             case null, default -> ending.minusHours(1);
         };
-        List<ItemPricing> answer = pricingRepository.findAllByItemIdAndLastUpdateBetweenOrderByLastUpdate(itemId, beginning, ending);
+        List<ItemPricing> answer = pricingRepository.findAllByItemIdAndTimeBetweenOrderByTime(itemId, beginning, ending);
         logger.log(Level.INFO, () -> "successfully processed history for " + itemId + " for " + timeWindow);
         return answer;
     }
@@ -103,7 +103,7 @@ public class DataProcessorService {
 
     private void groupRecordsWithTimeStampAndWindowSize(LocalDateTime begin, Integer samplingTimeWindow) {
         List<ItemPricing> summary = pricingRepository.groupAllByTimestampBetween(begin, begin.plusMinutes(samplingTimeWindow));
-        pricingRepository.deleteAllInBatchByLastUpdateBetween(begin, begin.plusMinutes(samplingTimeWindow));
+        pricingRepository.deleteAllInBatchByTimeBetween(begin, begin.plusMinutes(samplingTimeWindow));
         pricingRepository.saveAll(summary);
     }
 

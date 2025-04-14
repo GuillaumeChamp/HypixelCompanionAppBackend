@@ -11,7 +11,7 @@ public class PricingRecord {
     public PricingRecord(ItemPricing itemPricing){
         this.sellPrice = itemPricing.getSellPrice();
         this.buyPrice = itemPricing.getBuyPrice();
-        this.lastUpdate = itemPricing.getLastUpdate();
+        this.lastUpdate = itemPricing.getTime();
     }
 
     public Double getBuyPrice() {

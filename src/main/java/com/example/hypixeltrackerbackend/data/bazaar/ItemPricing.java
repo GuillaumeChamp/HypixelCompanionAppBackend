@@ -9,15 +9,15 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@IdClass(ItemPricingId.class)
 @Table(name = "pricing")
 public class ItemPricing {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
     private String itemId;
+    @Id
+    private LocalDateTime time;
     private Double sellPrice;
     private Double buyPrice;
-    private LocalDateTime lastUpdate;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @Transient
     private Double minimalPrice;
@@ -26,7 +26,7 @@ public class ItemPricing {
         this.itemId = itemId;
         this.sellPrice = sellPrice;
         this.buyPrice = buyPrice;
-        this.lastUpdate = update;
+        this.time = update;
     }
 
     public ItemPricing() {}
@@ -45,8 +45,8 @@ public class ItemPricing {
 
     @JsonIgnore
     @JsonProperty("timestamp")
-    public LocalDateTime getLastUpdate() {
-        return lastUpdate;
+    public LocalDateTime getTime() {
+        return time;
     }
 
     public Double getMinimalPrice() {
@@ -55,15 +55,6 @@ public class ItemPricing {
 
     public void setMinimalPrice(double minimalPrice) {
         this.minimalPrice = minimalPrice;
-    }
-
-    @JsonIgnore
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
 }
