@@ -1,6 +1,8 @@
 package com.example.hypixeltrackerbackend.web;
 
 import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
+import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
 import com.example.hypixeltrackerbackend.services.DataProcessorService;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -25,6 +28,8 @@ class RequestControllerTest {
     DataProcessorService dataProcessorService;
     @Autowired
     RequestController requestController;
+    @Autowired
+    ItemPricingRepository itemPricingRepository;
     MockMvc mockMvc;
 
     @BeforeEach
@@ -34,7 +39,7 @@ class RequestControllerTest {
 
     @Test
     @DisplayName("GET /bazaar")
-    void testGetItems() throws Exception {
+    void shouldGetBazaarCurrentValueWorkProperly() throws Exception {
         // wait that a request have been proceeded
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
                 .until(() -> dataProcessorService.getLastData() != null);
@@ -51,11 +56,9 @@ class RequestControllerTest {
 
     @Test
     @DisplayName("GET /bazaar/{id} with wrong ID")
-    void testGetSpecificItemWithWrongId() throws Exception {
-        // wait that a request have been proceeded
-        Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
-                .pollDelay(500,TimeUnit.MILLISECONDS)
-                .until(() -> dataProcessorService.getLastData() != null);
+    void shouldGetAnInvalidItemHistoryReturn404() throws Exception {
+        itemPricingRepository.save(new ItemPricing("WHEAT",4d,4d, LocalDateTime.now()));
+
 
         mockMvc.perform(get("/bazaar/{id}","toto").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
                 .andExpect(status().isNotFound())
@@ -65,11 +68,9 @@ class RequestControllerTest {
 
     @Test
     @DisplayName("GET /bazaar/{id}")
-    void testGetSpecificItem() throws Exception {
+    void shouldGetAParticularItemHistoryWorkProperly() throws Exception {
         // wait that a request have been proceeded
-        Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
-                .pollDelay(500,TimeUnit.MILLISECONDS)
-                .until(() -> dataProcessorService.getLastData() != null);
+        itemPricingRepository.save(new ItemPricing("WHEAT",4d,4d, LocalDateTime.now()));
 
         mockMvc.perform(get("/bazaar/{id}/{window}","WHEAT","day").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
                 .andExpect(status().isOk())
