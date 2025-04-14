@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Table(name = "pricing")
 public class ItemPricing {
     @Id
+    @Column(length = 35)
     private String itemId;
     @Id
     private LocalDateTime time;
