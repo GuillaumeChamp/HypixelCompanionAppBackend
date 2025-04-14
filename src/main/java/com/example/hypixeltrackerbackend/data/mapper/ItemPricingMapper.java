@@ -1,5 +1,6 @@
 package com.example.hypixeltrackerbackend.data.mapper;
 
+import com.example.hypixeltrackerbackend.constant.BazaarConstant;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,11 +22,13 @@ public class ItemPricingMapper {
         JSONObject productList = response.getJSONObject("products");
         JSONArray listOfEntry = productList.toJSONArray(productList.names());
 
-        HashMap<String, ItemPricing> itemList = new HashMap<>(1500);
+        HashMap<String, ItemPricing> itemList = HashMap.newHashMap(1500);
 
         listOfEntry.forEach(object -> {
             ItemPricing newItem = readAnEntry((JSONObject) object,update);
-            itemList.put(newItem.getItemId(), newItem);
+            if (!BazaarConstant.LEGACY_ITEM_LIST.contains(newItem.getItemId())){
+                itemList.put(newItem.getItemId(), newItem);
+            }
         });
 
         return itemList;
