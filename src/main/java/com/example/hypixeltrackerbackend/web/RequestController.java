@@ -60,6 +60,10 @@ public class RequestController {
     String compressData() {
         LocalDateTime now = LocalDateTime.now();
         new Thread(() -> {
+            // compress last year
+            for (int i = 2; i < 52; i++) {
+                dataProcessorService.groupOneDayRecords(now.minusWeeks(i));
+            }
             // compress last week
             for (int i = 2; i < 7; i++) {
                 dataProcessorService.groupOneDayRecords(now.minusDays(i));

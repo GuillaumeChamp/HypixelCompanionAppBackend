@@ -39,7 +39,7 @@ public class StaticItemMapper {
             JSONArray ourItemDatabase = new JSONObject(ourItemDatabaseFile).getJSONArray("myTable");
             JSONArray hypixelProvidedItemList = new JSONObject(hypixelProvidedItemsFile).getJSONArray("items");
 
-            Map<String,CompleteItem> completeItemMap = new HashMap<>(ourItemDatabase.length());
+            Map<String,CompleteItem> completeItemMap = HashMap.newHashMap(ourItemDatabase.length());
 
             ourItemDatabase.forEach(object -> appendANewEntry(completeItemMap,(JSONObject) object));
             hypixelProvidedItemList.forEach(object -> processItemFromHypixelDatabase(completeItemMap,(JSONObject) object));

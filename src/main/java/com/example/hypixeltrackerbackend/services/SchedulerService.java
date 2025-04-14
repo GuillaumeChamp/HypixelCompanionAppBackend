@@ -43,6 +43,7 @@ public class SchedulerService {
         scheduleTaskExecutor.scheduleAtFixedRate(this::processNewestData, 0, TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS);
         scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
         scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
+        scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneWeekRecords(LocalDateTime.now().minusWeeks(2)), 14, 7, TimeUnit.DAYS);
         logger.log(Level.INFO, "Scheduler started !");
     }
 

@@ -21,7 +21,12 @@ public class TimeConstant {
      * After one day, data are compress to keep only 72 data per day which mean one every 20 minutes i.e. every skyblock day
      */
     public static final Integer VALUES_BY_DAYS = 72;
-    public static final Integer SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES = 24*60/VALUES_BY_DAYS;
+    public static final Integer SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES = 20;
 
+    /**
+     * After one week, data are compress to keep only 168 data per week which mean one every 60 minutes i.e. every 3 skyblock day
+     */
+    public static final Integer VALUES_BY_WEEK = 168;
+    public static final Integer SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES = 60;
     private TimeConstant(){}
 }

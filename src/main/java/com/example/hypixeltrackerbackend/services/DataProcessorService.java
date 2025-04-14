@@ -25,6 +25,8 @@ public class DataProcessorService {
     private final ItemPricingRepository pricingRepository;
     private static final Logger logger = Logger.getLogger(DataProcessorService.class.getName());
     private Map<String, CompleteItem> completeItemHashMap;
+    private static final String SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2 = "Successfully compress data from {1} to {2}";
+
 
     @Autowired
     public DataProcessorService(ItemPricingRepository pricingRepository) {
@@ -79,8 +81,7 @@ public class DataProcessorService {
             groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
         }
-        String logString = "Successfully compress data from " + beginning + " to " + startOfWindow;
-        logger.info(logString);
+        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2,new Object[]{beginning,startOfWindow});
     }
 
     /**
@@ -97,8 +98,24 @@ public class DataProcessorService {
             groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
         }
-        String logString = "Successfully compress data from " + beginning + " to " + startOfWindow;
-        logger.log(Level.INFO, logString);
+        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2,new Object[]{beginning,startOfWindow});
+    }
+
+    /**
+     * Group all the records from the given date time and the given date time plus one day
+     *
+     * @param beginning the beginning of the compression
+     * @see TimeConstant
+     */
+    @Transactional
+    public void groupOneWeekRecords(LocalDateTime beginning) {
+        LocalDateTime startOfWindow = beginning.truncatedTo(ChronoUnit.SECONDS);
+
+        for (int i = 0; i < TimeConstant.VALUES_BY_WEEK; i++) {
+            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES);
+            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES);
+        }
+        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2,new Object[]{beginning,startOfWindow});
     }
 
     private void groupRecordsWithTimeStampAndWindowSize(LocalDateTime begin, Integer samplingTimeWindow) {
