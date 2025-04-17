@@ -141,13 +141,13 @@ public class ItemPricingUtil {
 
     private static double handleMissingPricing(CompleteItem completeItem) throws DataProcessingException {
         if (CollectionsUtils.isNotEmpty(completeItem.getCrafts())) {
-            if (completeItem.getCrafts().get(0).getCraftingCost() == null) {
+            if (completeItem.getCrafts().getFirst().getCraftingCost() == null) {
                 // old school for loop to handle exception
                 for (Craft craft : completeItem.getCrafts()) {
                     computeCraftCost(craft);
                 }
             }
-            return completeItem.getCrafts().get(0).getCraftingCost();
+            return completeItem.getCrafts().getFirst().getCraftingCost();
         } else {
             throw new DataProcessingException("no pricing and no craft, craft aborted", completeItem);
         }

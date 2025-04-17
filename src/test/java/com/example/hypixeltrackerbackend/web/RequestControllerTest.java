@@ -57,10 +57,10 @@ class RequestControllerTest {
     @Test
     @DisplayName("GET /bazaar/{id} with wrong ID")
     void shouldGetAnInvalidItemHistoryReturn404() throws Exception {
-        itemPricingRepository.save(new ItemPricing("WHEAT",4d,4d, LocalDateTime.now()));
+        String testString = "invalid_id_history_test";
+        itemPricingRepository.save(new ItemPricing(testString, 4d, 4d, LocalDateTime.now()));
 
-
-        mockMvc.perform(get("/bazaar/{id}","toto").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
+        mockMvc.perform(get("/bazaar/{id}", "toto").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
                 .andExpect(status().isNotFound())
                 .andDo(result -> assertThat(result.getResponse().getErrorMessage()).isEqualTo("Item not found : toto"));
     }
@@ -69,10 +69,10 @@ class RequestControllerTest {
     @Test
     @DisplayName("GET /bazaar/{id}")
     void shouldGetAParticularItemHistoryWorkProperly() throws Exception {
-        // wait that a request have been proceeded
-        itemPricingRepository.save(new ItemPricing("WHEAT",4d,4d, LocalDateTime.now()));
+        String testString = "valid_id_history_test";
+        itemPricingRepository.save(new ItemPricing(testString, 4d, 4d, LocalDateTime.now()));
 
-        mockMvc.perform(get("/bazaar/{id}/{window}","WHEAT","day").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
+        mockMvc.perform(get("/bazaar/{id}/{window}", testString, TimeConstant.DAY_TIME_WINDOW).accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
                 .andExpect(status().isOk())
                 .andDo(result -> assertThat(result.getResponse().getContentAsString())
                         .contains("sellPrice")
@@ -85,12 +85,19 @@ class RequestControllerTest {
 
     @Test
     @DisplayName("GET /compress")
-    void shouldCompressEndpointWorkProperly() throws Exception {
+    void shouldCompressEndpointAnswerFirst() throws Exception {
         // wait that a request have been proceeded
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
                 .until(() -> dataProcessorService.getLastData() != null);
 
         mockMvc.perform(get("/bazaar/compress").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("GET /museum")
+    void shouldGetMuseumItemsEndpointWorkProperly() throws Exception {
+        mockMvc.perform(get("/museum").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }

@@ -141,4 +141,18 @@ class DataProcessorServiceTest {
         List<ItemPricing> pricing = repository.findAllByItemId(TEST_STRING);
         assertThat(pricing).hasSize(2);
     }
+
+    @Test
+    void shouldDeleteLastYearRecordsWorkAsIntended() {
+        LocalDateTime testTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+
+        repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusYears(1).minusDays(3)));
+        repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusYears(1)));
+        repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusDays(3)));
+
+        dataProcessorService.deleteLastYearRecords();
+        assertThat(repository.findAllByItemId(TEST_STRING))
+                .hasSize(1)
+                .allSatisfy(price -> assertThat(price.getTime()).isAfterOrEqualTo(testTime.minusYears(1)));
+    }
 }

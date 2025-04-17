@@ -53,6 +53,26 @@ public class DataProcessorService {
         return completeItemHashMap;
     }
 
+    /**
+     * Parse a payload from the endpoint and update local data
+     *
+     * @param string the payload of the getBazaarItem request
+     */
+    public void updateBazaarPrice(String string) {
+        if (completeItemHashMap == null) {
+            return;
+        }
+        Map<String, ItemPricing> bazaarItemList = ItemPricingMapper.toBazaarItems(string);
+        bazaarItemList.forEach((key, value) -> {
+            if (completeItemHashMap.containsKey(key)) {
+                completeItemHashMap.get(key).setPricing(value);
+            }
+        });
+        Collection<ItemPricing> prices = bazaarItemList.values();
+        pricingRepository.saveAll(prices);
+        ItemPricingUtil.updateAllItemsMinimalCost(completeItemHashMap);
+    }
+
     public List<ItemPricing> getHistory(String itemId, String timeWindow) {
         LocalDateTime ending = LocalDateTime.now();
         LocalDateTime beginning = switch (timeWindow) {
@@ -81,7 +101,7 @@ public class DataProcessorService {
             groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
         }
-        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2,new Object[]{beginning,startOfWindow});
+        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2, new Object[]{beginning, startOfWindow});
     }
 
     /**
@@ -98,7 +118,7 @@ public class DataProcessorService {
             groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
         }
-        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2,new Object[]{beginning,startOfWindow});
+        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2, new Object[]{beginning, startOfWindow});
     }
 
     /**
@@ -115,7 +135,14 @@ public class DataProcessorService {
             groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES);
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES);
         }
-        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2,new Object[]{beginning,startOfWindow});
+        logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2, new Object[]{beginning, startOfWindow});
+    }
+
+    @Transactional
+    public void deleteLastYearRecords() {
+        LocalDateTime lastYear = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).minusYears(1).plusDays(1);
+        pricingRepository.deleteAllByTimeBefore(lastYear);
+        logger.log(Level.INFO, "Successfully drop records before {0}", lastYear);
     }
 
     private void groupRecordsWithTimeStampAndWindowSize(LocalDateTime begin, Integer samplingTimeWindow) {
@@ -123,25 +150,4 @@ public class DataProcessorService {
         pricingRepository.deleteAllInBatchByTimeBetween(begin, begin.plusMinutes(samplingTimeWindow));
         pricingRepository.saveAll(summary);
     }
-
-    /**
-     * Parse a payload from the endpoint and update local data
-     *
-     * @param string the payload of the getBazaarItem request
-     */
-    public void updateBazaarPrice(String string) {
-        if (completeItemHashMap == null) {
-            return;
-        }
-        Map<String, ItemPricing> bazaarItemList = ItemPricingMapper.toBazaarItems(string);
-        bazaarItemList.forEach((key, value) -> {
-            if (completeItemHashMap.containsKey(key)) {
-                completeItemHashMap.get(key).setPricing(value);
-            }
-        });
-        Collection<ItemPricing> prices = bazaarItemList.values();
-        pricingRepository.saveAll(prices);
-        ItemPricingUtil.updateAllItemsMinimalCost(completeItemHashMap);
-    }
-
 }

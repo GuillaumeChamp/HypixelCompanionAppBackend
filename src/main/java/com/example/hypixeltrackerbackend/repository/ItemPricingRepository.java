@@ -14,15 +14,18 @@ import java.util.List;
 public interface ItemPricingRepository extends JpaRepository<ItemPricing, ItemPricingId> {
 
     List<ItemPricing> findAllByItemIdAndTimeBetweenOrderByTime(String itemId, LocalDateTime lowerDateTime, LocalDateTime upperDateTime);
+
     @Query("""
-         select new com.example.hypixeltrackerbackend.data.bazaar.ItemPricing(p.itemId,avg(p.sellPrice),avg(p.buyPrice),:before)
-         from ItemPricing p
-         where p.time between :before and :after
-         group by p.itemId""")
+            select new com.example.hypixeltrackerbackend.data.bazaar.ItemPricing(p.itemId,avg(p.sellPrice),avg(p.buyPrice),:before)
+            from ItemPricing p
+            where p.time between :before and :after
+            group by p.itemId""")
     List<ItemPricing> groupAllByTimestampBetween(@Param("before") LocalDateTime before,
                                                  @Param("after") LocalDateTime after);
 
     void deleteAllInBatchByTimeBetween(LocalDateTime before, LocalDateTime after);
+
+    void deleteAllByTimeBefore(LocalDateTime before);
 
     List<ItemPricing> findAllByItemId(String itemId);
 
