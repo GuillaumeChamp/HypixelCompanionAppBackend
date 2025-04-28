@@ -44,7 +44,7 @@ class SchedulerServiceTests {
         Awaitility.await().pollDelay(1, TimeUnit.SECONDS).until(() -> true);
         AssertionsForInterfaceTypes.assertThat(itemPricingRepository.findAllByItemId(testString))
                 .singleElement()
-                .extracting(ItemPricing::getTime)
+                .extracting(ItemPricing::getTimestamp)
                 .asInstanceOf(InstanceOfAssertFactories.LOCAL_DATE_TIME)
                 .isAfterOrEqualTo(testTime.minusYears(1));
     }

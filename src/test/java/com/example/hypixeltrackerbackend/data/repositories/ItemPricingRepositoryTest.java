@@ -39,7 +39,7 @@ class ItemPricingRepositoryTest {
         assertThat(grouping)
                 .filteredOn(e -> TEST_STRING.equals(e.getItemId()))
                 .singleElement()
-                .extracting("itemId", "buyPrice", "sellPrice", "time")
+                .extracting("itemId", "buyPrice", "sellPrice", "timestamp")
                 .containsExactly(TEST_STRING, 11d, 9d, testTime.minusMinutes(3));
     }
 
@@ -54,23 +54,23 @@ class ItemPricingRepositoryTest {
         assertThat(grouping)
                 .filteredOn(e -> TEST_STRING.equals(e.getItemId()))
                 .singleElement()
-                .satisfies(price -> assertThat(price.getTime()).isEqualTo(testTime.minusMinutes(3)));
+                .satisfies(price -> assertThat(price.getTimestamp()).isEqualTo(testTime.minusMinutes(3)));
 
     }
 
     @Test
     @Transactional
-    void ShouldDeleteAllByTimeBeforeWorkProperly() {
+    void ShouldDeleteAllByTimestampBeforeWorkProperly() {
         LocalDateTime testTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
 
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusYears(1).minusDays(3)));
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusYears(1)));
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusDays(3)));
 
-        repository.deleteAllByTimeBefore(testTime.minusYears(1));
+        repository.deleteAllByTimestampBefore(testTime.minusYears(1));
         assertThat(repository.findAllByItemId(TEST_STRING))
                 .hasSize(2)
-                .extracting(ItemPricing::getTime)
+                .extracting(ItemPricing::getTimestamp)
                 .asInstanceOf(InstanceOfAssertFactories.iterable(LocalDateTime.class))
                 .allSatisfy(time -> assertThat(time).isAfterOrEqualTo(testTime.minusYears(1)));
     }

@@ -52,24 +52,11 @@ public class CompleteItem {
         return name;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public String getTier() {
-        return tier;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
     @JsonProperty("image")
     public String getImagePath() {
         return imagePath;
     }
 
-    @JsonProperty("pricing")
     public ItemPricing getPricing() {
         return pricing;
     }
@@ -84,10 +71,6 @@ public class CompleteItem {
 
     public void setTier(String tier) {
         this.tier = tier;
-    }
-
-    public Float getNpcBuyPrice() {
-        return npcBuyPrice;
     }
 
     public void setNpcBuyPrice(float npcBuyPrice) {

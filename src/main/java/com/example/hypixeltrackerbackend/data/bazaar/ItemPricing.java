@@ -3,7 +3,6 @@ package com.example.hypixeltrackerbackend.data.bazaar;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -12,11 +11,14 @@ import java.time.LocalDateTime;
 @IdClass(ItemPricingId.class)
 @Table(name = "pricing")
 public class ItemPricing {
+    /**
+     * Identifier of the item as provided by Hypixel. Current longest id is 38
+     */
     @Id
     @Column(length = 45)
     private String itemId;
     @Id
-    private LocalDateTime time;
+    private LocalDateTime timestamp;
     private Double sellPrice;
     private Double buyPrice;
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,7 +29,7 @@ public class ItemPricing {
         this.itemId = itemId;
         this.sellPrice = sellPrice;
         this.buyPrice = buyPrice;
-        this.time = update;
+        this.timestamp = update;
     }
 
     public ItemPricing() {
@@ -46,9 +48,8 @@ public class ItemPricing {
     }
 
     @JsonIgnore
-    @JsonProperty("timestamp")
-    public LocalDateTime getTime() {
-        return time;
+    public LocalDateTime getTimestamp() {
+        return timestamp;
     }
 
     public Double getMinimalPrice() {

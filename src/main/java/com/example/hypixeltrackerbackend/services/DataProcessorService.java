@@ -82,7 +82,7 @@ public class DataProcessorService {
             case TimeConstant.YEAR_TIME_WINDOW -> ending.minusYears(1);
             case null, default -> ending.minusHours(1);
         };
-        List<ItemPricing> answer = pricingRepository.findAllByItemIdAndTimeBetweenOrderByTime(itemId, beginning, ending);
+        List<ItemPricing> answer = pricingRepository.findAllByItemIdAndTimestampBetweenOrderByTimestamp(itemId, beginning, ending);
         logger.log(Level.INFO, () -> "successfully processed history for " + itemId + " for " + timeWindow);
         return answer;
     }
@@ -141,13 +141,13 @@ public class DataProcessorService {
     @Transactional
     public void deleteLastYearRecords() {
         LocalDateTime lastYear = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).minusYears(1).plusDays(1);
-        pricingRepository.deleteAllByTimeBefore(lastYear);
+        pricingRepository.deleteAllByTimestampBefore(lastYear);
         logger.log(Level.INFO, "Successfully drop records before {0}", lastYear);
     }
 
     private void groupRecordsWithTimeStampAndWindowSize(LocalDateTime begin, Integer samplingTimeWindow) {
         List<ItemPricing> summary = pricingRepository.groupAllByTimestampBetween(begin, begin.plusMinutes(samplingTimeWindow));
-        pricingRepository.deleteAllInBatchByTimeBetween(begin, begin.plusMinutes(samplingTimeWindow));
+        pricingRepository.deleteAllInBatchByTimestampBetween(begin, begin.plusMinutes(samplingTimeWindow));
         pricingRepository.saveAll(summary);
     }
 }
