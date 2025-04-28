@@ -78,7 +78,7 @@ public class DataProcessorService {
         LocalDateTime beginning = switch (timeWindow) {
             case TimeConstant.DAY_TIME_WINDOW -> ending.minusHours(24);
             case TimeConstant.WEEK_TIME_WINDOW -> ending.minusDays(7);
-            case TimeConstant.MOUTH_TIME_WINDOW -> ending.minusMonths(1);
+            case TimeConstant.MONTH_TIME_WINDOW -> ending.minusMonths(1);
             case TimeConstant.YEAR_TIME_WINDOW -> ending.minusYears(1);
             case null, default -> ending.minusHours(1);
         };

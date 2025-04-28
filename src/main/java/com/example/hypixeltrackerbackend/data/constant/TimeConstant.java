@@ -6,7 +6,7 @@ package com.example.hypixeltrackerbackend.data.constant;
 public class TimeConstant {
     public static final String DAY_TIME_WINDOW = "day";
     public static final String WEEK_TIME_WINDOW = "week";
-    public static final String MOUTH_TIME_WINDOW = "month";
+    public static final String MONTH_TIME_WINDOW = "month";
     public static final String YEAR_TIME_WINDOW = "year";
     /**
      * Data are fetch every 30 seconds
