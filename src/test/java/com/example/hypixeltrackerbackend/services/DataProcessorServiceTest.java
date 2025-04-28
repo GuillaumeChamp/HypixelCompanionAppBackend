@@ -79,7 +79,7 @@ class DataProcessorServiceTest {
         repository.save(itemPricing4);
 
         dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
-        LocalDateTime compressedUpdateTime = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        LocalDateTime compressedUpdateTime = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
         List<ItemPricing> pricing1 = repository.findAllByItemId(testItemId1);
         assertThat(pricing1).singleElement().satisfies(e -> {
             assertThat(e.getTimestamp()).isEqualTo(compressedUpdateTime);
@@ -102,7 +102,7 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime));
         repository.save(new ItemPricing(TEST_STRING, 8d, 10d, testTime.minusMinutes(2)));
 
-        LocalDateTime secondTimeStamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        LocalDateTime secondTimeStamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
         repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
         repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
 
@@ -113,13 +113,13 @@ class DataProcessorServiceTest {
                 .anySatisfy(e -> {
                     assertThat(e.getSellPrice()).isEqualTo(9);
                     assertThat(e.getBuyPrice()).isEqualTo(11);
-                    final LocalDateTime expectedTimestamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+                    final LocalDateTime expectedTimestamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
                     assertThat(e.getTimestamp().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
                 })
                 .anySatisfy(e -> {
                     assertThat(e.getSellPrice()).isEqualTo(18);
                     assertThat(e.getBuyPrice()).isEqualTo(35);
-                    final LocalDateTime expectedTimestamp = secondTimeStamp.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+                    final LocalDateTime expectedTimestamp = secondTimeStamp.minusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
                     assertThat(e.getTimestamp().truncatedTo(ChronoUnit.SECONDS)).isEqualTo(expectedTimestamp);
                 });
     }
@@ -131,7 +131,7 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime));
         repository.save(new ItemPricing(TEST_STRING, 8d, 10d, testTime.minusMinutes(2)));
 
-        LocalDateTime secondTimeStamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        LocalDateTime secondTimeStamp = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
         repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
         repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
 

@@ -97,9 +97,9 @@ public class DataProcessorService {
     public void groupOneHourRecords(LocalDateTime beginning) {
         LocalDateTime startOfWindow = beginning.truncatedTo(ChronoUnit.SECONDS);
 
-        for (int i = 0; i < TimeConstant.VALUES_BY_HOURS; i++) {
-            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
-            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES);
+        for (int i = 0; i < TimeConstant.RECORDS_PER_HOUR; i++) {
+            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
+            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
         }
         logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2, new Object[]{beginning, startOfWindow});
     }
@@ -114,9 +114,9 @@ public class DataProcessorService {
     public void groupOneDayRecords(LocalDateTime beginning) {
         LocalDateTime startOfWindow = beginning.truncatedTo(ChronoUnit.SECONDS);
 
-        for (int i = 0; i < TimeConstant.VALUES_BY_DAYS; i++) {
-            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
-            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES);
+        for (int i = 0; i < TimeConstant.RECORDS_PER_DAY; i++) {
+            groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_DAY_TIME_SLOT_IN_MINUTES);
+            startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_DAY_TIME_SLOT_IN_MINUTES);
         }
         logger.log(Level.INFO, SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2, new Object[]{beginning, startOfWindow});
     }
@@ -131,7 +131,7 @@ public class DataProcessorService {
     public void groupOneWeekRecords(LocalDateTime beginning) {
         LocalDateTime startOfWindow = beginning.truncatedTo(ChronoUnit.SECONDS);
 
-        for (int i = 0; i < TimeConstant.VALUES_BY_WEEK; i++) {
+        for (int i = 0; i < TimeConstant.RECORDS_PER_WEEK; i++) {
             groupRecordsWithTimeStampAndWindowSize(startOfWindow, TimeConstant.SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES);
             startOfWindow = startOfWindow.plusMinutes(TimeConstant.SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES);
         }

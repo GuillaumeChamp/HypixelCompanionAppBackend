@@ -13,21 +13,21 @@ public class TimeConstant {
      */
     public static final Integer CALL_FREQUENCY_IN_SECOND = 30;
     /**
-     * After one hour, data are compress to keep only 10 data per hour which mean one every 6 minutes
+     * After one hour, data are compress to keep only 10 records per hour which mean one every 6 minutes
      */
-    public static final Integer VALUES_BY_HOURS = 10;
-    public static final Integer SAMPLING_BY_HOURS_TIME_SLOT_IN_MINUTES = 60 / VALUES_BY_HOURS;
+    public static final Integer RECORDS_PER_HOUR = 10;
+    public static final Integer SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES = 60 / RECORDS_PER_HOUR;
     /**
-     * After one day, data are compress to keep only 72 data per day which mean one every 20 minutes i.e. every skyblock day
+     * After one day, data are compress to keep only 72 records per day which mean one every 20 minutes i.e. every skyblock's day
      */
-    public static final Integer VALUES_BY_DAYS = 72;
-    public static final Integer SAMPLING_BY_DAYS_TIME_SLOT_IN_MINUTES = 20;
+    public static final Integer RECORDS_PER_DAY = 72;
+    public static final Integer SAMPLING_BY_DAY_TIME_SLOT_IN_MINUTES = 24*60/ RECORDS_PER_DAY;
 
     /**
-     * After one week, data are compress to keep only 168 data per week which mean one every 60 minutes i.e. every 3 skyblock day
+     * After one week, data are compress to keep only 168 records per week which mean one every 60 minutes i.e. every 3 skyblock's day
      */
-    public static final Integer VALUES_BY_WEEK = 168;
-    public static final Integer SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES = 60;
+    public static final Integer RECORDS_PER_WEEK = 168;
+    public static final Integer SAMPLING_BY_WEEK_TIME_SLOT_IN_MINUTES = 7*24*60/ RECORDS_PER_WEEK;
 
     private TimeConstant() {
     }
