@@ -1,6 +1,6 @@
 package com.example.hypixeltrackerbackend.utils;
 
-import com.example.hypixeltrackerbackend.utils.request_parsers.ProfilesRequestParser;
+import com.example.hypixeltrackerbackend.web.requestparsers.ProfilesRequestParser;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

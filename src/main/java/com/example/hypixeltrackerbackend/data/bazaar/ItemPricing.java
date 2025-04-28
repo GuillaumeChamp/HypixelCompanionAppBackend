@@ -30,7 +30,8 @@ public class ItemPricing {
         this.time = update;
     }
 
-    public ItemPricing() {}
+    public ItemPricing() {
+    }
 
     public String getItemId() {
         return itemId;

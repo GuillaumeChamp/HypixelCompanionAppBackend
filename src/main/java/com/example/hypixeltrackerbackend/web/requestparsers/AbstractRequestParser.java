@@ -1,13 +1,14 @@
-package com.example.hypixeltrackerbackend.utils.request_parsers;
+package com.example.hypixeltrackerbackend.web.requestparsers;
 
-import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
+import com.example.hypixeltrackerbackend.web.exceptions.HTTPRequestException;
 import org.json.JSONObject;
 
 import java.net.http.HttpResponse;
 
 public abstract class AbstractRequestParser {
 
-    protected AbstractRequestParser() {}
+    protected AbstractRequestParser() {
+    }
 
     static void checkResponseValidity(HttpResponse<String> responseBody) throws HTTPRequestException {
         if (responseBody == null) {

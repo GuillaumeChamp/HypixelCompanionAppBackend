@@ -1,7 +1,7 @@
 package com.example.hypixeltrackerbackend.web.healthchecks;
 
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
+import com.example.hypixeltrackerbackend.data.repositories.ItemPricingRepository;
 import com.example.hypixeltrackerbackend.utils.CollectionsUtils;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;

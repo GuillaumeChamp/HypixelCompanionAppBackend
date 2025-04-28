@@ -1,7 +1,7 @@
 package com.example.hypixeltrackerbackend.services;
 
-import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
-import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
+import com.example.hypixeltrackerbackend.web.responses.UUIDResponse;
+import com.example.hypixeltrackerbackend.web.exceptions.HTTPRequestException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

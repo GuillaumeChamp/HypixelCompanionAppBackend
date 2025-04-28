@@ -1,7 +1,7 @@
 package com.example.hypixeltrackerbackend.services;
 
 
-import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.data.constant.TimeConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;

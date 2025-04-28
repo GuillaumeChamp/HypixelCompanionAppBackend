@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.services.exceptions;
+package com.example.hypixeltrackerbackend.web.exceptions;
 
 public class HTTPRequestException extends Exception {
     public HTTPRequestException(String message) {

@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.data.mapper;
+package com.example.hypixeltrackerbackend.utils.mapper;
 
 
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;

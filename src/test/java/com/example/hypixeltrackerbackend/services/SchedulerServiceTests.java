@@ -1,8 +1,8 @@
 package com.example.hypixeltrackerbackend.services;
 
-import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.data.constant.TimeConstant;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
+import com.example.hypixeltrackerbackend.data.repositories.ItemPricingRepository;
 import org.assertj.core.api.AssertionsForInterfaceTypes;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.awaitility.Awaitility;

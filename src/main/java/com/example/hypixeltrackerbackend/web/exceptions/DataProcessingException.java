@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.services.exceptions;
+package com.example.hypixeltrackerbackend.web.exceptions;
 
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.bazaar.Craft;

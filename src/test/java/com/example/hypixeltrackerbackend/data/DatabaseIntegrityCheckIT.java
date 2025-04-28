@@ -1,12 +1,12 @@
 package com.example.hypixeltrackerbackend.data;
 
-import com.example.hypixeltrackerbackend.constant.BazaarConstant;
+import com.example.hypixeltrackerbackend.data.constant.BazaarConstant;
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.data.mapper.ItemPricingMapper;
-import com.example.hypixeltrackerbackend.data.mapper.StaticItemMapper;
+import com.example.hypixeltrackerbackend.utils.mapper.ItemPricingMapper;
+import com.example.hypixeltrackerbackend.utils.mapper.StaticItemMapper;
 import com.example.hypixeltrackerbackend.services.ApiFetcherService;
-import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
+import com.example.hypixeltrackerbackend.web.exceptions.HTTPRequestException;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

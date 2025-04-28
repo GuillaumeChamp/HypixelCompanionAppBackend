@@ -1,8 +1,8 @@
 package com.example.hypixeltrackerbackend.services;
 
-import com.example.hypixeltrackerbackend.data.responses.UUIDResponse;
-import com.example.hypixeltrackerbackend.services.exceptions.HTTPRequestException;
-import com.example.hypixeltrackerbackend.utils.request_parsers.UUIDRequestParser;
+import com.example.hypixeltrackerbackend.web.responses.UUIDResponse;
+import com.example.hypixeltrackerbackend.web.exceptions.HTTPRequestException;
+import com.example.hypixeltrackerbackend.web.requestparsers.UUIDRequestParser;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 

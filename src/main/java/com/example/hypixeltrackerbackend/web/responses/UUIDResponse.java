@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.data.responses;
+package com.example.hypixeltrackerbackend.web.responses;
 
 public record UUIDResponse(String uuid, String name, String urlPath) {
 }

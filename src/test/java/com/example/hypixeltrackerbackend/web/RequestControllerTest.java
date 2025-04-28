@@ -1,8 +1,8 @@
 package com.example.hypixeltrackerbackend.web;
 
-import com.example.hypixeltrackerbackend.constant.TimeConstant;
+import com.example.hypixeltrackerbackend.data.constant.TimeConstant;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.repository.ItemPricingRepository;
+import com.example.hypixeltrackerbackend.data.repositories.ItemPricingRepository;
 import com.example.hypixeltrackerbackend.services.DataProcessorService;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;

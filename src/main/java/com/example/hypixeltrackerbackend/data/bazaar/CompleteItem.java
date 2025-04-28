@@ -8,24 +8,24 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompleteItem {
     private String id;
-    @JsonProperty(index=0)
+    @JsonProperty(index = 0)
     private String name;
-    @JsonProperty(index=1)
+    @JsonProperty(index = 1)
     private final String category;
-    @JsonProperty(index=2)
+    @JsonProperty(index = 2)
     private String tier;
-    @JsonProperty(index=3)
+    @JsonProperty(index = 3)
     private final String tag;
-    @JsonProperty(index=4)
+    @JsonProperty(index = 4)
     private final String imagePath;
-    @JsonProperty(index=5)
+    @JsonProperty(index = 5)
     private ItemPricing pricing;
-    @JsonProperty(index=6)
+    @JsonProperty(index = 6)
     private List<Craft> crafts;
     @JsonProperty(index = 7)
     private Float npcBuyPrice;
 
-    public CompleteItem(String id,String category, String tag, String imagePath) {
+    public CompleteItem(String id, String category, String tag, String imagePath) {
         this.id = id;
         this.category = category;
         this.tag = tag;

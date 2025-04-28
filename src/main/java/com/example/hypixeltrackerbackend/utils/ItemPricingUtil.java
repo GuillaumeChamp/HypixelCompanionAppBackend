@@ -3,7 +3,7 @@ package com.example.hypixeltrackerbackend.utils;
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.bazaar.Craft;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
-import com.example.hypixeltrackerbackend.services.exceptions.DataProcessingException;
+import com.example.hypixeltrackerbackend.web.exceptions.DataProcessingException;
 
 import java.util.List;
 import java.util.Map;

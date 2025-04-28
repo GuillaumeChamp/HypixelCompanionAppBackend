@@ -1,4 +1,4 @@
-package com.example.hypixeltrackerbackend.repository;
+package com.example.hypixeltrackerbackend.data.repositories;
 
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
 import org.assertj.core.api.InstanceOfAssertFactories;
