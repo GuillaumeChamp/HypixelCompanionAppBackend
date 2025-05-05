@@ -19,4 +19,5 @@ public abstract class AbstractRequestParser {
             throw new HTTPRequestException("Request failed");
         }
     }
+
 }

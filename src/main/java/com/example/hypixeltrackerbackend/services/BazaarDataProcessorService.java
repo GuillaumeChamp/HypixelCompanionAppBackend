@@ -21,15 +21,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Service
-public class DataProcessorService {
+public class BazaarDataProcessorService {
     private final ItemPricingRepository pricingRepository;
-    private static final Logger logger = Logger.getLogger(DataProcessorService.class.getName());
+    private static final Logger logger = Logger.getLogger(BazaarDataProcessorService.class.getName());
     private Map<String, CompleteItem> completeItemHashMap;
     private static final String SUCCESSFULLY_COMPRESS_DATA_FROM_1_TO_2 = "Successfully compress data from {1} to {2}";
 
 
     @Autowired
-    public DataProcessorService(ItemPricingRepository pricingRepository) {
+    public BazaarDataProcessorService(ItemPricingRepository pricingRepository) {
         this.pricingRepository = pricingRepository;
     }
 

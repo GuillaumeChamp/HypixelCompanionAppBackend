@@ -17,15 +17,15 @@ import java.util.logging.Logger;
 
 @Service
 public class SchedulerService {
-    private final DataProcessorService dataProcessorService;
+    private final BazaarDataProcessorService bazaarDataProcessorService;
     private final Logger logger = Logger.getLogger(SchedulerService.class.getName());
     private boolean isRunning = false;
     private ScheduledExecutorService scheduleTaskExecutor;
     private final ApiFetcherService apiFetcherService;
 
     @Autowired
-    public SchedulerService(DataProcessorService dataProcessorService, ApiFetcherService apiFetcherService) {
-        this.dataProcessorService = dataProcessorService;
+    public SchedulerService(BazaarDataProcessorService bazaarDataProcessorService, ApiFetcherService apiFetcherService) {
+        this.bazaarDataProcessorService = bazaarDataProcessorService;
         this.apiFetcherService = apiFetcherService;
     }
 
@@ -39,19 +39,19 @@ public class SchedulerService {
         }
         isRunning = true;
         scheduleTaskExecutor = Executors.newScheduledThreadPool(3);
-        dataProcessorService.preloadData();
+        bazaarDataProcessorService.preloadData();
         scheduleTaskExecutor.scheduleAtFixedRate(this::processNewestData, 0, TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS);
-        scheduleTaskExecutor.scheduleAtFixedRate(dataProcessorService::deleteLastYearRecords, 0, 1, TimeUnit.DAYS);
-        scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
-        scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
-        scheduleTaskExecutor.scheduleAtFixedRate(() -> dataProcessorService.groupOneWeekRecords(LocalDateTime.now().minusWeeks(2)), 14, 7, TimeUnit.DAYS);
+        scheduleTaskExecutor.scheduleAtFixedRate(bazaarDataProcessorService::deleteLastYearRecords, 0, 1, TimeUnit.DAYS);
+        scheduleTaskExecutor.scheduleAtFixedRate(() -> bazaarDataProcessorService.groupOneHourRecords(LocalDateTime.now().minusHours(2)), 1, 1, TimeUnit.HOURS);
+        scheduleTaskExecutor.scheduleAtFixedRate(() -> bazaarDataProcessorService.groupOneDayRecords(LocalDateTime.now().minusDays(2)), 1, 1, TimeUnit.DAYS);
+        scheduleTaskExecutor.scheduleAtFixedRate(() -> bazaarDataProcessorService.groupOneWeekRecords(LocalDateTime.now().minusWeeks(2)), 14, 7, TimeUnit.DAYS);
         logger.log(Level.INFO, "Scheduler started !");
     }
 
     private void processNewestData() {
         try {
             String response = apiFetcherService.getBazaar();
-            dataProcessorService.updateBazaarPrice(response);
+            bazaarDataProcessorService.updateBazaarPrice(response);
         } catch (Exception e) {
             logger.log(Level.WARNING, parseException(e));
         }

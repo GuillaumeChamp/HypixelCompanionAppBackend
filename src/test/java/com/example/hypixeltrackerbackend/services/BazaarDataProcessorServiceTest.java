@@ -17,9 +17,9 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @SpringBootTest
 @ActiveProfiles("test")
-class DataProcessorServiceTest {
+class BazaarDataProcessorServiceTest {
     @Autowired
-    private DataProcessorService dataProcessorService;
+    private BazaarDataProcessorService bazaarDataProcessorService;
     @Autowired
     private ItemPricingRepository repository;
 
@@ -38,7 +38,7 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, randomTimeInOneWeekWindow));
         repository.save(new ItemPricing(TEST_STRING, 8d, 10d, randomTimeInOneWeekWindow.plusSeconds(60)));
 
-        dataProcessorService.groupOneWeekRecords(testTime.minusWeeks(1));
+        bazaarDataProcessorService.groupOneWeekRecords(testTime.minusWeeks(1));
 
         assertThat(repository.findAll()).singleElement().satisfies(
                 itemPricing -> assertThat(itemPricing.getBuyPrice()).isEqualTo(11d)
@@ -53,7 +53,7 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, randomTimeInOneDayWindow));
         repository.save(new ItemPricing(TEST_STRING, 8d, 10d, randomTimeInOneDayWindow.plusSeconds(60)));
 
-        dataProcessorService.groupOneDayRecords(testTime.minusDays(1));
+        bazaarDataProcessorService.groupOneDayRecords(testTime.minusDays(1));
 
         assertThat(repository.findAll()).singleElement().satisfies(
                 itemPricing -> assertThat(itemPricing.getSellPrice()).isEqualTo(9d)
@@ -78,7 +78,7 @@ class DataProcessorServiceTest {
         repository.save(itemPricing3);
         repository.save(itemPricing4);
 
-        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
+        bazaarDataProcessorService.groupOneHourRecords(testTime.minusHours(1));
         LocalDateTime compressedUpdateTime = testTime.minusMinutes(TimeConstant.SAMPLING_BY_HOUR_TIME_SLOT_IN_MINUTES);
         List<ItemPricing> pricing1 = repository.findAllByItemId(testItemId1);
         assertThat(pricing1).singleElement().satisfies(e -> {
@@ -106,7 +106,7 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
         repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
 
-        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
+        bazaarDataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = repository.findAllByItemId(TEST_STRING);
         assertThat(pricing).hasSize(2)
@@ -135,8 +135,8 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 20d, 40d, secondTimeStamp));
         repository.save(new ItemPricing(TEST_STRING, 16d, 30d, secondTimeStamp.minusMinutes(2)));
 
-        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
-        dataProcessorService.groupOneHourRecords(testTime.minusHours(1));
+        bazaarDataProcessorService.groupOneHourRecords(testTime.minusHours(1));
+        bazaarDataProcessorService.groupOneHourRecords(testTime.minusHours(1));
 
         List<ItemPricing> pricing = repository.findAllByItemId(TEST_STRING);
         assertThat(pricing).hasSize(2);
@@ -150,7 +150,7 @@ class DataProcessorServiceTest {
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusYears(1)));
         repository.save(new ItemPricing(TEST_STRING, 10d, 12d, testTime.minusDays(3)));
 
-        dataProcessorService.deleteLastYearRecords();
+        bazaarDataProcessorService.deleteLastYearRecords();
         assertThat(repository.findAllByItemId(TEST_STRING))
                 .hasSize(1)
                 .allSatisfy(price -> assertThat(price.getTimestamp()).isAfterOrEqualTo(testTime.minusYears(1)));

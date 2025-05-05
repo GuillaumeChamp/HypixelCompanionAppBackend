@@ -3,7 +3,7 @@ package com.example.hypixeltrackerbackend.web;
 import com.example.hypixeltrackerbackend.data.constant.TimeConstant;
 import com.example.hypixeltrackerbackend.data.bazaar.ItemPricing;
 import com.example.hypixeltrackerbackend.data.repositories.ItemPricingRepository;
-import com.example.hypixeltrackerbackend.services.DataProcessorService;
+import com.example.hypixeltrackerbackend.services.BazaarDataProcessorService;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 class RequestControllerTest {
     @Autowired
-    DataProcessorService dataProcessorService;
+    BazaarDataProcessorService bazaarDataProcessorService;
     @Autowired
     RequestController requestController;
     @Autowired
@@ -42,7 +42,7 @@ class RequestControllerTest {
     void shouldGetBazaarCurrentValueWorkProperly() throws Exception {
         // wait that a request have been proceeded
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
-                .until(() -> dataProcessorService.getLastData() != null);
+                .until(() -> bazaarDataProcessorService.getLastData() != null);
 
         mockMvc.perform(get("/bazaar").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -88,7 +88,7 @@ class RequestControllerTest {
     void shouldCompressEndpointAnswerFirst() throws Exception {
         // wait that a request have been proceeded
         Awaitility.waitAtMost(TimeConstant.CALL_FREQUENCY_IN_SECOND, TimeUnit.SECONDS)
-                .until(() -> dataProcessorService.getLastData() != null);
+                .until(() -> bazaarDataProcessorService.getLastData() != null);
 
         mockMvc.perform(get("/bazaar/compress").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

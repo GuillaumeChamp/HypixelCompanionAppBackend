@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
-import static org.assertj.core.api.AssertionsForClassTypes.*;
+import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
 class ApiFetcherServiceTest {
@@ -34,7 +35,7 @@ class ApiFetcherServiceTest {
     @Test
     void shouldProfileQueryWorkProperly() {
         assertThatNoException().isThrownBy(() -> {
-            String answer = apiFetcherService.getProfilesByPlayerUUID("75957f87-aaea-4952-953b-6ca217a2654d");
+            Map<String, String> answer = apiFetcherService.getProfilesByPlayerUUID("75957f87-aaea-4952-953b-6ca217a2654d");
             assertThat(answer).isNotEmpty();
         });
     }

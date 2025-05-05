@@ -1,21 +1,15 @@
-package com.example.hypixeltrackerbackend.utils;
+package com.example.hypixeltrackerbackend.web.requestparsers;
 
 import com.example.hypixeltrackerbackend.web.exceptions.HTTPRequestException;
-import com.example.hypixeltrackerbackend.web.requestparsers.UUIDRequestParser;
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
 
-import javax.net.ssl.SSLSession;
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpHeaders;
-import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Optional;
 
+import static com.example.hypixeltrackerbackend.testutils.RequestTestUtil.createMockHttpResponse;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
@@ -47,47 +41,4 @@ class UUIDRequestParserTest {
         assertThatThrownBy(() -> UUIDRequestParser.parse(response)).isInstanceOf(JSONException.class).hasMessageContaining("not found");
     }
 
-    HttpResponse<String> createMockHttpResponse(int statusCode, String payload) {
-        return new HttpResponse<>() {
-            @Override
-            public int statusCode() {
-                return statusCode;
-            }
-
-            @Override
-            public HttpRequest request() {
-                return null;
-            }
-
-            @Override
-            public Optional<HttpResponse<String>> previousResponse() {
-                return Optional.empty();
-            }
-
-            @Override
-            public HttpHeaders headers() {
-                return null;
-            }
-
-            @Override
-            public String body() {
-                return payload;
-            }
-
-            @Override
-            public Optional<SSLSession> sslSession() {
-                return Optional.empty();
-            }
-
-            @Override
-            public URI uri() {
-                return null;
-            }
-
-            @Override
-            public HttpClient.Version version() {
-                return null;
-            }
-        };
-    }
 }
