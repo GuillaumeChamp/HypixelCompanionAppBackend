@@ -56,20 +56,30 @@ class RequestControllerTest {
 
     @Test
     @DisplayName("GET /bazaar/{id} with wrong ID")
-    void shouldGetAnInvalidItemHistoryReturn404() throws Exception {
-        String testString = "invalid_id_history_test";
+    void shouldGetAWrongIDHistoryReturn404() throws Exception {
+        String testString = "VALID_ID";
         itemPricingRepository.save(new ItemPricing(testString, 4d, 4d, LocalDateTime.now()));
 
-        mockMvc.perform(get("/bazaar/{id}", "toto").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
+        mockMvc.perform(get("/bazaar/{id}", "TOTO").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
                 .andExpect(status().isNotFound())
-                .andDo(result -> assertThat(result.getResponse().getErrorMessage()).isEqualTo("Item not found : toto"));
+                .andDo(result -> assertThat(result.getResponse().getErrorMessage()).isEqualTo("Item not found : TOTO"));
     }
 
+    @Test
+    @DisplayName("GET /bazaar/{id} bad request")
+    void shouldGetAnInvalidItemIDHistoryReturn400() throws Exception {
+        String testString = "invalid ID";
+        itemPricingRepository.save(new ItemPricing(testString, 4d, 4d, LocalDateTime.now()));
+
+        mockMvc.perform(get("/bazaar/{id}", "invalid ID").accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
+                .andExpect(status().isBadRequest())
+                .andDo(result -> assertThat(result.getResponse().getErrorMessage()).isEqualTo("Invalid item ID"));
+    }
 
     @Test
     @DisplayName("GET /bazaar/{id}")
     void shouldGetAParticularItemHistoryWorkProperly() throws Exception {
-        String testString = "valid_id_history_test";
+        String testString = "VALID_ID";
         itemPricingRepository.save(new ItemPricing(testString, 4d, 4d, LocalDateTime.now()));
 
         mockMvc.perform(get("/bazaar/{id}/{window}", testString, TimeConstant.DAY_TIME_WINDOW).accept(MediaType.APPLICATION_JSON).characterEncoding("UTF-8"))
