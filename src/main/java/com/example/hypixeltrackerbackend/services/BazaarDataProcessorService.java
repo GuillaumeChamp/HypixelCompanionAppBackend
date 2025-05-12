@@ -7,6 +7,7 @@ import com.example.hypixeltrackerbackend.utils.mapper.ItemPricingMapper;
 import com.example.hypixeltrackerbackend.utils.mapper.StaticItemMapper;
 import com.example.hypixeltrackerbackend.data.repositories.ItemPricingRepository;
 import com.example.hypixeltrackerbackend.utils.ItemPricingUtil;
+import com.example.hypixeltrackerbackend.web.responses.PricingRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -73,7 +74,7 @@ public class BazaarDataProcessorService {
         ItemPricingUtil.updateAllItemsMinimalCost(completeItemHashMap);
     }
 
-    public List<ItemPricing> getHistory(String itemId, String timeWindow) {
+    public List<PricingRecord> getHistory(String itemId, String timeWindow) {
         LocalDateTime ending = LocalDateTime.now();
         LocalDateTime beginning = switch (timeWindow) {
             case TimeConstant.DAY_TIME_WINDOW -> ending.minusHours(24);
@@ -83,8 +84,7 @@ public class BazaarDataProcessorService {
             case null, default -> ending.minusHours(1);
         };
         List<ItemPricing> answer = pricingRepository.findAllByItemIdAndTimestampBetweenOrderByTimestamp(itemId, beginning, ending);
-        logger.log(Level.INFO, () -> "successfully processed history for " + itemId + " for " + timeWindow);
-        return answer;
+        return answer.stream().map(PricingRecord::new).toList();
     }
 
     /**

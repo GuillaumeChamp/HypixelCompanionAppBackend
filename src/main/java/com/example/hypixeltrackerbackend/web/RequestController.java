@@ -3,6 +3,7 @@ package com.example.hypixeltrackerbackend.web;
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.museum.MuseumItem;
 import com.example.hypixeltrackerbackend.services.MuseumDataProcessorService;
+import com.example.hypixeltrackerbackend.utils.ParameterValidationUtil;
 import com.example.hypixeltrackerbackend.web.responses.PricingRecord;
 import com.example.hypixeltrackerbackend.web.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.services.BazaarDataProcessorService;
@@ -23,7 +24,9 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.Set;
 
-
+/**
+ * Entrypoint of the api
+ */
 @RestController
 public class RequestController {
     private final BazaarDataProcessorService bazaarDataProcessorService;
@@ -43,14 +46,17 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping("/bazaar")
-    List<CompleteItem> current() {
+    public List<CompleteItem> current() {
         return bazaarDataProcessorService.getLastData().values().stream().toList();
     }
 
     @CrossOrigin
     @GetMapping(value = {"/bazaar/{id}", "/bazaar/{id}/{window}"})
-    List<PricingRecord> getHistory(@PathVariable("id") String itemId, @PathVariable(value = "window", required = false) String timeWindow) {
-        List<PricingRecord> history = bazaarDataProcessorService.getHistory(itemId, timeWindow).stream().map(PricingRecord::new).toList();
+    public List<PricingRecord> getHistory(@PathVariable("id") String itemId, @PathVariable(value = "window", required = false) String timeWindow) {
+        if (!ParameterValidationUtil.isValidItemID(itemId)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid item ID");
+        }
+        List<PricingRecord> history = bazaarDataProcessorService.getHistory(itemId, timeWindow);
         if (CollectionsUtils.isEmpty(history)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item not found : " + itemId);
         }
@@ -59,7 +65,7 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping(value = {"/bazaar/compress"})
-    String compressData() {
+    public String compressData() {
         LocalDateTime now = LocalDateTime.now();
         new Thread(() -> {
             // compress last year
@@ -84,7 +90,7 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping("/museum")
-    List<MuseumItem> getMuseumItems() {
+    public List<MuseumItem> getMuseumItems() {
         try {
             return museumDataProcessorService.getStaticMuseumItems();
         } catch (MissingResourceException e) {
@@ -103,7 +109,10 @@ public class RequestController {
      */
     @CrossOrigin
     @GetMapping("/museum/{profile}")
-    Set<String> getMuseumItemsForAProfile(@PathVariable String profile) throws ResponseStatusException {
+    public Set<String> getMuseumItemsForAProfile(@PathVariable String profile) throws ResponseStatusException {
+        if (!ParameterValidationUtil.isValidProfileId(profile)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid profile id : " + profile);
+        }
         if (museumDataProcessorService.isARecentRecodeExistsForAProfileID(profile)) {
             return museumDataProcessorService.getMuseumIdsForAProfileID(profile);
         }
@@ -120,7 +129,7 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping(value = {"/uuid/{username}"})
-    UUIDResponse getPlayerUUID(@PathVariable("username") String username) {
+    public UUIDResponse getPlayerUUID(@PathVariable("username") String username) {
         try {
             return apiFetcherService.getUUIDFromUsername(username);
         } catch (HTTPRequestException e) {
@@ -130,7 +139,10 @@ public class RequestController {
 
     @CrossOrigin
     @GetMapping(value = {"/profiles/{playerUUID}"})
-    Map<String, String> getProfilesNameByPlayer(@PathVariable("playerUUID") String playerUUID) {
+    public Map<String, String> getProfilesNameByPlayer(@PathVariable("playerUUID") String playerUUID) {
+        if (!ParameterValidationUtil.isValidMinecraftId(playerUUID)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid profile id : " + playerUUID);
+        }
         try {
             return apiFetcherService.getProfilesByPlayerUUID(playerUUID);
         } catch (HTTPRequestException e) {
