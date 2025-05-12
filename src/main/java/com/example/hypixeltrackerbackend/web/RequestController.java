@@ -2,10 +2,7 @@ package com.example.hypixeltrackerbackend.web;
 
 import com.example.hypixeltrackerbackend.data.bazaar.CompleteItem;
 import com.example.hypixeltrackerbackend.data.museum.MuseumItem;
-import com.example.hypixeltrackerbackend.data.museum.MuseumRecord;
-import com.example.hypixeltrackerbackend.data.museum.MuseumRecordAdapter;
-import com.example.hypixeltrackerbackend.data.repositories.MuseumRecordsRepository;
-import com.example.hypixeltrackerbackend.utils.mapper.MuseumItemMapper;
+import com.example.hypixeltrackerbackend.services.MuseumDataProcessorService;
 import com.example.hypixeltrackerbackend.web.responses.PricingRecord;
 import com.example.hypixeltrackerbackend.web.responses.UUIDResponse;
 import com.example.hypixeltrackerbackend.services.BazaarDataProcessorService;
@@ -20,11 +17,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+import java.util.MissingResourceException;
 import java.util.Set;
 
 
@@ -32,13 +28,13 @@ import java.util.Set;
 public class RequestController {
     private final BazaarDataProcessorService bazaarDataProcessorService;
     private final ApiFetcherService apiFetcherService;
-    private final MuseumRecordsRepository museumRecordsRepository;
+    private final MuseumDataProcessorService museumDataProcessorService;
 
     @Autowired
-    public RequestController(BazaarDataProcessorService bazaarDataProcessorService, ApiFetcherService apiFetcherService, MuseumRecordsRepository museumRecordsRepository) {
+    public RequestController(BazaarDataProcessorService bazaarDataProcessorService, ApiFetcherService apiFetcherService, MuseumDataProcessorService museumDataProcessorService) {
         this.bazaarDataProcessorService = bazaarDataProcessorService;
         this.apiFetcherService = apiFetcherService;
-        this.museumRecordsRepository = museumRecordsRepository;
+        this.museumDataProcessorService = museumDataProcessorService;
     }
 
     /*
@@ -90,26 +86,35 @@ public class RequestController {
     @GetMapping("/museum")
     List<MuseumItem> getMuseumItems() {
         try {
-            return MuseumItemMapper.generateMuseumItemList();
-        } catch (IOException io) {
+            return museumDataProcessorService.getStaticMuseumItems();
+        } catch (MissingResourceException e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to get Museum Items");
         }
     }
 
+    /**
+     * send a set containing uuid of all items in the museum of the given profile
+     * @param profile uuid of the profile
+     * @return there is three scenario
+     * First, if a previous record exist in the database and is recent return this records
+     * Else, query to the provider api the current state of the museum
+     * Finally, if the api key is invalid and if a previous record exist send it
+     * @throws ResponseStatusException if the final case failed
+     */
     @CrossOrigin
     @GetMapping("/museum/{profile}")
-    Set<String> getMuseumItemsForAProfile(@PathVariable String profile) {
+    Set<String> getMuseumItemsForAProfile(@PathVariable String profile) throws ResponseStatusException {
+        if (museumDataProcessorService.isARecentRecodeExistsForAProfileID(profile)) {
+            return museumDataProcessorService.getMuseumIdsForAProfileID(profile);
+        }
         try {
-            Optional<MuseumRecord> previousRecord = museumRecordsRepository.getByProfileID(profile);
-            if(previousRecord.isPresent()) {
-                MuseumRecordAdapter museumRecordAdapter = new MuseumRecordAdapter(previousRecord.get());
-                if(museumRecordAdapter.isRecent()){
-                    return museumRecordAdapter.getMuseumIds();
-                }
-            }
-            return apiFetcherService.getMuseumItemsForAProfile(profile);
+             return apiFetcherService.getMuseumItemsForAProfile(profile);
         } catch (HTTPRequestException e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Expired API Key or Bad Request : " + e.getMessage());
+            if (HttpStatus.FORBIDDEN.equals(e.getStatusCode())
+                    && museumDataProcessorService.isARecordExistsForAProfileID(profile)) {
+                        return museumDataProcessorService.getMuseumIdsForAProfileID(profile);
+            }
+            throw new ResponseStatusException(e.getStatusCode(),e.getMessage());
         }
     }
 
@@ -119,7 +124,7 @@ public class RequestController {
         try {
             return apiFetcherService.getUUIDFromUsername(username);
         } catch (HTTPRequestException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid username : " + username);
+            throw new ResponseStatusException(e.getStatusCode(),e.getMessage());
         }
     }
 
@@ -129,7 +134,7 @@ public class RequestController {
         try {
             return apiFetcherService.getProfilesByPlayerUUID(playerUUID);
         } catch (HTTPRequestException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid playerUUID : " + playerUUID);
+            throw new ResponseStatusException(e.getStatusCode(), "Invalid playerUUID : " + playerUUID);
         }
     }
 

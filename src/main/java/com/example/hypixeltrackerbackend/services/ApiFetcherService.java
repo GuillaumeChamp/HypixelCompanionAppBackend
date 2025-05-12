@@ -109,14 +109,14 @@ public class ApiFetcherService {
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() != HttpStatus.OK.value()) {
-                throw new HTTPRequestException("bad request " + response.statusCode());
+                throw new HTTPRequestException(HttpStatus.resolve(response.statusCode()),"bad request");
             }
             return response;
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new IllegalThreadStateException("request interrupted");
         } catch (IOException e) {
-            throw new HTTPRequestException("No response received");
+            throw new HTTPRequestException(HttpStatus.INTERNAL_SERVER_ERROR,"INTERNAL SERVER ERROR");
         }
     }
 }

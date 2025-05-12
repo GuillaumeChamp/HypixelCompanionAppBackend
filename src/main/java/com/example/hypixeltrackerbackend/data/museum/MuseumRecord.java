@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 /**
  * Record of museum items for one user
- * Do not use it raw, use facade instead
+ * Do not use it raw, use adapter instead
  * @see MuseumRecordAdapter
  */
 @Entity

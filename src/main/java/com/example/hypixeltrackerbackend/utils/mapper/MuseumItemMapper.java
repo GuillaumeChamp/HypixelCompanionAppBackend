@@ -23,7 +23,7 @@ public class MuseumItemMapper {
     private MuseumItemMapper() {
     }
 
-    public static List<MuseumItem> generateMuseumItemList() throws IOException {
+    public static List<MuseumItem> generateMuseumItemList() {
         try (InputStream items = MuseumItemMapper.class.getResourceAsStream("/static/items.json")) {
             assert items != null;
             String itemListPayload = new String(items.readAllBytes(), StandardCharsets.UTF_8);
@@ -35,7 +35,7 @@ public class MuseumItemMapper {
             return museumItemMap.entrySet().stream().map(entry -> new MuseumItem(entry.getKey(), entry.getValue())).toList();
         } catch (IOException io) {
             logger.warning("Error while loading Museum Items");
-            throw io;
+            throw new MissingResourceException("items.json","static","museum_items");
         }
     }
 

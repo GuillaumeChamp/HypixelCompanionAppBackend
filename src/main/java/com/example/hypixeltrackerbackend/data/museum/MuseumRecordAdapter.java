@@ -30,11 +30,11 @@ public class MuseumRecordAdapter {
         return new MuseumRecord(profileId, String.join(",", this.museumIds), lastUpdated);
     }
 
-    public boolean isRecent(){
-        return this.lastUpdated.isAfter(LocalDateTime.now().minusMinutes(10));
-    }
-
     public Set<String> getMuseumIds() {
         return museumIds;
+    }
+
+    public static LocalDateTime getRecentLowerLimit() {
+        return LocalDateTime.now().minusMinutes(10);
     }
 }
